@@ -7,7 +7,7 @@ import Link from "next/link";
 
 const Topbar = () => {
   return (
-    <nav className="flex items-center justify-between w-full py-4">
+    <nav className=" container flex items-center justify-between w-full py-4">
       <Link href={"/"}>
         <div className="flex items-center gap-4">
           <Image
@@ -24,7 +24,7 @@ const Topbar = () => {
         </div>
       </Link>
       <div className="flex items-center gap-2">
-        <Button variant={"outline"}>Let's connect</Button>
+        <Button variant={"outline"}>Lets connect</Button>
         <ModeToggle />
       </div>
     </nav>

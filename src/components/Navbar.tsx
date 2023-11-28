@@ -10,8 +10,8 @@ export const pages: {
   link: string;
 }[] = [
   {
-    title: "Projects",
-    link: "/projects",
+    title: "Work",
+    link: "/work",
   },
   {
     title: "About",
@@ -19,22 +19,26 @@ export const pages: {
   },
   {
     title: "Journal",
-    link: "/Journal",
+    link: "/journal",
+  },
+  {
+    title: "Playground",
+    link: "/playground",
   },
 ];
 
 const Navbar = () => {
   return (
-    <>
-      <div className="bg-muted px-1 py-1 rounded-full  w-fit fixed bottom-8 left-0 right-0 mx-auto z-10 hidden sm:flex">
+    <div className="">
+      <div className=" container bg-muted px-1 py-1 rounded-full  w-fit fixed bottom-8 left-0 right-0 mx-auto z-50 hidden sm:flex">
         {pages.map((page) => (
-          <NavbarItem title={page.title} link={page.link} />
+          <NavbarItem title={page.title} link={page.link} key={page.title} />
         ))}
       </div>
 
       {/*Mobile Navbar*/}
       <MobileNavbar />
-    </>
+    </div>
   );
 };
 

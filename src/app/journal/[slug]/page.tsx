@@ -6,6 +6,8 @@ import Topbar from "@/components/Topbar";
 import { Mdx } from "@/components/MDX";
 import { format } from "date-fns";
 import InlineNavbar from "@/components/InlineNavbar";
+import { useScroll } from "framer-motion";
+import Post from "@/components/Post";
 
 interface Props {
   params: {
@@ -30,16 +32,7 @@ const Page = async ({ params }: Props) => {
     <div className="container">
       {/* Navigation */}
       <div className="my-10">
-        <InlineNavbar />
-        <div className="md:grid md:grid-cols-2 relative">
-          <div className="mb-10 md:sticky md:top-10 h-fit">
-            <h1 className="text-3xl font-medium">{doc.title}</h1>
-            <p className="text-muted-foreground text-sm mt-2">
-              {format(date, "EE, dd MMM yyyy")}
-            </p>
-          </div>
-          <Mdx code={doc.body.code} />
-        </div>
+        <Post doc={doc} />
       </div>
     </div>
   );

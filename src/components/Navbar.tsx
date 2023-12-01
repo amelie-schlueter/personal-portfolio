@@ -21,10 +21,10 @@ export const pages: {
     title: "Journal",
     link: "/journal",
   },
-  {
-    title: "Playground",
-    link: "/playground",
-  },
+  // {
+  //   title: "Playground",
+  //   link: "/playground",
+  // },
 ];
 
 const Navbar = () => {

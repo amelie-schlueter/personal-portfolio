@@ -12,6 +12,8 @@ import { allDocs } from "contentlayer/generated";
 import { notFound } from "next/navigation";
 import Projectcard from "@/components/Projectcard";
 import { projects } from "@/lib/data";
+import { Tabs } from "@radix-ui/react-tabs";
+import TabsComponent from "@/components/Tabs";
 
 export default function Home() {
   const docs = allDocs;
@@ -35,13 +37,13 @@ export default function Home() {
           </div>
         </div>
         <div className="w-full flex md:items-start md:justify-start ">
-          <Button variant={"outline"} className="gap-2">
+          {/* <Button variant={"outline"} className="gap-2">
             <Briefcase strokeWidth={1.5} size={22} />
             Working
             <span>
               <a href="https://zwoeins.de">@zwoeins</a>
             </span>
-          </Button>
+          </Button> */}
         </div>
       </div>
 
@@ -93,8 +95,6 @@ export default function Home() {
           {/* Footer */}
         </div>
       </section>
-      <Footer />
-      <div className="h-screen"></div>
     </div>
   );
 }

@@ -108,9 +108,8 @@ const Page = () => {
         </div>
 
         {/* Grid Image */}
-
-        <ImageGrid />
       </section>
+      <ImageGrid />
     </>
   );
 };

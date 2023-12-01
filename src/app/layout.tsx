@@ -7,6 +7,7 @@ import localFont from "next/font/local";
 import Topbar from "@/components/Topbar";
 import Navbar from "@/components/Navbar";
 import { PT_Serif } from "next/font/google";
+import Footer from "@/components/Footer";
 
 const soehne = localFont({
   src: [
@@ -62,6 +63,7 @@ export default function RootLayout({
             <Navbar />
           </div>
           {children}
+          <Footer />
         </ThemeProvider>
       </body>
     </html>

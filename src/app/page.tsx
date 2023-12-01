@@ -1,41 +1,32 @@
-import { ModeToggle } from "@/components/Mode-toggle";
-import Topbar from "@/components/Topbar";
-import Navbar from "@/components/Navbar";
-import { Button } from "@/components/ui/button";
-import { Briefcase, SplitSquareHorizontalIcon, Workflow } from "lucide-react";
-import Image from "next/image";
-import { Badge } from "@/components/ui/badge";
-import { Separator } from "@/components/ui/separator";
+import { Button, buttonVariants } from "@/components/ui/button";
+
 import BlogEntryCard from "@/components/BlogEntryCard";
-import Footer from "@/components/Footer";
+
 import { allDocs } from "contentlayer/generated";
-import { notFound } from "next/navigation";
+
 import Projectcard from "@/components/Projectcard";
 import { projects } from "@/lib/data";
-import { Tabs } from "@radix-ui/react-tabs";
-import TabsComponent from "@/components/Tabs";
+import Link from "next/link";
+import { cn } from "@/lib/utils";
+import Hero from "@/components/Hero";
 
 export default function Home() {
-  const docs = allDocs;
+  const docs = allDocs.sort((a, b) =>
+    b.publishedAt.localeCompare(a.publishedAt)
+  );
   return (
-    <div className="container w-full items-center relative">
+    <div className="container w-full relative min-h-screen h-full">
       {/*Wrapepr*/}
-      <div className="flex flex-col py-16 tems-start justify-center gap-10 md:grid md:grid-cols-2 md:items-center  md:h-full md:py-20  ">
+      <div className="flex flex-col py-24 tems-start justify-center gap-10 md:grid md:grid-cols-2 md:items-center  md:h-full md:py-20  ">
         {/*Hero*/}
-        <div className="max-w-md">
-          <div className="mb-6 text-4xl">
-            <h1 className="font-medium">Hi, Im Amelie</h1>
-            <h1 className="font-medium">a Designer & Developer</h1>
-          </div>
-          <p className="text-muted-foreground max-w-xl ">
-            Im Amelie an Interaction Design student at HFG Schwäbisch Gmuend,
-            and Im passionate about using user-centered functional design to
-            solve real-world problems.
-          </p>
-          <div className="mt-6">
-            <Button>Lets connect</Button>
-          </div>
-        </div>
+        <Hero
+          title="Hi, Im Amelie"
+          description="Im Amelie an Interaction Design student at HFG Schwäbisch Gmuend,
+          and Im passionate about using user-centered functional design to
+          solve real-world problems."
+          button="Lets connect"
+        />
+
         <div className="w-full flex md:items-start md:justify-start ">
           {/* <Button variant={"outline"} className="gap-2">
             <Briefcase strokeWidth={1.5} size={22} />
@@ -78,17 +69,20 @@ export default function Home() {
                 Writing makes you a better designer
               </h3>
               <div>
-                <Button variant={"outline"}>More Thoughts</Button>
+                <Link
+                  href="/journal"
+                  className={cn(buttonVariants({ variant: "outline" }))}
+                >
+                  More Thoughts
+                </Link>
               </div>
             </div>
 
             {/*Blog Wrapper*/}
-            <div className="flex flex-col gap-16">
+            <div className="flex flex-col gap-10">
               {/*Blog Entry*/}
               {docs &&
-                docs.map((doc, i) => (
-                  <BlogEntryCard doc={doc} key={i} id={i} />
-                ))}
+                docs.map((doc, i) => <BlogEntryCard doc={doc} key={i} />)}
             </div>
           </div>
 

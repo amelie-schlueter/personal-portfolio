@@ -43,6 +43,18 @@ export const projects = [
     link: "",
     image: "/Premium-room-design.png",
     description:
-      "Esse adipisicing dolore ad pariatur ipsum ullamco duis aliqua do ipsum id proident amet dolor consequat. In enim quis incididunt est aute officia aute adipisicing nisi aliqua voluptate do magna.",
+      "Esse adipisicing dolore ad pariatur ipsum ullamco duis aliqua do ipsum id proident amet dolor consequat.",
   },
-];
+  {
+    title: "Stacksdo",
+    slug: "stacksdo",
+    tags: ["Design", "Development"],
+    year: new Date("2023-06-01"),
+    type: "Side Project",
+    link: "",
+    image: "/Premium-room-design.png",
+    description:
+      "Stacksdo is a distraction free task management tool in a world full of constant overstimulation",
+    techStack: [{ title: "NextJS", icon: "/nextjs.png" }],
+  },
+].sort((a, b) => b.year.getTime() - a.year.getTime());

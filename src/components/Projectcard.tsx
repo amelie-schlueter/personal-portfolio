@@ -10,33 +10,20 @@ const Projectcard = ({ project }: { project: ProjectType }) => {
   return (
     <Link className="col-start-2 mb-24 " href={`work/${project.slug}`}>
       <div className="flex flex-col gap-6 item-center justify-between w-full ">
-        <div className="w-full flex flex-col gap-2 max-w-sm">
-          <h3 className="text-xl font-medium">{project.title}</h3>
-          <p className="text-muted-foreground text-sm  w-full">
+        <div className="w-full flex flex-col gap-2 ">
+          <div className="flex items-center gap-4">
+            <h3 className="text-xl font-medium">{project.title}</h3>
+            <Badge variant={"outline"}>{format(project.year, "yyyy")}</Badge>
+          </div>
+          <p className="text-muted-foreground   w-full">
             {project.description}
           </p>
         </div>
 
-        {/*Badges*/}
-        <div className="flex item-center gap-3">
-          {/*Tags*/}
-          <div className="flex gap-2">
-            {project.tags.map((tag) => (
-              <Badge variant={"green"} key={tag}>
-                {tag}
-              </Badge>
-            ))}
-          </div>
-
-          {/*Time*/}
-          <div>
-            <Badge variant={"outline"}>{format(project.year, "yyyy")}</Badge>
-          </div>
-        </div>
         {/*Image*/}
       </div>
       {/*Image*/}
-      <div className="mt-10">
+      <div className="mt-8">
         <Image
           src={project.image}
           className="rounded-lg"

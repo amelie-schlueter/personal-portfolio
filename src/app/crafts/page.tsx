@@ -5,7 +5,7 @@ import React from "react";
 const Page = () => {
   return (
     <div className="container">
-      <h1 className="text-4xl font-medium">Playground</h1>
+      <h1 className="text-4xl font-medium">Crafts</h1>
     </div>
   );
 };

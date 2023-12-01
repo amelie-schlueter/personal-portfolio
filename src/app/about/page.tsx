@@ -17,26 +17,26 @@ import JsLogo from "@/lib/icons/JSLogo";
 const Page = () => {
   return (
     <div className="container">
-      <div className="flex flex-col py-16 gap-4 items-start justify-end   md:grid md:grid-cols-2 md:justify-end ">
+      <div className="flex flex-col py-24 gap-4 items-start justify-end   md:grid md:grid-cols-2 md:justify-end ">
         <div className="flex flex-col gap-10">
-          <div className="max-w-md flex flex-col gap-4">
-            <h1 className="text-4xl font-medium">Who i am.</h1>
-            <p className="text-muted-foreground">
+          <div className="max-w-md">
+            <div className="mb-6 text-4xl">
+              <h1 className="font-medium">Who i am.</h1>
+            </div>
+            <p className="text-muted-foreground max-w-xl ">
               My name is Amelie and i am currently studying Interaction Design
               at the HfG Schwaebisch Gmuend. I am passionate about creating
               meaningful digital products.
             </p>
-            <p className="">
+            <p className="mt-4">
               If i am not pushing pixel, i love to go to the gym and spend time
               with my friends and family to recharge my battery 🔋.
             </p>
           </div>
-          <div>
-            <div className="mb-6">
-              <p className="text-muted-foreground font-">Tech Stack</p>
-              <h2 className="text-3xl font-medium">Technology</h2>
-            </div>
-            <div className="flex gap-4">
+          <div className="">
+            <p className="text-muted-foreground font-">Tech Stack</p>
+            <h2 className="text-3xl font-medium">Technology</h2>
+            <div className="flex gap-4 mt-6">
               {/*Technology Item*/}
               {/*Next*/}
               <div className="h-11 w-11 rounded-full flex items-center justify-center py-2 text-foreground">
@@ -95,7 +95,6 @@ const Page = () => {
           </div>
         </div>
       </div>
-
       <section className="w-full my-10" id="work">
         <div className="flex flex-col md:grid md:grid-cols-[2fr,2fr]  h-full">
           {/*Header*/}

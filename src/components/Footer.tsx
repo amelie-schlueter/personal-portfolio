@@ -7,7 +7,7 @@ import { File, Linkedin, Twitter } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="py-28 container">
+    <footer className="py-28 container ">
       <div className="flex flex-col w-full justify-between md:flex-row">
         <div className="pb-10 flex flex-col items-start">
           <p className="text-lg leading-none">Amelie Schlüter</p>

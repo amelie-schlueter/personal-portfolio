@@ -33,16 +33,14 @@ const Page = () => {
             </p>
             <div className="mt-6 flex gap-2">
               {project?.tags.map((tag) => (
-                <Badge key={tag} variant={"green"}>
+                <Badge key={tag} variant={"secondary"}>
                   {tag}
                 </Badge>
               ))}
               <Badge variant={"outline"}>{format(project.year, "yyyy")}</Badge>
             </div>
           </div>
-          <div>
-            <LoadingButton />
-          </div>
+          <div></div>
           <div className="w-full flex md:items-start md:justify-start "></div>
         </section>
         <section className="py-16">

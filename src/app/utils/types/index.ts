@@ -16,6 +16,7 @@ export type ProjectType = {
   year: Date;
   type: string;
   link: string | null;
-  image: string;
+  imageDarkmode: string;
+  imageLightmode: string;
   description: string;
 };

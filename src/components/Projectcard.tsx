@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { Badge } from "./ui/badge";
 import Image from "next/image";
@@ -5,8 +6,10 @@ import { ProjectType } from "@/app/utils/types";
 import { describe } from "node:test";
 import { format } from "date-fns";
 import Link from "next/link";
+import { useTheme } from "next-themes";
 
 const Projectcard = ({ project }: { project: ProjectType }) => {
+  const { theme } = useTheme();
   return (
     <Link className="col-start-2 mb-24 " href={`work/${project.slug}`}>
       <div className="flex flex-col gap-6 item-center justify-between w-full ">
@@ -23,10 +26,12 @@ const Projectcard = ({ project }: { project: ProjectType }) => {
         {/*Image*/}
       </div>
       {/*Image*/}
-      <div className="mt-8">
+      <div className="mt-8 p-10 bg-muted">
         <Image
-          src={project.image}
-          className="rounded-lg"
+          src={
+            theme === "dark" ? project.imageDarkmode : project.imageLightmode
+          }
+          className="rounded-lg shadow-lg"
           width={2605}
           height={1618}
           alt="premium-room-design-cover-image"

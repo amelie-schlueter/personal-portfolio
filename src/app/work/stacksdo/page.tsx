@@ -21,6 +21,7 @@ import { AddTaskButton } from "@/components/stacksdo/AddTaskButton";
 
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
+import { useTheme } from "next-themes";
 
 const Page = () => {
   const project = projects.find((project) => project.slug === "stacksdo");
@@ -29,11 +30,9 @@ const Page = () => {
   const ref = useRef(null);
   const isInView = useInView(ref);
 
-  console.log(isInView, "is in view");
-
-  console.log(project.slug);
-
   const [tasks, setTasks] = React.useState<Task[]>([]);
+
+  const { theme: currentTheme } = useTheme();
 
   console.log(tasks);
 
@@ -73,21 +72,19 @@ const Page = () => {
             <div className="flex flex-col gap-2 ">
               <h2 className="text-sm font-semibold">Ideation</h2>
               <p>
-                The digital epidemic of constant stimulation and information
-                overload is a constant in our daily lifes. At the same time, we
-                are constantly seeking the perfect productivity system or task
-                management tool, that assists us being ulitmative productive and
-                get more things done. Honestly, i am also guility in trying out
-                almost any productivity tool on the planet with the intention to
-                get a little bit more done in just 24 hours every day. But is
-                that what we should strive for?
+                In our digital age, we're constantly bombarded with information
+                and stimulation. At the same time, there's an ongoing quest for
+                the perfect productivity system or task management tool, aimed
+                at enhancing productivity and managing our daily 24 hours more
+                efficiently. I admit, I've tried nearly every productivity tool
+                out there, seeking that slight edge in efficiency. But is this
+                relentless pursuit really beneficial?
               </p>
               <p>
-                I decided to create a minimal and distraction free project and
-                task management tool for myself with the intention to proof to
-                myself that the no system on the planet will make me more
-                productive if i cannot get my attention on to the work that
-                really matters.{" "}
+                I decided to develop a minimalistic, distraction-free project
+                and task management tool for personal use. This project was an
+                experiment to prove to myself that no system could enhance my
+                productivity unless I focused on the work that truly mattered.
               </p>
             </div>
           </section>
@@ -99,10 +96,9 @@ const Page = () => {
             <div className="flex flex-col gap-2 ">
               <h2 className="text-sm font-semibold">Planing</h2>
               <p>
-                After figuring out what basic features a task management app
-                really needs. I sit down to plan how i can structure codebase of
-                the app. To create a mental model for myself i started creating
-                a visualisation of the app dataflow.
+                First, I identified the essential features needed in a task
+                management app. To structure my thoughts and create a coherent
+                plan, I began with a visualization of the app's data flow.
               </p>
             </div>
             <div>
@@ -168,7 +164,7 @@ const Page = () => {
                   <UserAuthForm />
                 </div>
                 <p className="text-muted-foreground text-sm mt-2">
-                  Authentication using Github OAuth via Next Auth
+                  Authentication using GitHub OAuth via NextAuth.
                 </p>
               </div>
 
@@ -189,9 +185,11 @@ const Page = () => {
           >
             <div className="">
               <p>
-                My goal was to reduce the application to the really neccessary
-                features but also to create an easy usable interface for
-                advanced user who are familiar to keyboard shortcuts.
+                The aim was to strip the application down to only the necessary
+                features while crafting an intuitive interface for advanced
+                users familiar with keyboard shortcuts. I focused on direct user
+                feedback combined with minimalistic yet appealing animations and
+                interactions.
               </p>
             </div>
             <div className="w-full grid  md:grid-cols-2 gap-4 flex-col md:flex-row">
@@ -226,17 +224,23 @@ const Page = () => {
                   </motion.div>
                 </div>
                 <p className="text-muted-foreground text-sm mt-2">
-                  Keyboard Shortcuts and calendar day selector
+                  Keyboard Shortcuts and Calendar Day Selector
                 </p>
               </div>
 
               {/* Code Component*/}
               <div className="bg-muted h-72 w-full flex items-center justify-center overflow-hidden">
                 <Image
-                  src={"/stacksdo/stacksdo-calendar.png"}
-                  width={1500}
-                  height={1500}
+                  src={
+                    currentTheme === "dark"
+                      ? "/stacksdo/stacksdo-calendar.png"
+                      : "/stacksdo/stacksdo-calendar-neg.png"
+                  }
+                  width={1800}
+                  height={1800}
                   alt="stacksdo-authcode"
+                  quality={100}
+                  className=" scale-[100%]  md:scale-[130%]"
                 ></Image>
               </div>
             </div>
@@ -252,10 +256,10 @@ const Page = () => {
                 yourself:
               </p>
             </div>
-            <div className="w-full grid gap-4 flex-col md:flex-row">
+            <div className="w-full bg-muted grid gap-4 flex-col md:flex-row">
               {/* User auth Form */}
               <div className="w-full">
-                <div className="py-8 px-6  md:px-10 bg-background border-[1px] gap-8 flex flex-col h-fit    md:flex-row justify-center relative">
+                <div className="py-8 px-6  md:px-10  gap-8 flex flex-col h-fit    md:flex-row justify-center relative">
                   <AddTaskButton setTask={setTasks} />
                   <div className="w-full flex flex-col gap-2">
                     <h3 className="font-semibold mb-2 w-full">Your Tasks</h3>
@@ -274,6 +278,88 @@ const Page = () => {
                   </div>
                 </div>
               </div>
+            </div>
+          </section>
+          <section
+            id="stacksdo-result-II"
+            className="col-start-2 mt-16 flex flex-col gap-8"
+          >
+            <div className="flex flex-col gap-2 ">
+              <h2 className="text-sm font-semibold">Result</h2>
+              <p>
+                Stacksdo is an amazing tool for managing task and projects
+                without any unnessary distractions for the user. It focuses on
+                the foundatinal elements and still provides an amazing user
+                experience throught consistent user feedback, a minimal design
+                and great performance.
+                <Link
+                  href="https://nextjs.org/"
+                  className=" underline hover:text-muted-foreground"
+                >
+                  NEXTjs
+                </Link>
+                ,{" "}
+                <Link
+                  href="https://www.typescriptlang.org/"
+                  className=" underline hover:text-muted-foreground"
+                >
+                  Typescript
+                </Link>{" "}
+                with{" "}
+                <Link
+                  href="https://tailwindcss.com/"
+                  className=" underline hover:text-muted-foreground"
+                >
+                  Tailwind CSS
+                </Link>{" "}
+                for styling,{" "}
+                <Link
+                  href="https://planetscale.com/"
+                  className=" underline hover:text-muted-foreground"
+                >
+                  Planetscale
+                </Link>{" "}
+                as the database and Prisma ORM for communication with the
+                database.
+              </p>
+            </div>
+            <div className="w-full bg-muted py-6 px-6 flex h-[30] items-center justify-center overflow-hidden">
+              {currentTheme === "dark" ? (
+                <Image
+                  src={"/stacksdo/Stackdo-image-1.png"}
+                  className="shadow-2xl relative"
+                  width={550}
+                  height={1080}
+                  alt="stackdo-image-1"
+                ></Image>
+              ) : (
+                <Image
+                  src={"/stacksdo/Stackdo-image-1-neg.png"}
+                  className="shadow-2xl relative"
+                  width={550}
+                  height={1080}
+                  alt="stackdo-image-1"
+                ></Image>
+              )}
+            </div>
+            <div className="w-full bg-muted py-6 px-6 flex h-[30] items-center justify-center overflow-hidden relative">
+              {currentTheme === "dark" ? (
+                <Image
+                  src={"/stacksdo/stackdo-image-2.png"}
+                  className="shadow-lg  relative bottom-[-100px] right-[-150px] scale-[130%]"
+                  width={900}
+                  height={1080}
+                  alt="stackdo-image-1"
+                ></Image>
+              ) : (
+                <Image
+                  src={"/stacksdo/stackdo-image-2-neg.png"}
+                  className="shadow-lg  relative bottom-[-100px] right-[-150px] scale-[130%]"
+                  width={900}
+                  height={1080}
+                  alt="stackdo-image-1"
+                ></Image>
+              )}
             </div>
           </section>
         </div>

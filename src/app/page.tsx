@@ -17,7 +17,7 @@ export default function Home() {
   return (
     <div className="container w-full relative min-h-screen h-full">
       {/*Wrapepr*/}
-      <div className="flex flex-col py-24 tems-start justify-center gap-10 md:grid md:grid-cols-2 md:items-center  md:h-full md:py-20  ">
+      <div className="flex flex-col py-24 tems-start justify-center gap-10 md:grid md:grid-cols-[1fr,1.25fr] md:items-center  md:h-full md:py-20  ">
         {/*Hero*/}
         <Hero
           title="Hi, Im Amelie"
@@ -39,10 +39,10 @@ export default function Home() {
       </div>
 
       {/*My Work*/}
-      <section className="w-full my-10" id="work">
-        <div className="flex flex-col md:grid md:grid-cols-[2fr,2fr]  h-full">
+      <section className="w-full my-10 " id="work">
+        <div className="flex flex-col md:grid md:grid-cols-[1fr,1.25fr]  h-full">
           {/*Header*/}
-          <div className="w-full mb-8 md:sticky md:top-10 h-fit">
+          <div className="w-full mb-8 md:sticky md:top-10 h-fit ">
             <p className="text-muted-foreground font-">Cases</p>
             <h2 className="text-3xl font-medium">My Work</h2>
           </div>
@@ -63,8 +63,8 @@ export default function Home() {
         aria-label="journal-section"
       >
         <div className="w-full">
-          <div className="w-full grid  gap-6 md:grid-cols-[1.25fr,2fr] md:gap-24">
-            <div className="flex flex-col gap-6 md:sticky md:top-10 h-fit">
+          <div className="w-full grid  gap-6 md:grid-cols-[1fr,1.25fr] md:gap-2">
+            <div className="flex flex-col gap-6 md:sticky md:top-10 h-full">
               <h3 className="text-3xl font-medium md:max-w-xs">
                 Writing makes you a better designer
               </h3>
@@ -79,7 +79,7 @@ export default function Home() {
             </div>
 
             {/*Blog Wrapper*/}
-            <div className="flex flex-col gap-10">
+            <div className="flex flex-col gap-10 w-full">
               {/*Blog Entry*/}
               {docs &&
                 docs.map((doc, i) => <BlogEntryCard doc={doc} key={i} />)}

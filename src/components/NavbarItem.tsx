@@ -9,9 +9,7 @@ interface Props {
 
 const NavbarItem = ({ title, link }: Props) => {
   const page = usePathname();
-  console.log(page);
   if (page.includes(link)) {
-    console.log("mark", title);
   }
   return (
     <Link href={link}>

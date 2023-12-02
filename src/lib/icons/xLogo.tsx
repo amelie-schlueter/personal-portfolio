@@ -7,8 +7,6 @@ const XLogo = () => {
       shape-rendering="geometricPrecision"
       text-rendering="geometricPrecision"
       image-rendering="optimizeQuality"
-      fill-rule="evenodd"
-      clip-rule="evenodd"
       viewBox="0 0 512 462.799"
     >
       <path

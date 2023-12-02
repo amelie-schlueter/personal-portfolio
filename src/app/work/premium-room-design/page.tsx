@@ -17,6 +17,8 @@ const Page = () => {
   );
   if (!project) return notFound();
 
+  console.log(project.slug);
+
   return (
     <>
       <div className="container">

@@ -8,6 +8,7 @@ import Topbar from "@/components/Topbar";
 import Navbar from "@/components/Navbar";
 import { PT_Serif } from "next/font/google";
 import Footer from "@/components/Footer";
+import { CommandLine } from "@/components/CommandLine";
 
 const soehne = localFont({
   src: [

@@ -4,6 +4,9 @@ import { Speech } from "lucide-react";
 import { ModeToggle } from "./Mode-toggle";
 import Image from "next/image";
 import Link from "next/link";
+import { cn } from "@/lib/utils";
+import { CommandLine } from "./CommandLine";
+import MobileTopbar from "./MobileTopbar";
 
 const Topbar = () => {
   return (
@@ -13,7 +16,7 @@ const Topbar = () => {
           <Image
             src={"/profile.png"}
             width={42}
-            className="rounded-full"
+            className="rounded-full hidden md:block"
             alt="profileimage"
             height={42}
           ></Image>
@@ -24,9 +27,11 @@ const Topbar = () => {
         </div>
       </Link>
       <div className="flex items-center gap-2">
+        <CommandLine />
         <Button variant={"outline"}>Lets connect</Button>
         <ModeToggle />
       </div>
+      <MobileTopbar />
     </nav>
   );
 };

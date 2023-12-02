@@ -12,7 +12,7 @@ const BlogEntryCard = ({ doc }: { doc: Doc }) => {
   const [arrowPosition, setArrowPosition] = React.useState(0);
 
   return (
-    <Link href={doc.slug} className="">
+    <Link href={doc.slug} className="w-full ">
       <div className="flex flex-col md:flex-row gap-2">
         <div className="flex md:w-[20rem]">
           <p className="w-fit text-muted-foreground text-sm">

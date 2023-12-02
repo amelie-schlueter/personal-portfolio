@@ -10,7 +10,7 @@ const page = () => {
   );
   return (
     <div className="container">
-      <div className="flex flex-col py-24 gap-4 items-start justify-end   md:grid md:grid-cols-2 md:justify-end ">
+      <div className="flex flex-col py-24 gap-8 items-start justify-end w-full  md:grid md:grid-cols-[1fr,1.25fr] md:justify-end ">
         <Hero
           title="Journal"
           description="  Writing is one of the most underrated skills when it comes to
@@ -21,7 +21,7 @@ const page = () => {
               design, development and life specific topics."
         />
 
-        <div className="flex flex-col gap-10">
+        <div className="flex flex-col gap-10 w-full">
           {docs.map((doc) => {
             return <BlogEntryCard doc={doc} key={doc.title} />;
           })}

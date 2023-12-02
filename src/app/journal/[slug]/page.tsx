@@ -29,9 +29,9 @@ const Page = async ({ params }: Props) => {
   const date = new Date(doc.publishedAt);
 
   return (
-    <div className="container min-h-screen h-full">
+    <div className="container  h-full">
       {/* Navigation */}
-      <div className="my-10">
+      <div className="md:my-10">
         <Post doc={doc} />
       </div>
     </div>

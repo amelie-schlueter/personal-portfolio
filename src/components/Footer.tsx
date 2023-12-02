@@ -7,7 +7,7 @@ import { File, Linkedin, Twitter } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="py-28 container ">
+    <footer className=" pt-24 pb-4 md:pt-28 md:mb-6 container ">
       <div className="flex flex-col w-full justify-between md:flex-row">
         <div className="pb-10 flex flex-col items-start">
           <p className="text-lg leading-none">Amelie Schlüter</p>
@@ -60,12 +60,8 @@ const Footer = () => {
       <div className="text-muted-foreground text-xs">
         <div className="flex w-full justify-between"></div>
 
-        <div className="flex items-center justify-between mt-4">
-          <div className="flex gap-2">
-            <p>{new Date().getFullYear()}</p>
-            <p>Amelie Schlüter</p>
-          </div>
-          <div className="flex gap-2 my-4 ">
+        <div className="flex items-start justify-between mt-4 flex-col md:flex-row md:mt-8">
+          <div className="flex gap-2 my-4">
             <Link
               className="hover:underline hover:text-foreground"
               href={"/imprint"}
@@ -81,6 +77,10 @@ const Footer = () => {
           </div>
           <div>
             <p>All rights reserved</p>
+          </div>
+          <div className="flex gap-2">
+            <p>{new Date().getFullYear()}</p>
+            <p>Amelie Schlüter</p>
           </div>
         </div>
       </div>

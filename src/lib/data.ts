@@ -58,3 +58,18 @@ export const projects = [
     techStack: [{ title: "NextJS", icon: "/nextjs.png" }],
   },
 ].sort((a, b) => b.year.getTime() - a.year.getTime());
+
+export const socialLinks = [
+  {
+    title: "X",
+    link: "https://www.twitter.com/amelieschltr",
+  },
+  {
+    title: "LinkedIn",
+    link: "https://www.linkedin.com/in/amelie-schl%C3%BCter-b36430269/",
+  },
+  {
+    title: "Read.cv",
+    link: "https://www.read.cv/amelieschltr/",
+  },
+];

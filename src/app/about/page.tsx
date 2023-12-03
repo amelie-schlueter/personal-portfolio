@@ -39,19 +39,19 @@ const Page = () => {
             <div className="flex gap-4 mt-6">
               {/*Technology Item*/}
               {/*Next*/}
-              <div className="h-11 w-11 rounded-full flex items-center justify-center py-2 text-foreground">
+              <div className="h-10 w-10 rounded-full flex items-center justify-center py-2 text-foreground">
                 <NextLogo />
               </div>
-              <div className="h-11 w-11 rounded-full flex items-center justify-center py-2 text-foreground">
+              <div className="h-10 w-10 rounded-full flex items-center justify-center py-2 text-foreground">
                 <TsLogo />
               </div>
-              <div className="h-11 w-11 rounded-full flex items-center justify-center py-2 text-foreground">
+              <div className="h-10 w-10 rounded-full flex items-center justify-center py-2 text-foreground">
                 <TwLogo />
               </div>
-              <div className="h-11 w-11 rounded-full flex items-center justify-center py-2 text-foreground">
+              <div className="h-9 w-9 rounded-full flex items-center justify-center py-2 text-foreground">
                 <ReactIcon />
               </div>
-              <div className="h-11 w-11 rounded-full flex items-center justify-center py-2 text-foreground">
+              <div className="h-9 w-9 rounded-full flex items-center justify-center py-2 text-foreground">
                 <JsLogo />
               </div>
             </div>

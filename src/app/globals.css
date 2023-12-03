@@ -53,8 +53,29 @@
   * {
     @apply border-border;
     margin: 0;
+    scroll-behavior: smooth;
   }
   body {
     @apply bg-background text-foreground;
   }
+}
+
+ul ul li,
+ul ol li,
+ol ul li,
+ol ol li {
+  /* Styles for nested li elements */
+
+  /* Add more styles as needed */
+}
+
+.mdx ul ul {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.mdx ul li li {
+  margin-left: 0;
+  list-style: circle;
+  @apply text-muted-foreground;
 }

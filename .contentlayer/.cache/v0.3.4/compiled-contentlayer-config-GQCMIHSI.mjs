@@ -1,67 +1,62 @@
+// contentlayer.config.js
 import { defineDocumentType, makeSource } from "contentlayer/source-files";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypePrettyCode from "rehype-pretty-code";
 import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
-import GithubSlugger from "github-slugger";
-
-/** @type {import('contentlayer/source-files').ComputedFields} */
-
-const computedFields = {
+import { visit } from "unist-util-visit";
+var computedFields = {
   slug: {
     type: "string",
-    resolve: (doc) => `/${doc._raw.flattenedPath}`,
+    resolve: (doc) => `/${doc._raw.flattenedPath}`
   },
   slugAsParams: {
     type: "string",
-    resolve: (doc) => doc._raw.flattenedPath.split("/").slice(1).join("/"),
+    resolve: (doc) => doc._raw.flattenedPath.split("/").slice(1).join("/")
   },
-
   headings: {
     type: "json",
-    resolve: async (doc) => {
-      const regXHeader = /\n(?<flag>#{1,6})\s+(?<content>.+)/g;
-      const slugger = new GithubSlugger();
-      const headings = Array.from(doc.body.raw.matchAll(regXHeader)).map(
-        ({ groups }) => {
-          const flag = groups?.flag;
-          const content = groups?.content;
-          return {
-            level: flag.length,
-            text: content,
-            slug: content ? slugger.slug(content) : undefined,
-          };
+    resolve: (doc) => {
+      const headings = [];
+      visit(doc.body.raw, "element", (node) => {
+        if (node.tagName === "h1" || node.tagName === "h2" || node.tagName === "h3") {
+          const id = node.properties.id;
+          const title = node.children.find(
+            (child) => child.type === "text"
+          )?.value;
+          if (id && title) {
+            headings.push({ id, title, level: node.tagName });
+          }
         }
-      );
+      });
       return headings;
-    },
-  },
+    }
+  }
 };
-export const Doc = defineDocumentType(() => ({
+var Doc = defineDocumentType(() => ({
   name: "Doc",
   filePathPattern: `journal/**/*.mdx`,
   contentType: "mdx",
   fields: {
     title: {
       type: "string",
-      required: true,
+      required: true
     },
     description: {
-      type: "string",
+      type: "string"
     },
     published: {
       type: "boolean",
-      default: true,
+      default: true
     },
     publishedAt: {
       type: "date",
-      required: true,
-    },
+      required: true
+    }
   },
-  computedFields,
+  computedFields
 }));
-
-export default makeSource({
+var contentlayer_config_default = makeSource({
   contentDirPath: "src/content",
   documentTypes: [Doc],
   mdx: {
@@ -73,8 +68,6 @@ export default makeSource({
         {
           theme: "github-dark",
           onVisitLine(node) {
-            // Prevent lines from collapsing in `display: grid` mode, and allow empty
-            // lines to be copy/pasted
             if (node.children.length === 0) {
               node.children = [{ type: "text", value: " " }];
             }
@@ -84,18 +77,23 @@ export default makeSource({
           },
           onVisitHighlightedWord(node) {
             node.properties.className = ["word--highlighted"];
-          },
-        },
+          }
+        }
       ],
       [
         rehypeAutolinkHeadings,
         {
           properties: {
             className: ["subheading-anchor"],
-            ariaLabel: "Link to section",
-          },
-        },
-      ],
-    ],
-  },
+            ariaLabel: "Link to section"
+          }
+        }
+      ]
+    ]
+  }
 });
+export {
+  Doc,
+  contentlayer_config_default as default
+};
+//# sourceMappingURL=compiled-contentlayer-config-GQCMIHSI.mjs.map

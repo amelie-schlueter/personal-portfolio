@@ -6,10 +6,15 @@ import { Mdx } from "./MDX";
 import { useScroll } from "framer-motion";
 import { motion } from "framer-motion";
 import InlineNavbar from "./InlineNavbar";
+import TOC from "./TOC";
 
 const Post = ({ doc }: { doc: Doc }) => {
   const date = new Date(doc.publishedAt);
   const { scrollYProgress } = useScroll();
+
+  const headings = doc.headings;
+  console.log(headings);
+
   return (
     <>
       <div className="sticky h-1 top-0 w-full flex items-center z-10 justify-center bg-background pt-6 pb-4">
@@ -20,6 +25,7 @@ const Post = ({ doc }: { doc: Doc }) => {
             originX: 0,
           }}
         ></motion.div>
+        {/*Table of contents*/}
       </div>
       <InlineNavbar />
       <div className="md:grid md:grid-cols-[1fr,1.25fr] relative ">
@@ -28,6 +34,7 @@ const Post = ({ doc }: { doc: Doc }) => {
           <p className="text-muted-foreground text-sm mt-2">
             {format(date, "EE, dd MMM yyyy")}
           </p>
+          <TOC headings={headings} />
         </div>
 
         <Mdx code={doc.body.code} />

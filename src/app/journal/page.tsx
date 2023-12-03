@@ -8,6 +8,7 @@ const page = () => {
   const docs = allDocs.sort((a, b) =>
     b.publishedAt.localeCompare(a.publishedAt)
   );
+
   return (
     <div className="container">
       <div className="flex flex-col py-24 gap-8 items-start justify-end w-full  md:grid md:grid-cols-[1fr,1.25fr] md:justify-end ">

@@ -28,11 +28,11 @@ const TaskMenuShowcase = () => {
   return (
     <div
       //   ref={ref}
-      className="bg-background flex items-center min-w-[300px] justify-between px-4 py-2 rounded-md border-[1.5px] shadow-2xl"
+      className="bg-background relative top-[-30px] max-w-[250px] w-full flex items-center justify-between px-4 py-2 rounded-md border-[1.5px] shadow-2xl"
     >
       <div className="flex items-center gap-2">
         <Calendar width={14} className="text-muted-foreground" />
-        <p className="text-sm">2023-12-01</p>
+        <p className="text-xs">2023-12-01</p>
       </div>
       <DropdownMenu>
         {/* <DropdownMenuTrigger> */}

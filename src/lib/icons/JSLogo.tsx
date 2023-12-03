@@ -5,8 +5,8 @@ const JsLogo = () => {
   return (
     <Image
       src="/JS.png"
-      width={28}
-      height={28}
+      width={24}
+      height={24}
       alt="jslogo"
       className="rounded-[2px]"
     ></Image>

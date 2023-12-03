@@ -156,7 +156,7 @@ const Page = () => {
                 database.
               </p>
             </div>
-            <div className="w-full grid  md:grid-cols-2 gap-4 flex-col md:flex-row">
+            <div className="w-full grid  lg:grid-cols-2 gap-4 flex-col md:flex-row">
               {/* User auth Form */}
               <div className="w-full">
                 <div className="py-16 px-12 md:px-4 bg-muted  h-72 w-full  flex items-center justify-center">
@@ -192,10 +192,10 @@ const Page = () => {
                 interactions.
               </p>
             </div>
-            <div className="w-full grid  md:grid-cols-2 gap-4 flex-col md:flex-row">
+            <div className="w-full grid  lg:grid-cols-2 gap-4 flex-col md:flex-row">
               {/* User auth Form */}
               <div className="w-full" ref={ref}>
-                <div className="py-16 px-12 md:px-4 bg-muted  h-72 w-full  flex items-center justify-center relative">
+                <div className="py-16 px-12 md:px-4  bg-muted  h-72 w-full  flex items-center justify-center relative">
                   {/* Keyboard Shortcut Showcase*/}
                   <TaskMenuShowcase />
                   <motion.div
@@ -209,7 +209,7 @@ const Page = () => {
                         delay: 0.3,
                       },
                     }}
-                    className="absolute bg-background flex flex-col min-w-[150px] border-[1px] rounded-md p-1 right-4 bottom-10"
+                    className="absolute bg-background flex flex-col max-w-[150px] w-full border-[1px] rounded-md p-1 right-50 md:right-10  bottom-10"
                   >
                     <div className="text-xs w-full h-full cursor-pointer hover:bg-accent py-2 px-2 rounded-sm">
                       Edit
@@ -259,7 +259,7 @@ const Page = () => {
             <div className="w-full bg-muted grid gap-4 flex-col md:flex-row">
               {/* User auth Form */}
               <div className="w-full">
-                <div className="py-8 px-6  md:px-10  gap-8 flex flex-col h-fit    md:flex-row justify-center relative">
+                <div className="py-8 px-6  lg:px-10  gap-4 flex flex-col h-fit    lg:flex-row justify-center relative">
                   <AddTaskButton setTask={setTasks} />
                   <div className="w-full flex flex-col gap-2">
                     <h3 className="font-semibold mb-2 w-full">Your Tasks</h3>

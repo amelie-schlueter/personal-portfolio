@@ -22,6 +22,14 @@ import { AddTaskButton } from "@/components/stacksdo/AddTaskButton";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 import { useTheme } from "next-themes";
+import TOC from "@/components/TOC";
+
+const headings = [
+  { level: 3, text: "Ideation", slug: "stacksdo-ideation" },
+  { level: 3, text: "Planning", slug: "stacksdo-planning" },
+  { level: 3, text: "Building", slug: "stacksdo-building" },
+  { level: 3, text: "Result", slug: "stacksdo-result" },
+];
 
 const Page = () => {
   const project = projects.find((project) => project.slug === "stacksdo");
@@ -33,8 +41,6 @@ const Page = () => {
   const [tasks, setTasks] = React.useState<Task[]>([]);
 
   const { resolvedTheme: currentTheme } = useTheme();
-
-  console.log(tasks);
 
   return (
     <>
@@ -67,6 +73,7 @@ const Page = () => {
                 </div>
               </div>
             </div>
+            <TOC headings={headings} />
           </div>
           <section id="stacksdo-ideation" className="col-start-2 w-full">
             <div className="flex flex-col gap-2 ">
@@ -94,7 +101,7 @@ const Page = () => {
             className="col-start-2 mt-16 flex flex-col gap-8"
           >
             <div className="flex flex-col gap-2 ">
-              <h2 className="text-sm font-semibold">Planing</h2>
+              <h2 className="text-sm font-semibold">Planning</h2>
               <p>
                 First, I identified the essential features needed in a task
                 management app. To structure my thoughts and create a coherent
@@ -117,7 +124,7 @@ const Page = () => {
             </div>
           </section>
           <section
-            id="stacksdo-building-I"
+            id="stacksdo-building"
             className="col-start-2 mt-16 flex flex-col gap-8"
           >
             <div className="flex flex-col gap-2 ">
@@ -180,7 +187,7 @@ const Page = () => {
             </div>
           </section>
           <section
-            id="stacksdo-building-I"
+            id="stacksdo-building-II"
             className="col-start-2 mt-16 flex flex-col gap-8"
           >
             <div className="">
@@ -246,7 +253,7 @@ const Page = () => {
             </div>
           </section>
           <section
-            id="stacksdo-building-I"
+            id="stacksdo-building-III"
             className="col-start-2 mt-16 flex flex-col gap-8"
           >
             <div className="">
@@ -281,7 +288,7 @@ const Page = () => {
             </div>
           </section>
           <section
-            id="stacksdo-result-II"
+            id="stacksdo-result"
             className="col-start-2 mt-16 flex flex-col gap-8"
           >
             <div className="flex flex-col gap-2 ">

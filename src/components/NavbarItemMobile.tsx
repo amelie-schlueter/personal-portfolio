@@ -11,7 +11,7 @@ interface Props {
 
 const NavbarItemMobile = ({ title, link, setOpen }: Props) => {
   const page = usePathname();
-  console.log(page);
+
   return (
     <Link href={link} onClick={() => setOpen(() => !open)}>
       <div

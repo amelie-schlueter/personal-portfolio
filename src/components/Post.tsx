@@ -13,7 +13,6 @@ const Post = ({ doc }: { doc: Doc }) => {
   const { scrollYProgress } = useScroll();
 
   const headings = doc.headings;
-  console.log(headings);
 
   return (
     <>

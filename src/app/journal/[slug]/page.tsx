@@ -28,8 +28,6 @@ const Page = async ({ params }: Props) => {
   const doc = await getDocFromParams(params.slug);
   const date = new Date(doc.publishedAt);
 
-  console.log(doc);
-
   return (
     <div className="container  h-full">
       {/* Navigation */}

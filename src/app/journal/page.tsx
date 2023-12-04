@@ -22,7 +22,7 @@ const page = () => {
               design, development and life specific topics."
         />
 
-        <div className="flex flex-col gap-10 w-full">
+        <div className="flex flex-col gap-6 w-full">
           {docs.map((doc) => {
             return <BlogEntryCard doc={doc} key={doc.title} />;
           })}

@@ -14,7 +14,7 @@ const TOC = ({ headings }: Props) => {
     <nav className="flex flex-col gap-2 my-8">
       {headings.map((heading) => (
         <Link
-          key={`{heading.slug}`}
+          key={`${heading.slug}`}
           href={`#${heading.slug}`}
           className="underline text-sm text-muted-foreground hover:text-foreground"
         >

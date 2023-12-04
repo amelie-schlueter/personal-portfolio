@@ -27,8 +27,6 @@ export function CommandLine() {
   const docs = allDocs.filter((doc) => doc.published);
   const { setTheme, theme } = useTheme();
 
-  console.log(theme);
-
   useEffect(() => {
     const down = (e: KeyboardEvent) => {
       if (e.key === "k" && (e.metaKey || e.ctrlKey)) {

@@ -67,6 +67,7 @@ const components = {
         "font-base underline underline-offset-4 hover:text-muted-foreground",
         className
       )}
+      target="_blank"
       {...props}
     />
   ),

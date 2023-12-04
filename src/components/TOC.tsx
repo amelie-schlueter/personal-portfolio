@@ -11,17 +11,17 @@ interface Props {
 
 const TOC = ({ headings }: Props) => {
   return (
-    <div className="flex flex-col gap-2 my-8">
+    <nav className="flex flex-col gap-2 my-8">
       {headings.map((heading) => (
         <Link
           key={`{heading.slug}`}
           href={`#${heading.slug}`}
-          className="underline text-sm text-muted-foreground"
+          className="underline text-sm text-muted-foreground hover:text-foreground"
         >
           {heading.text}{" "}
         </Link>
       ))}
-    </div>
+    </nav>
   );
 };
 

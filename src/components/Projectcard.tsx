@@ -9,7 +9,7 @@ import Link from "next/link";
 import { useTheme } from "next-themes";
 
 const Projectcard = ({ project }: { project: ProjectType }) => {
-  const { theme } = useTheme();
+  const { resolvedTheme: theme } = useTheme();
   return (
     <Link className="col-start-2 mb-24 " href={`work/${project.slug}`}>
       <div className="flex flex-col gap-6 item-center justify-between w-full ">

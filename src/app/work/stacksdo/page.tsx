@@ -32,7 +32,7 @@ const Page = () => {
 
   const [tasks, setTasks] = React.useState<Task[]>([]);
 
-  const { theme: currentTheme } = useTheme();
+  const { resolvedTheme: currentTheme } = useTheme();
 
   console.log(tasks);
 

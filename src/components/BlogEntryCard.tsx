@@ -13,7 +13,7 @@ const BlogEntryCard = ({ doc }: { doc: Doc }) => {
 
   return (
     <Link href={doc.slug} className="w-full ">
-      <div className="flex flex-col md:flex-row gap-2">
+      <div className="flex flex-col md:flex-row gap-2 mb-4">
         <div className="flex md:w-[20rem]">
           <p className="w-fit text-muted-foreground text-sm">
             {format(date, "EE, dd MMM yyyy")}
@@ -24,7 +24,7 @@ const BlogEntryCard = ({ doc }: { doc: Doc }) => {
           onHoverStart={() => setArrowPosition(2)}
           onHoverEnd={() => setArrowPosition(0)}
         >
-          <div className="flex items-center justify-between hover:underline">
+          <div className="flex items-center justify-between hover:underline ">
             <h4 className="font-medium ">{doc.title}</h4>
             <motion.div
               animate={{ y: -arrowPosition, x: arrowPosition }}
@@ -38,8 +38,8 @@ const BlogEntryCard = ({ doc }: { doc: Doc }) => {
               <ArrowUpRight size={18} strokeWidth={1.5} />
             </motion.div>
           </div>
-          <Separator />
-          <p className="text-muted-foreground">{doc.description}</p>
+
+          <p className="text-muted-foreground text-sm">{doc.description}</p>
         </motion.div>
       </div>
     </Link>

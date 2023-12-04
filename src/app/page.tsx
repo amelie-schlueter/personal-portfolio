@@ -79,7 +79,7 @@ export default function Home() {
             </div>
 
             {/*Blog Wrapper*/}
-            <div className="flex flex-col gap-10 w-full">
+            <div className="flex flex-col gap-8 w-full">
               {/*Blog Entry*/}
               {docs &&
                 docs.map((doc, i) => <BlogEntryCard doc={doc} key={i} />)}

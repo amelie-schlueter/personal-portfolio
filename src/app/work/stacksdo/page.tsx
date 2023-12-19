@@ -1,6 +1,5 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
 import React, { useEffect, useRef } from "react";
 import { projects } from "@/lib/data";
 import { Badge } from "@/components/ui/badge";
@@ -20,7 +19,6 @@ import { inView, motion, useInView } from "framer-motion";
 import { AddTaskButton } from "@/components/stacksdo/AddTaskButton";
 
 import { Checkbox } from "@/components/ui/checkbox";
-import { Label } from "@/components/ui/label";
 import { useTheme } from "next-themes";
 import TOC from "@/components/TOC";
 
@@ -39,8 +37,9 @@ const Page = () => {
   const isInView = useInView(ref);
 
   const [tasks, setTasks] = React.useState<Task[]>([]);
-
   const { resolvedTheme: currentTheme } = useTheme();
+
+  const [sectionInView, setSectionInView] = React.useState<string>("");
 
   return (
     <>

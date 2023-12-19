@@ -29,7 +29,9 @@ const Post = ({ doc }: { doc: Doc }) => {
       <InlineNavbar />
       <div className="md:grid md:grid-cols-[1fr,1.25fr] relative ">
         <div className="mb-10 md:sticky md:top-10 h-fit">
-          <h1 className="text-3xl font-medium">{doc.title}</h1>
+          <h1 className="text-2xl font-medium max-w-[300px] md:max-w-[300px]">
+            {doc.title}
+          </h1>
           <p className="text-muted-foreground text-sm mt-2">
             {format(date, "EE, dd MMM yyyy")}
           </p>

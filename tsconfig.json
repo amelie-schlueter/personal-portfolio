@@ -29,7 +29,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/content/journal/daily-usage.mdx"
+    "src/content/journal/daily-usage.mdx",
+    "src/content/journal/The-impact-of-your-pear-group.mdx"
   ],
   "exclude": ["node_modules"]
 }

@@ -61,9 +61,42 @@ export const Doc = defineDocumentType(() => ({
   computedFields,
 }));
 
+export const Craft = defineDocumentType(() => ({
+  name: "Post",
+  filePathPattern: `crafts/**/*.mdx`,
+  contentType: "mdx",
+  fields: {
+    title: {
+      type: "string",
+      required: true,
+    },
+    description: {
+      type: "string",
+    },
+    publishedAt: {
+      type: "date",
+      required: true,
+    },
+    tech: {
+      type: "string",
+    },
+    published: {
+      type: "boolean",
+      default: true,
+    },
+    image: {
+      type: "string",
+    },
+    video: {
+      type: "string",
+    },
+  },
+  computedFields,
+}));
+
 export default makeSource({
   contentDirPath: "src/content",
-  documentTypes: [Doc],
+  documentTypes: [Doc, Craft],
   mdx: {
     remarkPlugins: [remarkGfm],
     rehypePlugins: [

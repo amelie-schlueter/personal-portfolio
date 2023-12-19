@@ -7,13 +7,30 @@ import { File, Linkedin, Twitter } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className=" pt-24 pb-4 md:pt-28 md:mb-6 container ">
-      <div className="flex flex-col w-full justify-between md:flex-row">
-        <div className="pb-10 flex flex-col items-start">
+    <footer className="pb-4  mt-12 md:pt-8 md:mb-6 container ">
+      <div className="flex flex-row w-full justify-between md:flex-row border-t-[1px] pt-4 items-center ">
+        <div className=" flex flex-col items-start  justify-center">
           <p className="text-lg leading-none">Amelie Schlüter</p>
           <p className="text-muted-foreground">Designer & Developer</p>
         </div>
-        <div className="flex flex-col justify-between gap-10 md:flex-row w-1/2 lg:w-1/3">
+        <div className="text-muted-foreground text-xs">
+          <div className="flex gap-2 my-4">
+            <Link
+              className="hover:underline hover:text-foreground"
+              href={"/imprint"}
+            >
+              Imprint
+            </Link>
+            <Link
+              className="hover:underline hover:text-foreground"
+              href={"/privacy-policy"}
+            >
+              Privacy Policy
+            </Link>
+          </div>
+        </div>
+
+        {/* <div className="flex flex-col justify-between gap-10 md:flex-row w-1/2 lg:w-1/3">
           <div>
             <p className="font-semibold">Navigation</p>
 
@@ -55,34 +72,7 @@ const Footer = () => {
               </Link>
             </div>
           </div>
-        </div>
-      </div>
-      <div className="text-muted-foreground text-xs">
-        <div className="flex w-full justify-between"></div>
-
-        <div className="flex items-start justify-between mt-4 flex-col md:flex-row md:mt-8">
-          <div className="flex gap-2 my-4">
-            <Link
-              className="hover:underline hover:text-foreground"
-              href={"/imprint"}
-            >
-              Imprint
-            </Link>
-            <Link
-              className="hover:underline hover:text-foreground"
-              href={"/privacy-policy"}
-            >
-              Privacy Policy
-            </Link>
-          </div>
-          <div>
-            <p>All rights reserved</p>
-          </div>
-          <div className="flex gap-2">
-            <p>{new Date().getFullYear()}</p>
-            <p>Amelie Schlüter</p>
-          </div>
-        </div>
+        </div> */}
       </div>
     </footer>
   );

@@ -22,6 +22,25 @@ export type Doc = {
   slug: string
   slugAsParams: string
   headings: json
+}
+
+export type Post = {
+  /** File path relative to `contentDirPath` */
+  _id: string
+  _raw: Local.RawDocumentData
+  type: 'Post'
+  title: string
+  description?: string | undefined
+  publishedAt: IsoDateTimeString
+  tech?: string | undefined
+  published: boolean
+  image?: string | undefined
+  video?: string | undefined
+  /** MDX file body */
+  body: MDX
+  slug: string
+  slugAsParams: string
+  headings: json
 }  
 
 /** Nested types */
@@ -32,8 +51,8 @@ export type Doc = {
 export type AllTypes = DocumentTypes | NestedTypes
 export type AllTypeNames = DocumentTypeNames | NestedTypeNames
 
-export type DocumentTypes = Doc
-export type DocumentTypeNames = 'Doc'
+export type DocumentTypes = Doc | Post
+export type DocumentTypeNames = 'Doc' | 'Post'
 
 export type NestedTypes = never
 export type NestedTypeNames = never
@@ -41,6 +60,7 @@ export type NestedTypeNames = never
 export type DataExports = {
   allDocuments: DocumentTypes[]
   allDocs: Doc[]
+  allPosts: Post[]
 }
 
 
@@ -61,6 +81,7 @@ declare global {
 
 export type DocumentTypeMap = {
   Doc: Doc
+  Post: Post
 }
 
 export type NestedTypeMap = {

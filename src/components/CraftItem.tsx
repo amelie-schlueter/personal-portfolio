@@ -1,28 +1,47 @@
 "use client";
-import { Post } from "contentlayer/generated";
+import { CraftArrItem } from "@/lib/data";
+import { Craft } from "contentlayer/generated";
 import { ArrowUpRight } from "lucide-react";
+import { useTheme } from "next-themes";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React from "react";
+import { motion } from "framer-motion";
+import { format } from "date-fns";
 
 interface Props {
-  post: Post;
+  craft: CraftArrItem;
 }
 
-const CraftItem = ({ post }: Props) => {
+const CraftItem = ({ craft }: Props) => {
+  const { resolvedTheme: currentTheme } = useTheme();
   return (
-    <Link href={post.slug}>
+    <Link href={`crafts/${craft.slug}`}>
       <div
-        className={`h-[300px] w-full relative  cursor-pointer overflow-hidden`}
+        className={`h-[280px] w-full relative cursor-pointer overflow-hidden rounded-md`}
       >
-        <video src={post.video} autoPlay muted loop className="w-screen" />
+        <motion.video
+          whileHover={{
+            scale: 1.05,
+            transition: { duration: 0.2, bounce: 0.2 },
+          }}
+          src={currentTheme == "dark" ? craft.video_dark : craft.video_light}
+          autoPlay
+          playsInline
+          muted
+          loop
+          className="w-full h-full object-cover right-0 left-0"
+        />
         <div className="absolute top-3 right-0 h-fit z-100 px-3 opacity-0">
           <ArrowUpRight strokeWidth={1.5} size={18} />
         </div>
+        {/* <div className="w-full flex items-center opacity-0 hover:opacity-90 justify-between absolute top-0 text-white right-0 left-0 px-3 text-sm py-2">
+          <p>{format(new Date(craft.date), "EE, dd.MMM yyyy")}</p>
+        </div> */}
         <div className="w-full flex items-center justify-between absolute bottom-0 text-white right-0 left-0 px-3 text-sm py-2">
-          <p>{post.title}</p>
-          <p className="">{post.type}</p>
+          <p>{craft.title}</p>
+          <p className="">{craft.type}</p>
         </div>
       </div>
     </Link>

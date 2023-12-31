@@ -1,9 +1,10 @@
+//@ts-nocheck
 import { useCallback, useEffect, useRef } from "react";
 
 import ReactCanvasConfetti from "react-canvas-confetti";
 
 export default function Confetti() {
-  const refAnimationInstance = useRef(null);
+  const refAnimationInstance = useRef<HTMLDivElement>(null);
 
   const getInstance = useCallback((instance: any) => {
     refAnimationInstance.current = instance;
@@ -17,8 +18,6 @@ export default function Confetti() {
         particleCount: Math.floor(200 * particleRatio),
       });
   }, []);
-
-  useEffect(() => fire(), []);
 
   const fire = useCallback(() => {
     makeShot(0.25, {
@@ -48,7 +47,7 @@ export default function Confetti() {
       startVelocity: 45,
     });
   }, [makeShot]);
-
+  useEffect(() => fire(), []);
   return (
     <ReactCanvasConfetti
       refConfetti={getInstance}

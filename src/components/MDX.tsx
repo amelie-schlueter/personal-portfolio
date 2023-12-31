@@ -1,9 +1,18 @@
 // @ts-nocheck
+"use client";
 import * as React from "react";
 import Image from "next/image";
 import { useMDXComponent } from "next-contentlayer/hooks";
+// Markdown.tsx
 
 import { cn } from "@/lib/utils";
+import hljs from "highlight.js";
+
+import { Code } from "lucide-react";
+import { CodeComponent } from "./CodeComponent";
+import { docco } from "react-syntax-highlighter/dist/esm/styles/hljs";
+import SyntaxHighlighter from "react-syntax-highlighter/dist/esm/default-highlight";
+import { useTheme } from "next-themes";
 
 const components = {
   h1: ({ className, ...props }) => (
@@ -27,7 +36,7 @@ const components = {
   h3: ({ className, ...props }) => (
     <h3
       className={cn(
-        "mt-2 scroll-m-20 text-sm font-semibold tracking-tight",
+        "mt-8 scroll-m-20 text-md font-semibold  tracking-tight",
         className
       )}
       {...props}
@@ -136,23 +145,37 @@ const components = {
   ),
   pre: ({ className, ...props }) => (
     <pre
-      className={cn(
-        "mb-4 mt-6 overflow-x-auto rounded-lg border bg-black py-4",
-        className
-      )}
+      className={cn("w-full my-4 py-2 rounded-md bg-transparent", className)}
       {...props}
     />
   ),
-  code: ({ className, ...props }) => (
-    <code
-      className={cn(
-        "relative rounded border px-[0.3rem] py-[0.2rem] font-mono text-sm",
-        className
-      )}
-      {...props}
-    />
-  ),
+  Code: ({ className, ...props }) => {
+    React.useEffect(() => {
+      hljs.highlightAll();
+
+      // check which mode is active
+      const currentTheme = window.localStorage.getItem("theme") || "light";
+      console.log(currentTheme);
+
+      const syntaxHighlightingCSS =
+        currentTheme === "dark"
+          ? import("highlight.js/styles/github-dark.css")
+          : import("highlight.js/styles/github.css");
+
+      syntaxHighlightingCSS.then((module) => {
+        module.default;
+      });
+    });
+    return (
+      <code class="language-typescript overflow-x-scroll custom-scrollbar  border-[1px] w-full  px-2 pb-2 rounded-[7px] text-sm">
+        {props.children}
+      </code>
+    );
+  },
   Image,
+  video: ({ className, ...props }) => (
+    <video className="w-full h-fit" autoPlay muted loop {...props} />
+  ),
 };
 
 interface MdxProps {
@@ -161,9 +184,10 @@ interface MdxProps {
 
 export function Mdx({ code }: MdxProps) {
   const Component = useMDXComponent(code);
+  const { resolvedTheme: currentTheme } = useTheme();
 
   return (
-    <div className="mdx">
+    <div className="w-full mt-4 mdx">
       <Component components={components} />
     </div>
   );

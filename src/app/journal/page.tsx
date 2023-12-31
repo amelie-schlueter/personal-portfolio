@@ -11,7 +11,7 @@ const page = () => {
 
   return (
     <div className="container">
-      <div className="flex flex-col py-24 gap-8 items-start justify-end w-full  md:grid md:grid-cols-[1fr,1.25fr] md:justify-end ">
+      <div className="flex flex-col py-12 md:py-24 gap-8 items-start justify-end w-full  md:grid md:grid-cols-[1fr,1.25fr] md:justify-end ">
         <Hero
           title="Journal"
           description="  Writing is one of the most underrated skills when it comes to

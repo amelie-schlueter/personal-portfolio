@@ -26,7 +26,7 @@ const Projectcard = ({ project }: { project: ProjectType }) => {
         {/*Image*/}
       </div>
       {/*Image*/}
-      <div className="mt-8 p-10 bg-muted">
+      <div className="mt-8 p-10 bg-muted rounded-md">
         <Image
           src={
             theme === "dark" ? project.imageDarkmode : project.imageLightmode

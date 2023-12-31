@@ -38,7 +38,7 @@ export const pages: {
 const Navbar = () => {
   return (
     <div className="">
-      <div className=" container bg-muted ring-1 ring-accent px-1 py-1 rounded-full  gap-2 w-fit fixed bottom-8 left-0 right-0 mx-auto z-50 hidden sm:flex ">
+      <div className=" container bg-muted ring-1 ring-accent px-1 py-1 rounded-full  gap-2 w-fit fixed bottom-8 left-0 right-0 mx-auto z-50  flex ">
         {pages.map((page) => (
           <NavbarItem
             title={page.title}
@@ -50,7 +50,7 @@ const Navbar = () => {
       </div>
 
       {/*Mobile Navbar*/}
-      <MobileNavbar />
+      {/* <MobileNavbar /> */}
     </div>
   );
 };

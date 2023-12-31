@@ -31,15 +31,12 @@ const headings = [
 
 const Page = () => {
   const project = projects.find((project) => project.slug === "stacksdo");
-  if (!project) return notFound();
 
   const ref = useRef(null);
-  const isInView = useInView(ref);
 
   const [tasks, setTasks] = React.useState<Task[]>([]);
   const { resolvedTheme: currentTheme } = useTheme();
-
-  const [sectionInView, setSectionInView] = React.useState<string>("");
+  if (!project) return notFound();
 
   return (
     <>
@@ -108,7 +105,7 @@ const Page = () => {
               </p>
             </div>
             <div>
-              <div className="py-16 px-12  h-72 bg-muted flex items-center justify-center">
+              <div className="py-16 px-12 rounded-md  h-72 bg-muted flex items-center justify-center">
                 <Image
                   src={"/stacksdo/stacksdo-dataflow.png"}
                   width={1200}
@@ -165,7 +162,7 @@ const Page = () => {
             <div className="w-full grid  lg:grid-cols-2 gap-4 flex-col md:flex-row">
               {/* User auth Form */}
               <div className="w-full">
-                <div className="py-16 px-12 md:px-4 bg-muted  h-72 w-full  flex items-center justify-center">
+                <div className="py-16 px-12 md:px-4 bg-muted rounded-md h-72 w-full  flex items-center justify-center">
                   {/* User auth Form */}
                   <UserAuthForm />
                 </div>
@@ -175,7 +172,7 @@ const Page = () => {
               </div>
 
               {/* Code Component*/}
-              <div className="bg-muted  h-72  w-full flex items-center justify-center">
+              <div className="bg-muted  h-72  w-full rounded-md flex items-center justify-center">
                 <Image
                   src={"/stacksdo/codeimage-dark.png"}
                   width={500}
@@ -201,7 +198,7 @@ const Page = () => {
             <div className="w-full grid  lg:grid-cols-2 gap-4 flex-col md:flex-row">
               {/* User auth Form */}
               <div className="w-full" ref={ref}>
-                <div className="py-16 px-12 md:px-4  bg-muted  h-72 w-full  flex items-center justify-center relative">
+                <div className="py-16 px-12 md:px-4 rounded-md bg-muted  h-72 w-full  flex items-center justify-center relative">
                   {/* Keyboard Shortcut Showcase*/}
                   <TaskMenuShowcase />
                   <motion.div
@@ -235,7 +232,7 @@ const Page = () => {
               </div>
 
               {/* Code Component*/}
-              <div className="bg-muted h-72 w-full flex items-center justify-center overflow-hidden">
+              <div className="bg-muted h-72 w-full rounded-md flex items-center justify-center overflow-hidden">
                 <Image
                   src={
                     currentTheme === "dark"
@@ -262,10 +259,10 @@ const Page = () => {
                 yourself:
               </p>
             </div>
-            <div className="w-full bg-muted grid gap-4 flex-col md:flex-row">
+            <div className="w-full bg-muted grid gap-4  rounded-md flex-col md:flex-row">
               {/* User auth Form */}
               <div className="w-full">
-                <div className="py-8 px-6  lg:px-10  gap-4 flex flex-col h-fit    lg:flex-row justify-center relative">
+                <div className="py-8 px-6 rounded-md lg:px-10  gap-4 flex flex-col h-fit    lg:flex-row justify-center relative">
                   <AddTaskButton setTask={setTasks} />
                   <div className="w-full flex flex-col gap-2">
                     <h3 className="font-semibold mb-2 w-full">Your Tasks</h3>
@@ -329,7 +326,7 @@ const Page = () => {
                 database.
               </p>
             </div>
-            <div className="w-full bg-muted py-6 px-6 flex h-[30] items-center justify-center overflow-hidden">
+            <div className="w-full bg-muted py-6 px-6 rounded-md flex h-[30] items-center justify-center overflow-hidden">
               {currentTheme === "dark" ? (
                 <Image
                   src={"/stacksdo/Stackdo-image-1.png"}
@@ -348,7 +345,7 @@ const Page = () => {
                 ></Image>
               )}
             </div>
-            <div className="w-full bg-muted py-6 px-6 flex h-[30] items-center justify-center overflow-hidden relative">
+            <div className="w-full bg-muted py-6 px-6  rounded-md flex h-[30] items-center justify-center overflow-hidden relative">
               {currentTheme === "dark" ? (
                 <Image
                   src={"/stacksdo/stackdo-image-2.png"}

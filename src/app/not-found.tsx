@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { redirect, useRouter } from "next/navigation";
 import React from "react";
 
-const page = () => {
+const Page = () => {
   const router = useRouter();
   return (
     <div className=" flex items-center justify-center  md:min-h-[60vh] p container">
@@ -17,7 +17,7 @@ const page = () => {
         <div className="py-6 px-4 flex flex-col gap-2 items-center justify-center h-full ">
           <p className="text-4xl">404</p>
           <p className="text-sm text-center">
-            Ups.. looks like i could not find the page you are looking fore.
+            Ups.. looks like i could not find the Page you are looking fore.
           </p>
           <Button
             variant={"outline"}
@@ -34,4 +34,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

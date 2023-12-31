@@ -55,6 +55,7 @@
     margin: 0;
     scroll-behavior: smooth;
   }
+
   body {
     @apply bg-background text-foreground;
   }
@@ -64,9 +65,8 @@ ul ul li,
 ul ol li,
 ol ul li,
 ol ol li {
-  /* Styles for nested li elements */
-
-  /* Add more styles as needed */
+  margin: 0;
+  padding: 0
 }
 
 .mdx ul ul {
@@ -77,5 +77,13 @@ ol ol li {
 .mdx ul li li {
   margin-left: 0;
   list-style: circle;
-  @apply text-muted-foreground;
+}
+
+body {
+  min-height: 100vh;
+}
+
+.mdx li ul li {
+  padding: 0;
+  margin: 0
 }

@@ -1,7 +1,8 @@
+import CodeComponent from "@/components/CodeComponent";
 import CraftPost from "@/components/CraftPost";
 import { Mdx } from "@/components/MDX";
 import Post from "@/components/Post";
-import { allDocs, allDocuments, allPosts } from "contentlayer/generated";
+import { allCrafts, allDocs, allDocuments } from "contentlayer/generated";
 import { notFound } from "next/navigation";
 import React from "react";
 
@@ -11,23 +12,23 @@ interface Props {
   };
 }
 
-async function getPostsFromParams(slug: string) {
-  const post = allPosts.find((post) => post.slugAsParams === slug);
+async function getcraftsFromParams(slug: string) {
+  const craft = allCrafts.find((craft) => craft.slugAsParams === slug);
 
-  if (!post) {
+  if (!craft) {
     notFound();
   }
-  return post;
+  return craft;
 }
 
 const page = async ({ params }: Props) => {
-  const doc = await getPostsFromParams(params.slug);
-  const date = new Date(doc.publishedAt);
+  const craft = await getcraftsFromParams(params.slug);
+  const date = new Date(craft.publishedAt);
   return (
     <div className="container  h-full">
       {/* Navigation */}
       <div className="md:my-10">
-        <CraftPost post={doc} />
+        <CraftPost craft={craft} key={craft._id} />
       </div>
     </div>
   );

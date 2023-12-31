@@ -15,7 +15,7 @@ import { File, Ghost, Linkedin, Search, XIcon } from "lucide-react";
 import { pages } from "./Navbar";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { allDocs } from "contentlayer/generated";
+import { allCrafts, allDocs } from "contentlayer/generated";
 import { projects, socialLinks } from "@/lib/data";
 import XLogo from "@/lib/icons/xLogo";
 import { useTheme } from "next-themes";
@@ -25,7 +25,7 @@ export function CommandLine() {
   const [open, setOpen] = useState(false);
   const router = useRouter();
   const docs = allDocs.filter((doc) => doc.published);
-  const { setTheme, theme } = useTheme();
+  const crafts = allCrafts.filter((craft) => craft.published);
 
   useEffect(() => {
     const down = (e: KeyboardEvent) => {
@@ -129,6 +129,20 @@ export function CommandLine() {
             >
               Toggle Appearence
             </CommandItem> */}
+          </CommandGroup>
+          <CommandGroup heading="Crafts">
+            {crafts.map((craft) => (
+              <CommandItem
+                key={craft.slug}
+                value={craft.title}
+                onSelect={() => {
+                  router.push(`${craft.slug}`);
+                  setOpen(false);
+                }}
+              >
+                {craft.title}
+              </CommandItem>
+            ))}
           </CommandGroup>
         </CommandList>
       </CommandDialog>

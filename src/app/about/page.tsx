@@ -17,7 +17,7 @@ import JsLogo from "@/lib/icons/JSLogo";
 const Page = () => {
   return (
     <div className="container">
-      <div className="flex flex-col py-24 gap-4 items-start justify-end   md:grid md:grid-cols-2 md:justify-end ">
+      <div className="flex flex-col py-12 md:py-24 gap-4 items-start justify-end   md:grid md:grid-cols-2 md:justify-end ">
         <div className="flex flex-col gap-10">
           <div className="max-w-md">
             <div className="mb-6 text-4xl">
@@ -35,7 +35,7 @@ const Page = () => {
           </div>
           <div className="">
             <p className="text-muted-foreground font-">Tech Stack</p>
-            <h2 className="text-3xl font-medium">Technology</h2>
+            <h3 className="text-2xl font-medium">Technology</h3>
             <div className="flex gap-4 mt-6">
               {/*Technology Item*/}
               {/*Next*/}
@@ -100,7 +100,7 @@ const Page = () => {
           {/*Header*/}
           <div className="w-full mb-6 md:sticky md:top-10 h-fit">
             <p className="text-muted-foreground font-">Work</p>
-            <h2 className="text-3xl font-medium">My Experience</h2>
+            <h3 className="text-2xl font-medium">My Experience</h3>
           </div>
         </div>
         <div className="flex flex-col gap-2 md:grid md:grid-cols-2">

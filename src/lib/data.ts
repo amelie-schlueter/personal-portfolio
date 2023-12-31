@@ -34,18 +34,18 @@ export const workExperience = [
 ];
 
 export const projects = [
-  {
-    title: "Premium Room Design",
-    slug: "premium-room-design",
-    tags: ["Design", "Development", "Strategy"],
-    year: new Date("2022-06-01"),
-    type: "Side Project",
-    link: "",
-    imageDarkmode: "/Premium-room-design.png",
-    imageLightmode: "/Premium-room-design.png",
-    description:
-      "Esse adipisicing dolore ad pariatur ipsum ullamco duis aliqua do ipsum id proident amet dolor consequat.",
-  },
+  // {
+  //   title: "Premium Room Design",
+  //   slug: "premium-room-design",
+  //   tags: ["Design", "Development", "Strategy"],
+  //   year: new Date("2022-06-01"),
+  //   type: "Side Project",
+  //   link: "",
+  //   imageDarkmode: "/Premium-room-design.png",
+  //   imageLightmode: "/Premium-room-design.png",
+  //   description:
+  //     "Esse adipisicing dolore ad pariatur ipsum ullamco duis aliqua do ipsum id proident amet dolor consequat.",
+  // },
   {
     title: "Stacksdo",
     slug: "stacksdo",
@@ -75,3 +75,48 @@ export const socialLinks = [
     link: "https://www.read.cv/amelieschltr/",
   },
 ];
+
+export const craftsArr = [
+  {
+    title: "Vertical Timeline",
+    slug: "vertical-timeline",
+    date: new Date("2023-12-03") as Date,
+    link: "",
+    video_dark: "/crafts/vertical-timeline/timeline_video.mp4",
+    video_light: "/crafts/vertical-timeline/timeline_video.mp4",
+    image_dark: "https://placehold.co/600x400",
+    image_light: "https://placehold.co/600x400",
+    type: "Craft",
+    description:
+      "A random list of things i use on a daily bases as a design student and software developer",
+    published: true,
+  },
+  {
+    title: "Gallery Grid",
+    slug: "gallery-grid",
+    date: new Date("2023-12-20") as Date,
+    link: "",
+    video_dark: "/crafts/gallery_grid/gallery_video-dark.mp4",
+    video_light: "/crafts/gallery_grid/gallery_video-light.mp4",
+    image_dark: "https://placehold.co/600x400",
+    image_light: "https://placehold.co/600x400",
+    type: "Craft",
+    description: "A smooth animated image gallery grid",
+    published: true,
+  },
+  {
+    title: "Slider",
+    slug: "slider",
+    date: new Date("2023-12-30") as Date,
+    link: "",
+    video_dark: "/crafts/slider/slider-video_dark.mp4",
+    video_light: "/crafts/slider/slider-video_light.mp4",
+    image_dark: "https://placehold.co/600x400",
+    image_light: "https://placehold.co/600x400",
+    type: "Craft",
+    description: "A smooth animated slider",
+    published: true,
+  },
+];
+
+export type CraftArrItem = (typeof craftsArr)[0];

@@ -1,0 +1,87 @@
+---
+title: Image Gallery
+image: https://placehold.co/600x400
+description: A smooth animated image gallery grid
+publishedAt: 2023-12-28
+published: true
+tech: React, Framer Motion 
+video_light: /crafts/gallery_grid/gallery-grid-light.mov
+video_dark: /crafts/gallery_grid/gallery_video-dark.mov
+---
+
+
+<video className="w-full h-fit" src="/crafts/gallery_grid/gallery-grid-light.mov" autoPlay loop muted />
+--- 
+
+I created a tabbar with a nice microinteraction to change between the tab content. I used [Framer Motion](https://www.framer.com/motion/) to create these microinteractions.
+<video className="w-full h-[150px] mt-4 " src="/crafts/gallery_grid/tab-bar-light.mov" autoPlay loop muted />
+
+  ```
+  <div className="flex space-x-1 items-center justify-center ">
+        {tabs.map((tab) => (
+          <button
+            key={tab.id}
+            onClick={() => clickHandler(tab.id)}
+            className={`${
+              activeTab === tab.id ? "" : "hover:text-muted-foreground"
+            } relative rounded-full px-3 py-1.5 text-sm font-medium 
+            text-foreground outline-sky-400 transition focus-visible:outline-2`
+            }
+            style={{
+              WebkitTapHighlightColor: "transparent",
+            }}
+          >
+            {activeTab === tab.id && (
+              <motion.span
+                layoutId="bubble"
+                className={`absolute inset-0 z-10  mix-blend-difference ${
+                  currentTheme === "dark" ? "bg-white" : "bg-background"
+                }`}
+                style={{ borderRadius: 9999 }}
+                transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+              />
+            )}
+            {tab.label}
+          </button>
+        ))}
+      </div>
+```
+--- 
+### Smooth Change Transitions
+To create these smooth change-transitions i used the Layout-Transition functionality from framer motion. Here i used a layoutId to achieve the desired outcome
+<video className="w-full h-[150px] mt-4 " src="/crafts/gallery_grid/gallery-grid-light.mov" autoPlay loop muted />
+```
+ <TabContent tabId="overview" activeTab={activeTab}>
+          <motion.div
+            className="flex gap-2 overflow-x-auto mx-auto h-[500px] max-w-[800px] "
+            layoutId="images"
+            transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+          >
+            {images.map((image) => {
+              return (
+                <motion.div
+                  className="shadow-lg"
+                  key={image.link}
+                  whileHover={{
+                    width: "350px",
+                    transition: { duration: 0.2, easings: "spring" },
+                  }}
+                >
+                  <Image
+                    src={image.link}
+                    width={400}
+                    height={600}
+                    onClick={() => clickHandler(image.id)}
+                    alt="placeholder"
+                    className="rounded-md h-full object-cover cursor-pointer "
+                  ></Image>
+                </motion.div>
+              );
+            })}
+          </motion.div>
+        </TabContent>
+```
+
+
+
+

@@ -62,7 +62,7 @@ export const Doc = defineDocumentType(() => ({
 }));
 
 export const Craft = defineDocumentType(() => ({
-  name: "Post",
+  name: "Craft",
   filePathPattern: `crafts/**/*.mdx`,
   contentType: "mdx",
   fields: {
@@ -87,7 +87,13 @@ export const Craft = defineDocumentType(() => ({
     image: {
       type: "string",
     },
-    video: {
+    video_light: {
+      type: "string",
+    },
+    video_dark: {
+      type: "string",
+    },
+    prototype_link: {
       type: "string",
     },
   },
@@ -104,7 +110,7 @@ export default makeSource({
       [
         rehypePrettyCode,
         {
-          theme: "github-dark",
+          theme: "material-theme",
           onVisitLine(node) {
             // Prevent lines from collapsing in `display: grid` mode, and allow empty
             // lines to be copy/pasted
@@ -112,12 +118,14 @@ export default makeSource({
               node.children = [{ type: "text", value: " " }];
             }
           },
+
           onVisitHighlightedLine(node) {
             node.properties.className.push("line--highlighted");
           },
           onVisitHighlightedWord(node) {
             node.properties.className = ["word--highlighted"];
           },
+          keepBackground: false,
         },
       ],
       [

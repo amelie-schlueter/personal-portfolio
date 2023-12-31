@@ -10,19 +10,19 @@ import MobileTopbar from "./MobileTopbar";
 
 const Topbar = () => {
   return (
-    <nav className=" container flex items-center justify-between w-full py-4">
+    <nav className=" container flex items-center justify-between w-full py-1 md:py-4">
       <Link href={"/"}>
-        <div className="flex items-center gap-4">
+        <div className=" items-center gap-4 flex">
           <Image
             src={"/profile.png"}
             width={42}
-            className="rounded-full hidden md:block"
+            className="rounded-full"
             alt="profileimage"
             height={42}
           ></Image>
-          <div className="flex flex-col ">
-            <p className="text-lg leading-none">Amelie Schlüter</p>
-            <p className="text-muted-foreground">Designer & Developer</p>
+          <div className=" flex-col flex invisible md:visible">
+            <p className="text-md leading-none">Amelie Schlüter</p>
+            <p className="text-muted-foreground text-sm">Creative Developer</p>
           </div>
         </div>
       </Link>

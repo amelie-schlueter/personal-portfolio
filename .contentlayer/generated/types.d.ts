@@ -8,6 +8,27 @@ export { isType } from 'contentlayer/client'
 export type { Markdown, MDX, ImageFieldData, IsoDateTimeString }
 
 /** Document types */
+export type Craft = {
+  /** File path relative to `contentDirPath` */
+  _id: string
+  _raw: Local.RawDocumentData
+  type: 'Craft'
+  title: string
+  description?: string | undefined
+  publishedAt: IsoDateTimeString
+  tech?: string | undefined
+  published: boolean
+  image?: string | undefined
+  video_light?: string | undefined
+  video_dark?: string | undefined
+  prototype_link?: string | undefined
+  /** MDX file body */
+  body: MDX
+  slug: string
+  slugAsParams: string
+  headings: json
+}
+
 export type Doc = {
   /** File path relative to `contentDirPath` */
   _id: string
@@ -17,25 +38,6 @@ export type Doc = {
   description?: string | undefined
   published: boolean
   publishedAt: IsoDateTimeString
-  /** MDX file body */
-  body: MDX
-  slug: string
-  slugAsParams: string
-  headings: json
-}
-
-export type Post = {
-  /** File path relative to `contentDirPath` */
-  _id: string
-  _raw: Local.RawDocumentData
-  type: 'Post'
-  title: string
-  description?: string | undefined
-  publishedAt: IsoDateTimeString
-  tech?: string | undefined
-  published: boolean
-  image?: string | undefined
-  video?: string | undefined
   /** MDX file body */
   body: MDX
   slug: string
@@ -51,8 +53,8 @@ export type Post = {
 export type AllTypes = DocumentTypes | NestedTypes
 export type AllTypeNames = DocumentTypeNames | NestedTypeNames
 
-export type DocumentTypes = Doc | Post
-export type DocumentTypeNames = 'Doc' | 'Post'
+export type DocumentTypes = Craft | Doc
+export type DocumentTypeNames = 'Craft' | 'Doc'
 
 export type NestedTypes = never
 export type NestedTypeNames = never
@@ -60,7 +62,7 @@ export type NestedTypeNames = never
 export type DataExports = {
   allDocuments: DocumentTypes[]
   allDocs: Doc[]
-  allPosts: Post[]
+  allCrafts: Craft[]
 }
 
 
@@ -80,8 +82,8 @@ declare global {
 }
 
 export type DocumentTypeMap = {
+  Craft: Craft
   Doc: Doc
-  Post: Post
 }
 
 export type NestedTypeMap = {

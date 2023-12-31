@@ -23,7 +23,7 @@ const ImageGrid = () => {
   useEffect(() => {
     setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth);
     console.log({ width });
-  }, [xPosition]);
+  }, [xPosition, width]);
 
   const slideLeft = () => {
     setXPosition((prev) => prev + 500);
@@ -54,12 +54,12 @@ const ImageGrid = () => {
               className="item pointer-events-none w-full pl-6  min-w-[27rem] md:min-w-[32rem] lg:min-w-[45rem] "
               key={image}
             >
-              <img
+              <Image
                 src={image}
                 alt={image}
                 key={image}
                 className="w-full h-full object-cover"
-              ></img>
+              ></Image>
             </motion.div>
           ))}
         </motion.div>

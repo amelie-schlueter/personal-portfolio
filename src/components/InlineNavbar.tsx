@@ -1,5 +1,12 @@
 "use client";
-import { ChevronLeft, SkipBack } from "lucide-react";
+import {
+  ArrowBigDown,
+  ArrowDownZaIcon,
+  ChevronLeft,
+  CornerDownLeft,
+  CornerUpLeft,
+  SkipBack,
+} from "lucide-react";
 import { useRouter } from "next/navigation";
 import React from "react";
 
@@ -7,10 +14,10 @@ const InlineNavbar = () => {
   const router = useRouter();
   return (
     <div
-      className="flex py-4 items-center hover:underline hover:text-opacity-80 cursor-pointer"
+      className="flex md:flex mb-4 gap-2 text-muted-foreground items-center hover:underline hover:text-foreground cursor-pointer"
       onClick={() => router.back()}
     >
-      <ChevronLeft className="w-6 h-6 " />
+      <CornerUpLeft strokeWidth={1.5} size={18} />
       <p className="text-sm">Back</p>
     </div>
   );

@@ -17,7 +17,7 @@ export default function Home() {
   return (
     <div className="container w-full relative min-h-screen h-full">
       {/*Wrapepr*/}
-      <div className="flex flex-col py-24 tems-start justify-center gap-10 md:grid md:grid-cols-[1fr,1.25fr] md:items-center  md:h-full md:py-20  ">
+      <div className="flex flex-col py-12 md:py-24 tems-start justify-center gap-10 md:grid md:grid-cols-[1fr,1.25fr] md:items-center  md:h-full   ">
         {/*Hero*/}
         <Hero
           title="Hi, Im Amelie"

@@ -67,9 +67,9 @@ export function Projectdatepicker({
         <div className="rounded-md border">
           <Calendar
             mode="single"
-            selected={date}
+            // selected={date}
             onSelect={(selectedDate) => {
-              setDate(selectedDate);
+              console.log(selectedDate);
             }}
           />
         </div>

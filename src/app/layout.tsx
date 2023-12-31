@@ -58,12 +58,14 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="z-[100]">
-            <Topbar />
+          <div className="min-h-[83vh]">
+            <div className="z-[100]">
+              <Topbar />
 
-            <Navbar />
+              <Navbar />
+            </div>
+            {children}
           </div>
-          {children}
           <Footer />
         </ThemeProvider>
       </body>

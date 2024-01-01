@@ -1,32 +1,48 @@
 import BlogEntryCard from "@/components/BlogEntryCard";
-import Hero from "@/components/Hero";
-
+import Title from "@/components/Title";
+import Grid from "@/components/layout/Grid";
 import { allDocs } from "contentlayer/generated";
+import { format } from "date-fns";
+import { PenLine } from "lucide-react";
 import React from "react";
 
 const page = () => {
-  const docs = allDocs.sort((a, b) =>
-    b.publishedAt.localeCompare(a.publishedAt)
-  );
-
+  const docs = allDocs.sort((a, b) => {
+    return b.publishedAt.localeCompare(a.publishedAt);
+  });
   return (
-    <div className="container">
-      <div className="flex flex-col py-12 md:py-24 gap-8 items-start justify-end w-full  md:grid md:grid-cols-[1fr,1.25fr] md:justify-end ">
-        <Hero
-          title="Journal"
-          description="  Writing is one of the most underrated skills when it comes to
-              design and development. I deeply believe that the ability to
-              commuicate your ideas and thoughts hugely impacts the quality of
-              your work."
-          description2="   This is why i love to share my thoughts and feelings about different
-              design, development and life specific topics."
-        />
+    <div className="max-w-[700px] px-4 mx-auto w-full relative mt-12 md:mt-24">
+      {/*Projects*/}
+      <div className="flex gap-6 mt-16 flex-col ">
+        <section
+          className="py-10 h-full w-full relative "
+          aria-label="journal-section"
+        >
+          <div className="w-full">
+            <Title
+              title="Writing"
+              icon={<PenLine strokeWidth={1.5} size={14} />}
+            />
 
-        <div className="flex flex-col gap-6 w-full">
-          {docs.map((doc) => {
-            return <BlogEntryCard doc={doc} key={doc.title} />;
-          })}
-        </div>
+            {/*Blog Wrapper*/}
+            <div className="flex flex-col gap-4 sw-full pt-4">
+              {/*Blog Entry*/}
+              {docs &&
+                docs.map((doc, i) => (
+                  <div className="flex w-full">
+                    <div className=" grid grid-cols-[1fr,1.75fr] w-full">
+                      <p className="text-muted-foreground text-sm   ">
+                        {format(new Date(doc.publishedAt), "EE, dd.MMM yyyy")}
+                      </p>
+                      <div className="flex items-center justify-start w-full ">
+                        <h2>{doc.title}</h2>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+            </div>
+          </div>
+        </section>
       </div>
     </div>
   );

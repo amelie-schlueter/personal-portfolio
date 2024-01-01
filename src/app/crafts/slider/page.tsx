@@ -30,12 +30,12 @@ const Page = () => {
   });
 
   return (
-    <div className="container  h-full">
+    <div className=" container  h-full ">
       {/* Navigation */}
       <div className="md:my-10">
         <>
-          <div className="relative h-full lg:flex">
-            <div className="mb-10  md:sticky py-4 md:top-0 h-full   bg-background xl:min-w-[450px] lg:min-w-[200px]">
+          <div className="md:grid md:grid-cols-[1fr,1.75fr] relative ">
+            <div className="mb-10  md:sticky py-4 md:top-0 h-full bg-background min-w-[250px]">
               <InlineNavbar />
               <h1 className="text-lg font-semibold">{craft?.title}</h1>
               <p className="text-muted-foreground text-sm mt-2">
@@ -44,11 +44,11 @@ const Page = () => {
               {/* <TOC headings={headings} /> */}
             </div>
 
-            <div className="w-full">
+            <div className="w-full ">
               {/* Prototype*/}
 
-              <div className="w-full border flex items-center justify-center relative mb-8 rounded-md">
-                <Slider />{" "}
+              <div className="w-full  border flex items-center justify-center relative mb-8 rounded-md">
+                <Slider />
               </div>
               <p className={cn("leading-7")}>
                 I was inspired by{" "}
@@ -65,7 +65,7 @@ const Page = () => {
               </p>
               <video
                 playsInline
-                className="w-full h-fit my-8 rounded-md sm:max-h-[300px] md:max-h-fit"
+                className="w-full h-fit my-8 rounded-md "
                 src={`${
                   currentTheme === "dark"
                     ? "/crafts/slider/slider-video_dark.mp4"
@@ -147,7 +147,10 @@ const x = useMotionValue(0);`}
           ))}
         </motion.div>
       </div>
-      <Dot className="mr-[26px] absolute right-[50%] left-[47.5%] text-orange-500" />
+      <Dot 
+      className="mr-[26px] absolute right-[50%] left-[47.5%] text-orange-500" 
+      />
+
     </div>`}
                 </code>
               </pre>

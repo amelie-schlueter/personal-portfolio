@@ -34,18 +34,18 @@ export const workExperience = [
 ];
 
 export const projects = [
-  // {
-  //   title: "Premium Room Design",
-  //   slug: "premium-room-design",
-  //   tags: ["Design", "Development", "Strategy"],
-  //   year: new Date("2022-06-01"),
-  //   type: "Side Project",
-  //   link: "",
-  //   imageDarkmode: "/Premium-room-design.png",
-  //   imageLightmode: "/Premium-room-design.png",
-  //   description:
-  //     "Esse adipisicing dolore ad pariatur ipsum ullamco duis aliqua do ipsum id proident amet dolor consequat.",
-  // },
+  {
+    title: "Premium Room Design",
+    slug: "premium-room-design",
+    tags: ["Design", "Development", "Strategy"],
+    year: new Date("2022-06-01"),
+    type: "Side Project",
+    link: "",
+    imageDarkmode: "/Premium-room-design.png",
+    imageLightmode: "/Premium-room-design.png",
+    description:
+      "Esse adipisicing dolore ad pariatur ipsum ullamco duis aliqua do ipsum id proident amet dolor consequat.",
+  },
   {
     title: "Stacksdo",
     slug: "stacksdo",
@@ -120,3 +120,33 @@ export const craftsArr = [
 ];
 
 export type CraftArrItem = (typeof craftsArr)[0];
+
+export const reading = [
+  {
+    title: "Principles",
+    author: "Ray Dalio",
+    link: "https://literal.club/book/ray-dalioray-daliojeremy-bobbprinciples-a9caw",
+    cover: "/reading/principles_book-cover.jpeg",
+    finished: null,
+    status: "reading",
+    rating: null,
+  },
+  {
+    title: "Feel-good Productivity",
+    author: "Ali Abdaal",
+    link: "https://literal.club/book/ali-abdaal-feel-good-productivity-474hi",
+    cover: "/reading/feel-good-productivty_book-cover.jpeg",
+    rating: null,
+    finished: null,
+    status: "wishlist",
+  },
+  // {
+  //   title: "Atomic Habits",
+  //   author: "James Clear",
+  //   link: "https://literal.club/book/james-clearatomic-habits-1b5aw",
+  //   cover: "/reading/atomic-habits_book-cover.jpeg",
+  //   rating: 5,
+  //   finished: 2022,
+  //   status: "finished",
+  // },
+];

@@ -12,17 +12,22 @@ module.exports = {
       center: true,
       padding: "2rem",
       screens: {
-        "2xl": "1300px",
-        xl: "1280px",
-        lg: "1024px",
+        "2xl": "1020px",
+        lg: "840px",
         md: "840px",
         sm: "600px",
         xs: "480px",
       },
     },
+
     extend: {
       fontFamily: {
         sans: ["pt_serif", "sans-serif"],
+      },
+      textDecorationColor: {
+        "custom-red": "#ff0000", // Custom red color
+        "custom-blue": "blue", // Custom blue color
+        // Add more custom colors as needed
       },
       colors: {
         border: "hsl(var(--border))",
@@ -80,5 +85,16 @@ module.exports = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+    require("tailwindcss-animate"),
+    function ({ addUtilities }) {
+      const extendUnderline = {
+        ".underline": {
+          textDecoration: "underline",
+          "text-decoration-color": "hsl(var(--muted-foreground))",
+        },
+      };
+      addUtilities(extendUnderline);
+    },
+  ],
 };

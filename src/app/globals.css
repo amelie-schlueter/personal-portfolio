@@ -11,6 +11,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 240 10% 3.9%;
     --primary: 240 5.9% 10%;
+    /* Updated highlight color */
     --primary-foreground: 0 0% 98%;
     --secondary: 240 4.8% 95.9%;
     --secondary-foreground: 240 5.9% 10%;
@@ -49,16 +50,33 @@
   }
 }
 
-@layer base {
+@layer components {
   * {
     @apply border-border;
     margin: 0;
     scroll-behavior: smooth;
   }
 
+  .underline:hover {
+    @apply text-blue-500;
+    text-decoration-color: currentColor
+  }
+
   body {
     @apply bg-background text-foreground;
   }
+
+  ::selection {
+    @apply bg-blue-600/30 text-blue-500;
+    /* Text color */
+  }
+
+  a::hover {
+    @apply text-primary;
+  }
+
+
+
 }
 
 ul ul li,
@@ -79,9 +97,6 @@ ol ol li {
   list-style: circle;
 }
 
-body {
-  min-height: 100vh;
-}
 
 .mdx li ul li {
   padding: 0;

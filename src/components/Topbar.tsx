@@ -12,25 +12,13 @@ const Topbar = () => {
   return (
     <nav className=" container flex items-center justify-between w-full py-1 md:py-4">
       <Link href={"/"}>
-        <div className=" items-center gap-4 flex">
-          <Image
-            src={"/profile.png"}
-            width={42}
-            className="rounded-full"
-            alt="profileimage"
-            height={42}
-          ></Image>
-          <div className=" flex-col flex invisible md:visible">
-            <p className="text-md leading-none">Amelie Schlüter</p>
-            <p className="text-muted-foreground text-sm">Creative Developer</p>
-          </div>
+        <div className=" flex-col flex text-sm">
+          <p className="text-sm leading-none">Amelie Schlüter</p>
         </div>
       </Link>
-      <div className="flex items-center gap-2">
-        <CommandLine />
-        <Button variant={"outline"}>Lets connect</Button>
-        <ModeToggle />
-      </div>
+
+      <p className="text-muted-foreground text-sm">Creative Developer</p>
+
       <MobileTopbar />
     </nav>
   );

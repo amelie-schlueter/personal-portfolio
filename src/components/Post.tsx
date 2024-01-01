@@ -41,12 +41,13 @@ const Post = ({ doc }: { doc: Doc }) => {
           </div>
         </div>
 
-        <div className="md:grid md:grid-cols-[1fr,1.25fr] relative ">
+        <div className="md:grid md:grid-cols-[1fr,1.75fr] relative ">
           <MobileInlineNav headings={headings} />
           <div className="mb-10 md:sticky bg-background top-10 pt-4 h-fit w-full">
             <div className="flex items-center justify-between w-full ">
               <div className=" w-full">
-                <h1 className="text-lg font-semibold max-w-[300px] md:max-w-[300px]">
+                <InlineNavbar />
+                <h1 className="text-lg font-semibold max-w-[300px] md:max-w-[225px]">
                   {doc.title}
                 </h1>
                 <p className="text-muted-foreground text-sm mt-1">
@@ -84,7 +85,7 @@ export const MobileInlineNav = ({ headings, className }: TOCProps) => {
       // animate={{ opacity: 1 }}
       className="h-fit md:hidden sticky w-full left-0 top-0 bg-background flex flex-col items-end py-4"
     >
-      <div className="flex w-full justify-between py-1  items-center">
+      <div className="flex w-full justify-between py-1 pb items-center">
         <div
           className="flex md:flex gap-2 text-muted-foreground items-center hover:underline hover:text-foreground cursor-pointer"
           onClick={() => router.push("/journal")}

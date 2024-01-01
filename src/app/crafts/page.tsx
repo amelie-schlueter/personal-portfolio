@@ -12,14 +12,14 @@ const Page = () => {
 
   return (
     <div className="container">
-      <div className="flex flex-col py-12 md:py-24 gap-8 items-start justify-end w-full  md:grid md:grid-cols-[1fr,1.25fr] md:justify-end ">
+      <div className="flex flex-col py-12  gap-8 items-start justify-end w-full  md:grid md:grid-cols-[1fr,1.25fr] md:justify-end ">
         <Hero
           title="Interaction Corner"
           description="A collection of microinteractions and interactive components, blending functionality with creativity."
         />
       </div>
 
-      <div className="grid md:grid-cols-3 gap-4">
+      <div className="grid md:grid-cols-2 gap-4">
         {craftsArr &&
           craftsArr.map((craft) => {
             return <CraftItem craft={craft} key={craft.slug} />;

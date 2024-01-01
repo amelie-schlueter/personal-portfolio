@@ -15,10 +15,10 @@ const Hero = ({
   return (
     <div className="flex flex-col gap-10">
       <div className="max-w-md flex flex-col gap-4">
-        <h1 className="text-4xl font-medium">{title}</h1>
-        <p className="text-muted-foreground">{description}</p>
+        <h1 className="text-2xl font-medium">{title}</h1>
+        <p className="text-muted-foreground text-sm">{description}</p>
 
-        {description2 && <p className="">{description2}</p>}
+        {description2 && <p className="text-sm">{description2}</p>}
 
         {button && (
           <div>

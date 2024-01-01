@@ -11,14 +11,14 @@ import { useTheme } from "next-themes";
 const Projectcard = ({ project }: { project: ProjectType }) => {
   const { resolvedTheme: theme } = useTheme();
   return (
-    <Link className="col-start-2 mb-24 " href={`work/${project.slug}`}>
+    <Link className="col-start-2 " href={`work/${project.slug}`}>
       <div className="flex flex-col gap-6 item-center justify-between w-full ">
         <div className="w-full flex flex-col gap-2 ">
-          <div className="flex items-center gap-4">
-            <h3 className="text-xl font-medium">{project.title}</h3>
+          <div className="flex items-center gap-2">
+            <h3 className="text-lg font-medium">{project.title}</h3>
             <Badge variant={"outline"}>{format(project.year, "yyyy")}</Badge>
           </div>
-          <p className="text-muted-foreground   w-full">
+          <p className="text-muted-foreground  text-sm  w-full">
             {project.description}
           </p>
         </div>

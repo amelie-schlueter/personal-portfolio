@@ -4,8 +4,9 @@ import { Doc } from "contentlayer/generated";
 import React from "react";
 import { format } from "date-fns";
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, BookOpenText, Pilcrow } from "lucide-react";
 import { motion } from "framer-motion";
+import { Mdx } from "./MDX";
 const BlogEntryCard = ({ doc }: { doc: Doc }) => {
   const date = new Date(doc.publishedAt);
 
@@ -13,35 +14,39 @@ const BlogEntryCard = ({ doc }: { doc: Doc }) => {
 
   return (
     <Link href={doc.slug} className="w-full ">
-      <div className="flex flex-col md:flex-row gap-2 mb-4">
-        <div className="flex md:w-[20rem]">
-          <p className="w-fit text-muted-foreground text-sm">
-            {format(date, "EE, dd MMM yyyy")}
-          </p>
-        </div>
-        <motion.div
-          className="flex flex-col  justify-between gap-2 w-full card-content"
-          onHoverStart={() => setArrowPosition(2)}
-          onHoverEnd={() => setArrowPosition(0)}
-        >
-          <div className="flex items-center justify-between hover:underline ">
-            <h4 className="font-medium ">{doc.title}</h4>
-            <motion.div
-              animate={{ y: -arrowPosition, x: arrowPosition }}
-              transition={{
-                type: "spring",
-                stiffness: 300,
-                damping: 20,
-                duration: 0.2,
-              }}
-            >
-              <ArrowUpRight size={18} strokeWidth={1.5} />
-            </motion.div>
-          </div>
+      <motion.div
+        className="flex flex-col  justify-between gap-2 w-full card-content"
+        onHoverStart={() => setArrowPosition(2)}
+        onHoverEnd={() => setArrowPosition(0)}
+      >
+        <div className="flex items-center justify-between  underline ">
+          <div className="flex items-center gap-2">
+            <Pilcrow
+              size={16}
+              strokeWidth={1.5}
+              className="mt-1 text-muted-foreground"
+            />
 
-          <p className="text-muted-foreground text-sm">{doc.description}</p>
-        </motion.div>
-      </div>
+            <div className="flex flex-col">
+              {/* <p className="w-fit mt-1 text-muted-foreground text-xs">
+                {format(date, "EE, dd MMM yyyy")}
+              </p> */}
+              <h4 className="font-medium text-md text-sm">{doc.title}</h4>
+            </div>
+          </div>
+          <motion.div
+            animate={{ y: -arrowPosition, x: arrowPosition }}
+            transition={{
+              type: "spring",
+              stiffness: 300,
+              damping: 20,
+              duration: 0.2,
+            }}
+          >
+            <ArrowUpRight size={18} strokeWidth={1.5} />
+          </motion.div>
+        </div>
+      </motion.div>
     </Link>
   );
 };

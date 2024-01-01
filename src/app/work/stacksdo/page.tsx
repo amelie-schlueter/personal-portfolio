@@ -41,11 +41,11 @@ const Page = () => {
   return (
     <>
       <div className="container">
-        <div className="flex flex-col py-16 items-start justify-center gap-10 md:grid md:grid-cols-[1fr,1.25fr] md:items-center md:h-full md:py-20">
+        <div className="flex flex-col py-16 items-start justify-center gap-10 md:grid md:grid-cols-[1fr,1.75fr] md:items-center md:h-full md:py-20">
           {/*Hero*/}{" "}
           <div className=" md:sticky top-10 w-fit">
             <Hero title="Stacksdo" description="Stacksdo Case Study" />
-            <div className="mt-6 flex gap-2">
+            <div className="mt-4 flex gap-2">
               {project?.tags.map((tag) => (
                 <Badge key={tag} variant={"secondary"}>
                   {tag}

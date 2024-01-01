@@ -10,7 +10,7 @@ import {
 
 import { Dot, PenTool } from "lucide-react";
 import { usePathname } from "next/navigation";
-import React from "react";
+import React, { useEffect } from "react";
 import { type } from "os";
 interface Props {
   title: string;
@@ -19,10 +19,17 @@ interface Props {
 }
 
 const NavbarItem = ({ title, link, icon }: Props) => {
+  const [active, setActive] = React.useState(false);
   const page = usePathname();
-  console.log(icon);
-  if (page.includes(link)) {
-  }
+
+  useEffect(() => {
+    if (page.includes(link)) {
+      setActive(true);
+    } else {
+      setActive(false);
+    }
+  }, []);
+
   return (
     <Link href={link} className="flex items-center justify-center ">
       <TooltipProvider>
@@ -35,10 +42,8 @@ const NavbarItem = ({ title, link, icon }: Props) => {
               }}
               transition={{ duration: 0.03, type: "spring" }}
               className={`${
-                page.includes(link)
-                  ? "bg-background bottom-3 shadow-md"
-                  : "bg-muted "
-              }  h-12 w-12 rounded-full flex  flex-col item-center shadow-sm relative cursor-pointer  ring-1 ring-foreground/10 hover:underline transition-all items-center justify-center`}
+                page == link ? "bg-background bottom-3 shadow-md" : "bg-muted "
+              }  h-12 w-12 rounded-full flex  flex-col item-center shadow-sm relative cursor-pointer  ring-1 ring-foreground/10  transition-all items-center justify-center`}
             >
               {icon}
             </motion.div>

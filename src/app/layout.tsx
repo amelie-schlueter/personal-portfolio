@@ -9,6 +9,7 @@ import Navbar from "@/components/Navbar";
 import { PT_Serif } from "next/font/google";
 import Footer from "@/components/Footer";
 import { CommandLine } from "@/components/CommandLine";
+import { Toaster } from "@/components/ui/sonner";
 
 const soehne = localFont({
   src: [
@@ -58,12 +59,11 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="">
-            <Navbar />
-          </div>
-          {children}
-
-          {/* <Footer /> */}
+          <Navbar />
+          {/* <Topbar /> */}
+          <div className="">{children}</div>
+          <Toaster />
+          <Footer />
         </ThemeProvider>
       </body>
     </html>

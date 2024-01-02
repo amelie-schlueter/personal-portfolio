@@ -103,6 +103,7 @@ export const Craft = defineDocumentType(() => ({
 export default makeSource({
   contentDirPath: "src/content",
   documentTypes: [Doc, Craft],
+
   mdx: {
     remarkPlugins: [remarkGfm],
     rehypePlugins: [

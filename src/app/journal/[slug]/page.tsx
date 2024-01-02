@@ -1,13 +1,10 @@
 import React from "react";
 import { allDocs } from "contentlayer/generated";
 import { notFound } from "next/navigation";
-import Navbar from "@/components/Navbar";
-import Topbar from "@/components/Topbar";
 import { Mdx } from "@/components/MDX";
-import { format } from "date-fns";
-import InlineNavbar from "@/components/InlineNavbar";
-import { useScroll } from "framer-motion";
-import Post from "@/components/Post";
+import EntryWrapper from "@/components/EntryWrapper";
+import EntrySidebar from "@/components/EntrySidebar";
+import EntryHeader from "@/components/EntryHeader";
 
 interface Props {
   params: {
@@ -27,14 +24,14 @@ async function getDocFromParams(slug: string) {
 const Page = async ({ params }: Props) => {
   const doc = await getDocFromParams(params.slug);
   const date = new Date(doc.publishedAt);
+  const headings = doc.headings;
 
   return (
-    <div className="container  h-full">
-      {/* Navigation */}
-      <div className="md:my-10">
-        <Post doc={doc} />
-      </div>
-    </div>
+    <EntryWrapper>
+      <EntrySidebar headings={headings} />
+      <EntryHeader title={doc.title} date={date} />
+      <Mdx code={doc.body.code} />
+    </EntryWrapper>
   );
 };
 

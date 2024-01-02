@@ -2,15 +2,8 @@
 
 import React, { useEffect, useRef } from "react";
 import { projects } from "@/lib/data";
-import { Badge } from "@/components/ui/badge";
-import { format } from "date-fns";
 import { notFound } from "next/navigation";
 import Image from "next/image";
-import NextLogo from "@/lib/icons/NextLogo";
-import TsLogo from "@/lib/icons/TSLogo";
-import TwLogo from "@/lib/icons/TwLogo";
-import Vercel from "@/lib/icons/Vercel";
-import Hero from "@/components/Hero";
 import Link from "next/link";
 import UserAuthForm from "@/components/stacksdo/UserAuthForm";
 
@@ -20,7 +13,10 @@ import { AddTaskButton } from "@/components/stacksdo/AddTaskButton";
 
 import { Checkbox } from "@/components/ui/checkbox";
 import { useTheme } from "next-themes";
-import TOC from "@/components/TOC";
+import EntryHeader from "@/components/EntryHeader";
+import EntrySidebar from "@/components/EntrySidebar";
+import EntryWrapper from "@/components/EntryWrapper";
+import ProjectDetails from "@/components/ProjectDetails";
 
 const headings = [
   { level: 3, text: "Ideation", slug: "stacksdo-ideation" },
@@ -40,37 +36,12 @@ const Page = () => {
 
   return (
     <>
-      <div className="container">
-        <div className="flex flex-col py-16 items-start justify-center gap-10 md:grid md:grid-cols-[1fr,1.75fr] md:items-center md:h-full md:py-20">
-          {/*Hero*/}{" "}
-          <div className=" md:sticky top-10 w-fit">
-            <Hero title="Stacksdo" description="Stacksdo Case Study" />
-            <div className="mt-4 flex gap-2">
-              {project?.tags.map((tag) => (
-                <Badge key={tag} variant={"secondary"}>
-                  {tag}
-                </Badge>
-              ))}
-              <Badge variant={"outline"}>{format(project.year, "yyyy")}</Badge>
-            </div>
-            <div>
-              <div className="flex gap-4 my-6">
-                <div className="h-10 w-10 rounded-full flex items-center justify-center py-2 text-foreground">
-                  <NextLogo />
-                </div>
-                <div className="h-10 w-10 rounded-full flex items-center justify-center py-2 text-foreground">
-                  <TsLogo />
-                </div>
-                <div className="h-10 w-10 rounded-full flex items-center justify-center py-2 text-foreground">
-                  <TwLogo />
-                </div>
-                <div className="h-10 w-10 rounded-full flex items-center justify-center py-2 text-foreground">
-                  <Vercel />
-                </div>
-              </div>
-            </div>
-            <TOC headings={headings} />
-          </div>
+      <EntryWrapper>
+        <EntrySidebar headings={headings} />
+        <EntryHeader title={project.title} date={project.year} />
+
+        {/*Content*/}
+        <div className="max-w-[600px]">
           <section id="stacksdo-ideation" className="col-start-2 w-full">
             <div className="flex flex-col gap-2 ">
               <h2 className="text-sm font-semibold">Ideation</h2>
@@ -366,7 +337,8 @@ const Page = () => {
             </div>
           </section>
         </div>
-      </div>
+        <ProjectDetails />
+      </EntryWrapper>
     </>
   );
 };

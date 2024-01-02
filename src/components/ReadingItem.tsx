@@ -16,7 +16,7 @@ const ReadingItem = ({ book }: { book: Book }) => {
           className="object-cover repeat-0 rounded-md w-14"
         />
         <div>
-          <h4 className="font-medium text-sm underline">{book.title}</h4>
+          <h4 className="font-medium text-base underline">{book.title}</h4>
           <p className="text-sm text-muted-foreground">{book.author}</p>
         </div>
       </div>

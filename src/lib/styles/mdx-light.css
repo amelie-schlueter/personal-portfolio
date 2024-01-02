@@ -1,0 +1,9 @@
+.hljs,
+.hljs-subst {
+    color: red;
+}
+
+.hljs {
+    background: red;
+    background-color: red;
+}

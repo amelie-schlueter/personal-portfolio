@@ -7,10 +7,10 @@ const Workexperience = ({ work }: { work: WorkType }) => {
   return (
     <div>
       <div className="flex items-center w-full md:col-start-1">
-        <div className=" py-2 flex items-start justify-between w-full">
+        <div className="flex items-start justify-between w-full">
           <div className="flex flex-col  gap-">
-            <h4 className="font-medium underline text-sm">{work.title}</h4>
-            <p className="text-muted-foreground text-sm"> {work.company}</p>
+            <h4 className="font-medium text-base ">{work.title}</h4>
+            <p className="text-muted-foreground "> {work.company}</p>
           </div>
           <div className="flex items-center text-sm text-muted-foreground">
             {format(work.startingDate, "MM / yyyy")} -{" "}
@@ -24,7 +24,7 @@ const Workexperience = ({ work }: { work: WorkType }) => {
           </div>
         </div>
       </div>
-      <p className="text-sm text-muted-foreground max-w-xs truncate">
+      <p className=" text-muted-foreground max-w-xs truncate">
         {work.description}
       </p>
     </div>

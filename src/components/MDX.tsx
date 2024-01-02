@@ -8,12 +8,6 @@ import { useMDXComponent } from "next-contentlayer/hooks";
 import { cn } from "@/lib/utils";
 import hljs from "highlight.js";
 
-import { Code } from "lucide-react";
-import { CodeComponent } from "./CodeComponent";
-import { docco } from "react-syntax-highlighter/dist/esm/styles/hljs";
-import SyntaxHighlighter from "react-syntax-highlighter/dist/esm/default-highlight";
-import { useTheme } from "next-themes";
-
 const components = {
   h1: ({ className, ...props }) => (
     <h1
@@ -72,17 +66,14 @@ const components = {
   ),
   a: ({ className, ...props }) => (
     <a
-      className={cn(
-        "font-base underline underline-offset-4 hover:text-muted-foreground",
-        className
-      )}
+      className={cn("font-base underline underline-offset-4 ", className)}
       target="_blank"
       {...props}
     />
   ),
   p: ({ className, ...props }) => (
     <p
-      className={cn("leading-7 [&:not(:first-child)]:mt-2", className)}
+      className={cn(" text-base [&:not(:first-child)]:mt-2", className)}
       {...props}
     />
   ),
@@ -109,10 +100,26 @@ const components = {
     className,
     alt,
     ...props
-  }: React.ImgHTMLAttributes<HTMLImageElement>) => (
+  }: React.ImgHTMLAttributes<HTMLImageElement>) => {
     // eslint-disable-next-line @next/next/no-img-element
-    <img className={cn("rounded-md border", className)} alt={alt} {...props} />
-  ),
+    const { resolvedTheme } = useTheme();
+    let url = "";
+    if (resolvedTheme === "dark") {
+      url = props.dark;
+    } else {
+      url = props.light;
+    }
+    console.log(url, "url");
+
+    return (
+      <img
+        className={cn("rounded-md border", className)}
+        alt={alt}
+        {...props}
+        src={url}
+      />
+    );
+  },
   hr: ({ ...props }) => <hr className="my-4 md:my-8" {...props} />,
   table: ({ className, ...props }: React.HTMLAttributes<HTMLTableElement>) => (
     <div className="my-6 w-full overflow-y-auto">
@@ -149,25 +156,10 @@ const components = {
       {...props}
     />
   ),
-  Code: ({ className, ...props }) => {
-    React.useEffect(() => {
-      hljs.highlightAll();
 
-      // check which mode is active
-      const currentTheme = window.localStorage.getItem("theme") || "light";
-      console.log(currentTheme);
-
-      const syntaxHighlightingCSS =
-        currentTheme === "dark"
-          ? import("highlight.js/styles/github-dark.css")
-          : import("highlight.js/styles/github.css");
-
-      syntaxHighlightingCSS.then((module) => {
-        module.default;
-      });
-    });
+  code: ({ className, ...props }) => {
     return (
-      <code class="language-typescript overflow-x-scroll custom-scrollbar  border-[1px] w-full  px-2 pb-2 rounded-[7px] text-sm">
+      <code class=" language-typescript overflow-x-scroll custom-scrollbar  border-[1px] w-full  px-2 pb-2 rounded-[7px] text-sm">
         {props.children}
       </code>
     );
@@ -184,10 +176,9 @@ interface MdxProps {
 
 export function Mdx({ code }: MdxProps) {
   const Component = useMDXComponent(code);
-  const { resolvedTheme: currentTheme } = useTheme();
 
   return (
-    <div className="w-full mt-4 mdx">
+    <div className="w-full mt-4 mdx ">
       <Component components={components} />
     </div>
   );

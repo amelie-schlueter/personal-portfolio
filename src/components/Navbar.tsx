@@ -31,7 +31,11 @@ export const pages: {
     link: "/",
     icon: <HomeIcon strokeWidth={1.5} width={20} />,
   },
-
+  {
+    title: "Writing",
+    link: "/journal",
+    icon: <Glasses strokeWidth={1.5} width={20} />,
+  },
   {
     title: "Crafts",
     link: "/crafts",

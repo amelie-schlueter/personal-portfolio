@@ -1,0 +1,129 @@
+---
+title: Slider
+image: https://placehold.co/600x400
+description: A smooth animated image gallery grid
+publishedAt: 2023-12-28
+published: true
+tech: React, Framer Motion 
+video_light: /crafts/gallery_grid/gallery-grid-light.mov
+video_dark: /crafts/gallery_grid/gallery_video-dark.mov
+---
+
+
+I was inspired by [Fractional Slider](https://www.framer.com/motion/)  by Rauno Freiberg an recreated it using Framer Motion and React. My focus was primarily on the motion and the sound design of these component.
+<video
+            playsInline
+            className="w-full h-fit my-8 rounded-md "
+            src="/crafts/slider/slider-video_dark.mp4"
+            autoPlay
+            light= "/crafts/slider/slider-video_light.mp4"
+            dark= "/crafts/slider/slider-video_dark.mp4"
+            loop
+            muted
+          />
+
+  
+```
+const range = [-20, 20];
+const sliderRef = useRef<HTMLDivElement>(null);
+const [value, setValue] = useState<number>(0);
+
+const items = Array.from({ 
+  length: range[1] - range[0] + 1 }(_, i) => i + range[0]
+  );
+const [maxWidth, setMaxWidth] = useState(0);
+const x = useMotionValue(0);
+```
+--- 
+### TSX elements and Framer-motion setup
+      I created the individual slider elements and pased the value i also
+            pased an active prop to track if the element is currently within the
+            selected range.
+ <img
+              className=" h-fit my-8 rounded-md sm:max-h-[300px] "
+              src="/crafts/slider/slider-dark_image.png"
+              alt="slider_image"
+              light= "/crafts/slider/slider-light_image.png"
+              dark= "/crafts/slider/slider-dark_image.png"
+            />
+```JSX
+  <div className="relative justify-center cursor-ew-resize p-10 ">
+      <p>{value}</p>
+      <div 
+      className="relative flex items-center max-w-[750px] 
+      overflow-x-hidden justify-center">
+        <div 
+        className="w-full h-full absolute bg-gradient-to-r 
+        pointer-events-none from-background from-5% 
+        via-transparent to-background to-95% z-[2]" 
+        />
+        <motion.div
+          ref={sliderRef}
+          drag="x"
+          dragConstraints={{ left: -maxWidth, right: maxWidth }}
+          style={{ x }} // Bind the motion value to the x style property
+          className="flex items-center    justify-start gap-[0.35rem] z-[1]"
+        >
+          {items.map((item, index) => (
+            <SliderItem
+              key={index}
+              value={item}
+              active={
+                (value >= 0 && item <= value && item >= 0) ||
+                (value < 0 && item >= value && item <= 0)
+              }
+            />
+          ))}
+        </motion.div>
+      </div>
+      <Dot 
+      className="mr-[26px] absolute right-[50%] left-[47.5%] text-orange-500" 
+      />
+
+    </div>
+```
+I used Framer-Motions "drag" option to implement the slider-dragging
+            logic. To create a seamless experience i used the dragConstraints
+            option to limit the dragging to the slider-range.
+
+
+
+```
+useEffect(() => {
+    const updateMaxWidth = () => {
+      const width = sliderRef.current?.offsetWidth;
+      if (width) {
+        setMaxWidth(width / 2);
+      }
+    };
+    updateMaxWidth();
+    window.addEventListener("resize", updateMaxWidth);
+    return () => window.removeEventListener("resize", updateMaxWidth);
+  }, []);
+```
+
+To create the selecting logic i used React-state.I used some math to
+            calculate the current value and set the state on every change. Then
+            i also added a click-soundeffect whenever the value changes.
+
+
+            ```
+            useEffect(() => {
+    const unsubscribeX = x.onChange((latestX) => {
+      const progress = (latestX + maxWidth) / (2 * maxWidth);
+      const newValue = Math.floor(progress * (range[1] - range[0])) + range[0];
+      setValue(-newValue);
+    });
+
+    return () => {
+      unsubscribeX();
+    };
+  }, [x, maxWidth, range]);
+
+  useEffect(() => {
+    const audio = new Audio(sound);
+    audio
+      .play()
+      .catch((error) => console.error("Error playing the sound:", error));
+  }, [value]);
+```

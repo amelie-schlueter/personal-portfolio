@@ -50,12 +50,17 @@
   }
 }
 
-@layer components {
+@layer base {
   * {
     @apply border-border;
     margin: 0;
     scroll-behavior: smooth;
   }
+
+  p {
+    @apply text-foreground text-base;
+  }
+
 
   .underline:hover {
     @apply text-blue-500;

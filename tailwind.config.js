@@ -12,9 +12,9 @@ module.exports = {
       center: true,
       padding: "2rem",
       screens: {
-        "2xl": "1020px",
-        lg: "840px",
-        md: "840px",
+        "2xl": "720px",
+        lg: "720px",
+        md: "720px",
         sm: "600px",
         xs: "480px",
       },
@@ -23,6 +23,11 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ["pt_serif", "sans-serif"],
+      },
+      fontSize: {
+        sm: ["0.8rem", { lineHeight: "1.25rem" }],
+        base: ["0.9rem", { lineHeight: "165%" }],
+        md: ["1rem", { lineHeight: "1.5rem" }],
       },
       textDecorationColor: {
         "custom-red": "#ff0000", // Custom red color
@@ -69,6 +74,7 @@ module.exports = {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+
       keyframes: {
         "accordion-down": {
           from: { height: 0 },

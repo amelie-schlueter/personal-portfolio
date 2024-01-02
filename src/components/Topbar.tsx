@@ -8,16 +8,27 @@ import { cn } from "@/lib/utils";
 import { CommandLine } from "./CommandLine";
 import MobileTopbar from "./MobileTopbar";
 
-const Topbar = () => {
+const Topbar = ({
+  size,
+  className,
+}: {
+  size?: "sm" | "base";
+  className?: string;
+}) => {
   return (
-    <nav className=" container flex items-center justify-between w-full py-1 md:py-4">
+    <nav
+      className={cn(
+        "mx-auto container  justify-between flex gap-6  items-center py-3  px-4",
+        className
+      )}
+    >
       <Link href={"/"}>
-        <div className=" flex-col flex text-sm">
-          <p className="text-sm leading-none">Amelie Schlüter</p>
+        <div className=" flex-col flex ">
+          <p className=" leading-none">Amelie Schlüter</p>
         </div>
       </Link>
 
-      <p className="text-muted-foreground text-sm">Creative Developer</p>
+      <p className="text-muted-foreground ">Creative Developer</p>
 
       <MobileTopbar />
     </nav>

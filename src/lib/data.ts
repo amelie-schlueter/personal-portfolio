@@ -53,7 +53,7 @@ export const projects = [
     year: new Date("2023-06-01"),
     type: "Side Project",
     link: "",
-    imageDarkmode: "/Stacksdo/stackdo-image-1.png",
+    imageDarkmode: "/Stacksdo/StacksdoImage.png",
     imageLightmode: "/Stacksdo/stackdo-image-1-neg.png",
     description:
       "Stacksdo is a distraction free task management tool in a world full of constant overstimulation",

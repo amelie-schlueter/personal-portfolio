@@ -31,7 +31,7 @@ const BlogEntryCard = ({ doc }: { doc: Doc }) => {
               {/* <p className="w-fit mt-1 text-muted-foreground text-xs">
                 {format(date, "EE, dd MMM yyyy")}
               </p> */}
-              <h4 className="font-medium text-md text-sm">{doc.title}</h4>
+              <h4 className="font-medium text-base">{doc.title}</h4>
             </div>
           </div>
           <motion.div

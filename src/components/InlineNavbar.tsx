@@ -14,7 +14,7 @@ const InlineNavbar = () => {
   const router = useRouter();
   return (
     <div
-      className="flex md:flex mb-4 gap-2 text-muted-foreground items-center hover:underline hover:text-foreground cursor-pointer"
+      className=" flex mb-4 gap-2 visible  py-4 md:p-0  md:relative text-muted-foreground items-center hover:underline hover:text-foreground cursor-pointer"
       onClick={() => router.back()}
     >
       <CornerUpLeft strokeWidth={1.5} size={18} />

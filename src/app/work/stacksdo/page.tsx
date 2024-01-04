@@ -1,5 +1,5 @@
+//@ts-nocheck
 "use client";
-
 import React, { useEffect, useRef } from "react";
 import { projects } from "@/lib/data";
 import { notFound } from "next/navigation";

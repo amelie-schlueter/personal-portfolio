@@ -4,11 +4,17 @@ import React, { PropsWithChildren } from "react";
 interface Props {
   columns?: number;
   children: React.ReactNode;
+  className?: string;
 }
 
-const Grid = ({ columns, children }: Props) => {
+const Grid = ({ columns, children, className }: Props) => {
   return (
-    <div className={`grid md:grid-cols-[1fr,1.75fr] gap-2 md:gap-16`}>
+    <div
+      className={cn(
+        `grid md:grid-cols-[1fr,1.75fr] gap-2 md:gap-16`,
+        className
+      )}
+    >
       {children}
     </div>
   );

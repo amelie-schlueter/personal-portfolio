@@ -64,7 +64,7 @@
   }
 
   h3 {
-    @apply text-foreground text-md font-semibold mb-1;
+    @apply text-foreground text-md font-medium mb-1;
   }
 
 

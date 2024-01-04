@@ -8,6 +8,7 @@ import { format } from "date-fns";
 import { ArrowUpRight, PenLine, Pilcrow } from "lucide-react";
 import React from "react";
 import Link from "next/link";
+import Footer from "@/components/layout/Footer";
 
 const page = () => {
   const docs = allDocs.sort((a, b) => {
@@ -43,7 +44,10 @@ const page = () => {
               {/*Blog Entry*/}
               {docs &&
                 docs.map((doc, i) => (
-                  <div className="flex w-full " key={doc.slug}>
+                  <div
+                    className="flex w-full pb-4 border-b-[1px] border-border/70 "
+                    key={doc.slug}
+                  >
                     <div className=" md:grid grid-cols-[1fr,1.75fr] gap-16 w-full">
                       <p className="text-muted-foreground text-sm mb-1 md:m-0">
                         {format(new Date(doc.publishedAt), "EE, dd.MMM yyyy")}
@@ -68,6 +72,7 @@ const page = () => {
           </div>
         </section>
       </div>
+      <Footer />
     </div>
   );
 };

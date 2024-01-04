@@ -34,18 +34,18 @@ export const workExperience = [
 ];
 
 export const projects = [
-  {
-    title: "Premium Room Design",
-    slug: "premium-room-design",
-    tags: ["Design", "Development", "Strategy"],
-    year: new Date("2022-06-01"),
-    type: "Side Project",
-    link: "",
-    imageDarkmode: "/Premium-room-design.png",
-    imageLightmode: "/Premium-room-design.png",
-    description:
-      "Esse adipisicing dolore ad pariatur ipsum ullamco duis aliqua do ipsum id proident amet dolor consequat.",
-  },
+  // {
+  //   title: "Premium Room Design",
+  //   slug: "premium-room-design",
+  //   tags: ["Design", "Development", "Strategy"],
+  //   year: new Date("2022-06-01"),
+  //   type: "Side Project",
+  //   link: "",
+  //   imageDarkmode: "/Premium-room-design.png",
+  //   imageLightmode: "/Premium-room-design.png",
+  //   description:
+  //     "Esse adipisicing dolore ad pariatur ipsum ullamco duis aliqua do ipsum id proident amet dolor consequat.",
+  // },
   {
     title: "Stacksdo",
     slug: "stacksdo",

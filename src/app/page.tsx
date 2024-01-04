@@ -15,6 +15,7 @@ import {
 } from "@/components/ui/tooltip";
 import CraftBanner from "@/components/CraftBanner";
 import { useEffect } from "react";
+import Footer from "@/components/layout/Footer";
 
 export default function Home() {
   const docs = allDocs.sort((a, b) =>
@@ -22,7 +23,7 @@ export default function Home() {
   );
 
   return (
-    <div className=" container px-4 mx-auto w-full relative mt-12 md:mt-24">
+    <div className=" container px-4 mx-auto w-full relative my-12 md:mt-24">
       {/*Hero*/}
       <div className="flex flex-col gap-10">
         <Grid>
@@ -153,6 +154,7 @@ export default function Home() {
           </div>
         </section>
       </div>
+      <Footer />
     </div>
   );
 }

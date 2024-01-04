@@ -1,5 +1,6 @@
 import CraftItem from "@/components/craft/CraftItem";
 import Hero from "@/components/Hero";
+import Footer from "@/components/layout/Footer";
 import Grid from "@/components/layout/Grid";
 import { craftsArr } from "@/lib/data";
 import { allCrafts } from "contentlayer/generated";

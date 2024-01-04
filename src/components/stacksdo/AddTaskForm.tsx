@@ -18,6 +18,7 @@ import { Input } from "@/components/ui/input";
 import { toast } from "@/components/ui/use-toast";
 import { Toaster } from "../ui/toaster";
 import { useRouter } from "next/navigation";
+import { Task } from "@/lib/types";
 
 interface Props {
   setTask: React.Dispatch<React.SetStateAction<Task[]>>;

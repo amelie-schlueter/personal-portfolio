@@ -2,15 +2,15 @@ import { cn } from "@/lib/utils";
 import React, { PropsWithChildren } from "react";
 
 interface Props {
-  className?: string;
   children: React.ReactNode;
+  className?: string;
 }
 
-const ComponentWrapper = ({ children, className }: Props) => {
+const ComponentContent = ({ children, className }: Props) => {
   return (
     <div
       className={cn(
-        "w-full border  p-4 md:p-8 overflow-hidden flex items-center justify-center relative  rounded-md",
+        "p-10  min-h-[200px] flex items-center justify-center  max-h-[300px]",
         className
       )}
     >
@@ -19,4 +19,4 @@ const ComponentWrapper = ({ children, className }: Props) => {
   );
 };
 
-export default ComponentWrapper;
+export default ComponentContent;

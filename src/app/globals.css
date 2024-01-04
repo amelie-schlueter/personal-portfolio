@@ -63,6 +63,10 @@
     @apply text-foreground text-base;
   }
 
+  h3 {
+    @apply text-foreground text-md font-semibold mb-1;
+  }
+
 
   .underline:hover {
     @apply text-blue-500;

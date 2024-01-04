@@ -46,9 +46,7 @@ const Page = () => {
             loop
             muted
           />
-          <h3 className="mt-8 scroll-m-20 text-md font-semibold  tracking-tight">
-            Code
-          </h3>
+          <h3>Code</h3>
           <p className={cn("")}>
             Preparing the states and variables for the unlimited month scroll
             and the drag funtionality
@@ -67,9 +65,7 @@ const Page = () => {
             </code>
           </pre>
           <Separator className="w-full my-6" />
-          <h3 className="mt-8 scroll-m-20 text-md font-semibold  tracking-tight">
-            Unlimited Month scroll
-          </h3>
+          <h3>Unlimited Month scroll</h3>
           <p className={cn("")}>Logic for unlimited month scroll</p>
           <pre className={cn("w-full my-4 py-2 rounded-md bg-transparent")}>
             <code className="language-typescript overflow-x-scroll custom-scrollbar  border-[1px] w-full  px-2 pb-2 rounded-[7px] text-sm">
@@ -125,9 +121,7 @@ const Page = () => {
             </code>
           </pre>
           <Separator className="w-full my-6" />
-          <h3 className="mt-8 scroll-m-20 text-md font-semibold  tracking-tight">
-            TSX Elements
-          </h3>
+          <h3>TSX Elements</h3>
           <p className={cn("")}>
             Implementation of using framer motion for animating the timeline
           </p>

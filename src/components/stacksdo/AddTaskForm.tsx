@@ -77,7 +77,9 @@ export function AddTaskForm({ setTask }: Props) {
               </FormItem>
             )}
           />
-          <Button type="submit">Add Task</Button>
+          <Button type="submit" size={"sm"}>
+            Add Task
+          </Button>
         </form>
       </Form>
       <Toaster />

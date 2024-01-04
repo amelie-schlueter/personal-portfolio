@@ -13,6 +13,9 @@ import React, { useState } from "react";
 import TabsGallery, { Tab } from "./components/TabsGallery";
 import TabBar from "./components/TabBar";
 import ComponentWrapper from "@/components/layout/ComponentWrapper";
+import CodeContent from "@/components/layout/CodeContent";
+import ComponentCodeBlock from "@/components/layout/ComponentCodeBlock";
+import ComponentContent from "@/components/layout/ComponentContent";
 
 const tabs: Tab[] = [
   { id: "overview", label: "Overview" },
@@ -44,7 +47,7 @@ const Page = () => {
         <EntrySidebar />
         <EntryHeader title={craft.title} date={new Date(craft?.date)} />
 
-        <div className="w-full">
+        <div className="w-full space-y-4">
           <ComponentWrapper className="flex flex-col">
             <TabsGallery tabs={tabs} />
             <p className="text-sm max-w-[200px] text-center text-muted-foreground/70 md:hidden ">
@@ -66,14 +69,11 @@ const Page = () => {
             </span>{" "}
             to create these microinteractions.
           </p>
-          <ComponentWrapper className="mt-8">
-            <TabBar />
-          </ComponentWrapper>
-
-          <pre
-            className={cn("w-full mb-4 mt-2 py-2 rounded-md bg-transparent")}
-          >
-            <code className="language-typescript overflow-x-scroll custom-scrollbar  border-[1px] w-full  px-2 pb-2 rounded-[7px] text-sm">
+          <ComponentCodeBlock>
+            <ComponentContent>
+              <TabBar />
+            </ComponentContent>
+            <CodeContent language="typescript">
               {`{activeTab === tab.id && (
     <motion.span
       layoutId="bubble"
@@ -82,28 +82,31 @@ const Page = () => {
       transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
   />
   )}`}
-            </code>
-          </pre>
-          <Separator className="w-full my-6" />
-          <h3 className="mt-8 scroll-m-20 text-md font-semibold  tracking-tight">
-            Smooth Change Transitions
-          </h3>
-          <p className={cn("")}>
-            To create these smooth change-transitions i used the
-            Layout-Transition functionality from framer motion. Here i used a
-            layoutId to achieve the desired outcome
+            </CodeContent>
+          </ComponentCodeBlock>
+          <p>
+            You can add some theme logic to change the background color of the
+            selected tab whenever the theme changes by using a ternary operator
+            within the className attribute.
           </p>
+          <div>
+            <h3 className="mt-6">Smooth Change Transitions</h3>
+            <p className={cn("")}>
+              To create these smooth change-transitions i used the
+              Layout-Transition functionality from framer motion. Here i used a
+              layoutId to achieve the desired outcome
+            </p>
+          </div>
           <video
-            className="w-full my-8 rounded-md max-h-[225px] md:max-h-full"
+            className="w-full  rounded-md max-h-[225px] md:max-h-full"
             src="/crafts/gallery_grid/gallery_video-light.mp4"
             autoPlay
             loop
             muted
             playsInline
           />
-          <pre className={cn("w-full my-4 py-2 rounded-md bg-transparent")}>
-            <code className="language-html overflow-x-scroll custom-scrollbar  border-[1px] w-full  px-2 pb-2 rounded-[7px] text-sm">
-              {` <TabContent tabId="overview" activeTab={activeTab}>
+          <CodeContent language="typescript" variant="default">
+            {` <TabContent tabId="overview" activeTab={activeTab}>
           <motion.div
             className="flex gap-2 overflow-x-auto mx-auto h-[500px] max-w-[800px] "
             layoutId="images"
@@ -132,8 +135,7 @@ const Page = () => {
             })}
           </motion.div>
         </TabContent>`}
-            </code>
-          </pre>
+          </CodeContent>
         </div>
       </EntryWrapper>
     </div>

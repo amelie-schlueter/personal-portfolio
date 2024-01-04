@@ -26,9 +26,9 @@ const EntryHeader = ({ title, date }: Props) => {
 
   return (
     <div className="h-fit w-full mb-4 ">
-      <div className="flex items-start   justify-between w-full ">
+      <div className="flex items-start   justify-between w-full  ">
         <div className=" w-full">
-          <h1 className="text-md font-semibold max">{title}</h1>
+          <h1 className="text-lg font-semibold">{title}</h1>
           <p className="text-muted-foreground text-sm mt-1">
             {format(new Date(date), "EE, dd MMM yyyy")}
           </p>

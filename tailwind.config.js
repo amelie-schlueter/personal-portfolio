@@ -25,15 +25,16 @@ module.exports = {
         sans: ["pt_serif", "sans-serif"],
       },
       fontSize: {
-        sm: ["0.8rem", { lineHeight: "1.25rem" }],
-        base: ["0.9rem", { lineHeight: "165%" }],
-        md: ["1rem", { lineHeight: "1.5rem" }],
+        sm: ["0.8rem", { lineHeight: "1.35rem" }],
+        base: ["0.93rem", { lineHeight: "165%" }],
+        md: ["1.1rem", { lineHeight: "1.5rem" }],
       },
       textDecorationColor: {
         "custom-red": "#ff0000", // Custom red color
         "custom-blue": "blue", // Custom blue color
         // Add more custom colors as needed
       },
+
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

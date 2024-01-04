@@ -52,7 +52,7 @@
 
 @layer base {
   * {
-    @apply border-border;
+    @apply border-border scroll-smooth;
     margin: 0;
     scroll-behavior: smooth;
   }

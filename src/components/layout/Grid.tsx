@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils";
 import Link from "next/link";
 import React, { PropsWithChildren } from "react";
 interface Props {
@@ -14,3 +15,13 @@ const Grid = ({ columns, children }: Props) => {
 };
 
 export default Grid;
+
+export const GridItem = ({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) => {
+  return <div className={cn("border-t pt-6", className)}>{children}</div>;
+};

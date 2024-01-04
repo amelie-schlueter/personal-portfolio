@@ -59,61 +59,74 @@ const Page = () => {
 
         {/*Content*/}
         <div className="max-w-[600px] space-y-4">
-          <h3 className="mt-6">Ideation</h3>
-          <p>
-            In our digital age, we're constantly bombarded with information and
-            stimulation. At the same time, there's an ongoing quest for the
-            perfect productivity system or task management tool, aimed at
-            enhancing productivity and managing our daily 24 hours more
-            efficiently. I admit, I've tried nearly every productivity tool out
-            there, seeking that slight edge in efficiency. But is this
-            relentless pursuit really beneficial?
-          </p>
+          <div>
+            <h3 className="mt-6" id="stacksdo-ideation">
+              Ideation
+            </h3>
+            <p>
+              In our digital age, we're constantly bombarded with information
+              and stimulation. At the same time, there's an ongoing quest for
+              the perfect productivity system or task management tool, aimed at
+              enhancing productivity and managing our daily 24 hours more
+              efficiently. I admit, I've tried nearly every productivity tool
+              out there, seeking that slight edge in efficiency. But is this
+              relentless pursuit really beneficial?
+            </p>
+          </div>
           <p>
             I decided to develop a minimalistic, distraction-free project and
             task management tool for personal use. This project was an
             experiment to prove to myself that no system could enhance my
             productivity unless I focused on the work that truly mattered.
           </p>
-          <h3 className="mt-6">Planing</h3>
-          <p>
-            First, I identified the essential features needed in a task
-            management app. To structure my thoughts and create a coherent plan,
-            I began with a visualization of the app's data flow.
-          </p>
-          <h3 className="mt-6">Building</h3>
-          <p>
-            Now i could start creating the basic setup of my app as well as
-            creating basic components. As a techstack i used{" "}
-            <Link
-              href="https://nextjs.org/"
-              className=" underline hover:text-muted-foreground"
-            >
-              NEXTjs
-            </Link>
-            ,{" "}
-            <Link
-              href="https://www.typescriptlang.org/"
-              className=" underline hover:text-muted-foreground"
-            >
-              Typescript
-            </Link>{" "}
-            with{" "}
-            <Link
-              href="https://tailwindcss.com/"
-              className=" underline hover:text-muted-foreground"
-            >
-              Tailwind CSS
-            </Link>{" "}
-            for styling,{" "}
-            <Link
-              href="https://planetscale.com/"
-              className=" underline hover:text-muted-foreground"
-            >
-              Planetscale
-            </Link>{" "}
-            as the database and Prisma ORM for communication with the database.
-          </p>
+          <div>
+            <h3 className="mt-6" id="stacksdo-planing">
+              Planing
+            </h3>
+            <p>
+              First, I identified the essential features needed in a task
+              management app. To structure my thoughts and create a coherent
+              plan, I began with a visualization of the app's data flow.
+            </p>
+          </div>
+          <div>
+            <h3 className="mt-6" id="stacksdo-building">
+              Building
+            </h3>
+            <p>
+              Now i could start creating the basic setup of my app as well as
+              creating basic components. As a techstack i used{" "}
+              <Link
+                href="https://nextjs.org/"
+                className=" underline hover:text-muted-foreground"
+              >
+                NEXTjs
+              </Link>
+              ,{" "}
+              <Link
+                href="https://www.typescriptlang.org/"
+                className=" underline hover:text-muted-foreground"
+              >
+                Typescript
+              </Link>{" "}
+              with{" "}
+              <Link
+                href="https://tailwindcss.com/"
+                className=" underline hover:text-muted-foreground"
+              >
+                Tailwind CSS
+              </Link>{" "}
+              for styling,{" "}
+              <Link
+                href="https://planetscale.com/"
+                className=" underline hover:text-muted-foreground"
+              >
+                Planetscale
+              </Link>{" "}
+              as the database and Prisma ORM for communication with the
+              database.
+            </p>
+          </div>
           <ComponentCodeBlock>
             <ComponentContent className="w-full max-w-full max-h-full">
               {/* User auth Form */}
@@ -208,42 +221,46 @@ const handler = NextAuth (options);
 export { handler as GET, handler as POST };`}
             </CodeContent>
           </ComponentCodeBlock>
-          <h3 className="mt-6">Result</h3>
-          <p>
-            Stacksdo is an amazing tool for managing task and projects without
-            any unnessary distractions for the user. It focuses on the
-            foundatinal elements and still provides an amazing user experience
-            throught consistent user feedback, a minimal design and great
-            performance.
-            <Link
-              href="https://nextjs.org/"
-              className=" underline hover:text-muted-foreground"
-            >
-              NEXTjs
-            </Link>
-            ,{" "}
-            <Link
-              href="https://www.typescriptlang.org/"
-              className=" underline hover:text-muted-foreground"
-            >
-              Typescript
-            </Link>{" "}
-            with{" "}
-            <Link
-              href="https://tailwindcss.com/"
-              className=" underline hover:text-muted-foreground"
-            >
-              Tailwind CSS
-            </Link>{" "}
-            for styling,{" "}
-            <Link
-              href="https://planetscale.com/"
-              className=" underline hover:text-muted-foreground"
-            >
-              Planetscale
-            </Link>{" "}
-            as the database and Prisma ORM for communication with the database.
-          </p>
+          <div>
+            <h3 className="mt-6" id="stacksdo-result">
+              Result
+            </h3>
+            <p>
+              Stacksdo is an amazing tool for managing task and projects without
+              any unnessary distractions for the user. It focuses on the
+              foundatinal elements and still provides an amazing user experience
+              throught consistent user feedback, a minimal design and great
+              performance.{" "}
+              <span>
+                <Link href="https://nextjs.org/" className=" underline ">
+                  NEXTjs
+                </Link>
+              </span>
+              ,{" "}
+              <span>
+                <Link
+                  href="https://www.typescriptlang.org/"
+                  className=" underline "
+                >
+                  Typescript
+                </Link>{" "}
+              </span>
+              with{" "}
+              <span>
+                <Link href="https://tailwindcss.com/" className=" underline ">
+                  Tailwind CSS
+                </Link>{" "}
+              </span>
+              <span>
+                for styling,{" "}
+                <Link href="https://planetscale.com/" className=" underline ">
+                  Planetscale
+                </Link>{" "}
+              </span>
+              as the database and Prisma ORM for communication with the
+              database.
+            </p>
+          </div>
           <div className="w-full bg-muted py-6 px-6 rounded-md flex h-[30] items-center justify-center overflow-hidden">
             {currentTheme === "dark" ? (
               <Image

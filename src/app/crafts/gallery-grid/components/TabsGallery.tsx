@@ -100,11 +100,8 @@ const TabsGallery = ({ tabs }: PropsWithChildren<TabsProps>) => {
 
             <div className="w-full">
               <p className="text-base max-w-sm mx-auto">
-                In amet quis sit ad ex. Id ipsum nisi tempor esse ut dolore id
-                adipisicing dolor incididunt voluptate et amet. Enim irure
-                labore laboris nisi non esse. Amet id incididunt mollit mollit.
-                Tempor aute nulla sit veniam velit dolore do consectetur irure
-                voluptate. In amet quis sit ad ex.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum
+                saepe beatae officiis cupiditate.
               </p>
             </div>
           </motion.div>
@@ -124,11 +121,8 @@ const TabsGallery = ({ tabs }: PropsWithChildren<TabsProps>) => {
             ></Image>
             <div>
               <p className="text-base max-w-sm">
-                In amet quis sit ad ex. Id ipsum nisi tempor esse ut dolore id
-                adipisicing dolor incididunt voluptate et amet. Enim irure
-                labore laboris nisi non esse. Amet id incididunt mollit mollit.
-                Tempor aute nulla sit veniam velit dolore do consectetur irure
-                voluptate. In amet quis sit ad ex.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum
+                saepe beatae officiis cupiditate.
               </p>
             </div>
           </motion.div>
@@ -141,11 +135,8 @@ const TabsGallery = ({ tabs }: PropsWithChildren<TabsProps>) => {
           >
             <div>
               <p className="text-base max-w-sm">
-                In amet quis sit ad ex. Id ipsum nisi tempor esse ut dolore id
-                adipisicing dolor incididunt voluptate et amet. Enim irure
-                labore laboris nisi non esse. Amet id incididunt mollit mollit.
-                Tempor aute nulla sit veniam velit dolore do consectetur irure
-                voluptate. In amet quis sit ad ex.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum
+                saepe beatae officiis cupiditate.
               </p>
             </div>
             <Image
@@ -172,11 +163,8 @@ const TabsGallery = ({ tabs }: PropsWithChildren<TabsProps>) => {
             ></Image>
             <div>
               <p className="text-base max-w-sm">
-                In amet quis sit ad ex. Id ipsum nisi tempor esse ut dolore id
-                adipisicing dolor incididunt voluptate et amet. Enim irure
-                labore laboris nisi non esse. Amet id incididunt mollit mollit.
-                Tempor aute nulla sit veniam velit dolore do consectetur irure
-                voluptate. In amet quis sit ad ex.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum
+                saepe beatae officiis cupiditate.
               </p>
             </div>
           </motion.div>

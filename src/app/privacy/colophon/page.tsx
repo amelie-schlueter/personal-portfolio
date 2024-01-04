@@ -155,6 +155,40 @@ const imprint = () => {
                     Anton Stallbörger
                   </Link>
                 </li>
+                <li>
+                  <Link
+                    href={"https://www.0xshapeshifter.dev/"}
+                    className="underline"
+                  >
+                    Shapeshifter
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href={"https://www.fabianschultz.com/"}
+                    className="underline"
+                  >
+                    Fabian Schultz
+                  </Link>
+                </li>
+                <li>
+                  <Link href={"https://paco.me/"} className="underline">
+                    Paco Coursey
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href={"https://carlbarenbrug.com/"}
+                    className="underline"
+                  >
+                    Carl Barenburg
+                  </Link>
+                </li>
+                <li>
+                  <Link href={"https://www.ambedg.ar/"} className="underline">
+                    Edgar Ambartsoumian
+                  </Link>
+                </li>
               </ul>
             </GridItem>
           </Grid>

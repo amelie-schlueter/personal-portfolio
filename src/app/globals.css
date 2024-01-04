@@ -149,3 +149,7 @@ p>code.hljs {
 span>pre>code.hljs {
   display: inline-flex;
 }
+
+li {
+  margin-bottom: 0.25rem;
+}

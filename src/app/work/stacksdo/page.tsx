@@ -32,13 +32,7 @@ const headings = [
 
 const Page = () => {
   const project = projects.find((project) => project.slug === "stacksdo");
-
-  const ref = useRef(null);
-
-  const [tasks, setTasks] = React.useState<Task[]>([]);
   const { resolvedTheme: currentTheme } = useTheme();
-  if (!project) return notFound();
-
   React.useEffect(() => {
     hljs.highlightAll();
 
@@ -51,6 +45,11 @@ const Page = () => {
       module.default;
     });
   }, [currentTheme]);
+  const ref = useRef(null);
+
+  const [tasks, setTasks] = React.useState<Task[]>([]);
+
+  if (!project) return notFound();
 
   return (
     <>

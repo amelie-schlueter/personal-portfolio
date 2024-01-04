@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/popover";
 import { AddTaskForm } from "./AddTaskForm";
 import { SetStateAction } from "react";
+import { Task } from "@/lib/types";
 
 interface Props {
   setTask: React.Dispatch<React.SetStateAction<Task[]>>;

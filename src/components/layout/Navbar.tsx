@@ -11,15 +11,15 @@ import {
   MoreHorizontal,
   PaintBucket,
   PenTool,
+  Pointer,
   Twitter,
   User,
   X,
   XIcon,
 } from "lucide-react";
-import NavbarItemMobile from "./NavbarItemMobile";
-import MobileNavbar from "./MobileNavbar";
-import { Separator } from "../ui/separator";
+
 import { ModeToggle } from "./Mode-toggle";
+import XLogo from "@/lib/icons/xLogo";
 
 export const pages: {
   title: string;
@@ -37,9 +37,9 @@ export const pages: {
     icon: <Glasses strokeWidth={1.5} width={20} />,
   },
   {
-    title: "Crafts",
+    title: "Interaction Corner",
     link: "/crafts",
-    icon: <PaintBucket strokeWidth={1.5} width={20} />,
+    icon: <Pointer strokeWidth={1.5} width={20} />,
   },
   {
     title: "About",
@@ -91,11 +91,11 @@ export const sublinks: {
   {
     title: "X",
     link: "https://twitter.com/amelieschltr",
-    icon: <Twitter strokeWidth={1.5} width={20} />,
+    icon: <XLogo />,
   },
   {
     title: "Mail",
-    link: "amelieschlueter@arcor.de",
+    link: "mailto:as@amelieschlueter.com",
     icon: <Mail strokeWidth={1.5} width={20} />,
   },
 ];

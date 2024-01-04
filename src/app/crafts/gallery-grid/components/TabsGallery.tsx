@@ -111,7 +111,7 @@ const TabsGallery = ({ tabs }: PropsWithChildren<TabsProps>) => {
         </TabContent>
         <TabContent tabId="image_02" activeTab={activeTab}>
           <motion.div
-            className="grid md:grid-cols-2 items-center gap-12 w-full"
+            className="grid md:grid-cols-2 items-center gap-8 w-full"
             layoutId="images"
             transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
           >
@@ -135,7 +135,7 @@ const TabsGallery = ({ tabs }: PropsWithChildren<TabsProps>) => {
         </TabContent>
         <TabContent tabId="image_03" activeTab={activeTab}>
           <motion.div
-            className="grid md:grid-cols-2 items-center gap-5 md:gap-20   md:max-h-full  w-full"
+            className="grid md:grid-cols-2 items-center gap-8    md:max-h-full  w-full"
             layoutId="images"
             transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
           >
@@ -159,7 +159,7 @@ const TabsGallery = ({ tabs }: PropsWithChildren<TabsProps>) => {
         </TabContent>
         <TabContent tabId="image_04" activeTab={activeTab}>
           <motion.div
-            className="grid md:grid-cols-2 items-center gap-5 md:gap-20 w-full"
+            className="grid md:grid-cols-2 items-center gap-8  w-full"
             layoutId="images"
             transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
           >

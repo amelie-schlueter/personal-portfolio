@@ -36,13 +36,22 @@ const Page = () => {
             <div className="my-4 md:mt-12 flex flex-col gap-2">
               <Separator />
               <div className=" flex gap-4 items-start ">
-                <Link href={"https://twitter.com"} className="underline">
+                <Link
+                  href={"https://twitter.com/amelieschltr"}
+                  className="underline"
+                >
                   <p>X</p>
                 </Link>
-                <Link href={"https://twitter.com"} className="underline">
+                <Link
+                  href={"https://read.cv/amelieschltr"}
+                  className="underline"
+                >
                   <p>Read.cv</p>
                 </Link>
-                <Link href={"https://github.com"} className="underline">
+                <Link
+                  href={"https://github.com/amelie-schlueter"}
+                  className="underline"
+                >
                   <p>Github</p>
                 </Link>
               </div>

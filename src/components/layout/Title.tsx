@@ -1,5 +1,7 @@
+"use client";
 import { Layout } from "lucide-react";
 import React from "react";
+import CraftBanner from "../CraftBanner";
 interface Props {
   title: string;
   icon: React.ReactNode;

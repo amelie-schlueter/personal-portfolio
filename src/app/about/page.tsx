@@ -125,7 +125,7 @@ const Page = () => {
             icon={<Glasses strokeWidth={1.5} size={14} />}
           />
 
-          <div className="flex flex-col gap-6 border-t pt-6">
+          <div className="flex flex-col gap-6 border-t pt-6 ">
             {reading.map((book) => {
               return <ReadingItem book={book} key={book.title} />;
             })}

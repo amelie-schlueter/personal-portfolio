@@ -3,7 +3,7 @@
 import EntryHeader from "@/components/journal/EntryHeader";
 import EntryWrapper from "@/components/journal/EntryWrapper";
 import EntrySidebar from "@/components/journal/EntrySidebar";
-import InlineNavbar from "@/components/layout/InlineNavbar";
+import { motion } from "framer-motion";
 import { Separator } from "@/components/ui/separator";
 import { craftsArr } from "@/lib/data";
 import { cn } from "@/lib/utils";
@@ -11,11 +11,22 @@ import { format } from "date-fns";
 import hljs from "highlight.js";
 import { useTheme } from "next-themes";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
+import TabsGallery, { Tab } from "./components/TabsGallery";
+import TabBar from "./components/TabBar";
+import ComponentWrapper from "@/components/layout/ComponentWrapper";
+
+export const tabs: Tab[] = [
+  { id: "overview", label: "Overview" },
+  { id: "image_01", label: "Image 1" },
+  { id: "image_02", label: "Image 2" },
+  { id: "image_03", label: "Image 3" },
+  { id: "image_04", label: "Image 4" },
+];
 
 const Page = () => {
   const craft = craftsArr.find((craft) => craft.slug === "gallery-grid");
-
+  const [activeTab, setActiveTab] = useState(tabs[0].id);
   const { resolvedTheme: currentTheme } = useTheme();
   React.useEffect(() => {
     hljs.highlightAll();
@@ -36,15 +47,15 @@ const Page = () => {
         <EntryHeader title={craft.title} date={new Date(craft?.date)} />
 
         <div className="w-full">
-          <video
-            className="w-full  my-8 rounded-md max-h-[225px] md:max-h-full"
-            src="/crafts/gallery_grid/gallery_video-light.mp4"
-            autoPlay
-            playsInline
-            loop
-            muted
-          />
-          <p className={cn("leading-7")}>
+          <ComponentWrapper className="flex flex-col">
+            <TabsGallery tabs={tabs} />
+            <p className="text-sm max-w-[200px] text-center text-muted-foreground/70 md:hidden ">
+              A larger screen size is required to view the differencies in the
+              layouts
+            </p>
+          </ComponentWrapper>
+
+          <p className={cn("")}>
             I created a tabbar with a nice microinteraction to change between
             the tab content. I used{" "}
             <span>
@@ -57,9 +68,22 @@ const Page = () => {
             </span>{" "}
             to create these microinteractions.
           </p>
-          <pre className={cn("w-full my-4 py-2 rounded-md bg-transparent")}>
+          <ComponentWrapper className="mt-8">
+            <TabBar />
+          </ComponentWrapper>
+
+          <pre
+            className={cn("w-full mb-4 mt-2 py-2 rounded-md bg-transparent")}
+          >
             <code className="language-typescript overflow-x-scroll custom-scrollbar  border-[1px] w-full  px-2 pb-2 rounded-[7px] text-sm">
-              {`const [selectedTab, setSelectedTab] = useState(0)`}
+              {`{activeTab === tab.id && (
+    <motion.span
+      layoutId="bubble"
+      className={"absolute inset-0 z-10  mix-blend-difference"
+      style={{ borderRadius: 9999 }}
+      transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+  />
+  )}`}
             </code>
           </pre>
           <Separator className="w-full my-6" />

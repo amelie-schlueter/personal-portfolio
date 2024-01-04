@@ -1,15 +1,7 @@
-import { Button, buttonVariants } from "@/components/ui/button";
-
 import BlogEntryCard from "@/components/journal/BlogEntryCard";
-
 import { allDocs } from "contentlayer/generated";
-
-import Projectcard from "@/components/projects/Projectcard";
 import { projects } from "@/lib/data";
 import Link from "next/link";
-import { cn } from "@/lib/utils";
-import Hero from "@/components/Hero";
-import { format } from "date-fns";
 import { ArrowUpRight, Layout, PenLine } from "lucide-react";
 import Title from "@/components/layout/Title";
 import Grid from "@/components/layout/Grid";
@@ -21,14 +13,16 @@ import {
   TooltipContent,
   Tooltip,
 } from "@/components/ui/tooltip";
+import CraftBanner from "@/components/CraftBanner";
+import { useEffect } from "react";
 
 export default function Home() {
   const docs = allDocs.sort((a, b) =>
     b.publishedAt.localeCompare(a.publishedAt)
   );
+
   return (
     <div className=" container px-4 mx-auto w-full relative mt-12 md:mt-24">
-      {/*Wrapepr*/}
       {/*Hero*/}
       <div className="flex flex-col gap-10">
         <Grid>

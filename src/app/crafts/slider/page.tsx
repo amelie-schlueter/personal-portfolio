@@ -17,6 +17,7 @@ import EntrySidebar from "@/components/journal/EntrySidebar";
 import EntryHeader from "@/components/journal/EntryHeader";
 import { allCrafts } from "contentlayer/generated";
 import SliderItem from "./SliderComponents/SliderItem";
+import ComponentWrapper from "@/components/layout/ComponentWrapper";
 
 const Page = () => {
   const craft = craftsArr.find((craft) => craft.slug === "slider");
@@ -42,9 +43,9 @@ const Page = () => {
 
         <div className="flex flex-col relative">
           <div className="w-full mt-4">
-            <div className="w-full  border flex items-center justify-center relative mb-8 rounded-md">
+            <ComponentWrapper>
               <Slider />
-            </div>
+            </ComponentWrapper>
             <p className="">
               I was inspired by{" "}
               <span>

@@ -9,6 +9,8 @@ import { cn } from "@/lib/utils";
 import hljs from "highlight.js";
 import { useTheme } from "next-themes";
 import React from "react";
+import ComponentWrapper from "@/components/layout/ComponentWrapper";
+import VerticalTimeline from "./components/VerticalTimeline";
 
 const Page = () => {
   const craft = craftsArr.find((craft) => craft.slug === "vertical-timeline");
@@ -33,6 +35,9 @@ const Page = () => {
         <EntryHeader title={craft.title} date={new Date(craft?.date)} />
 
         <div className="w-full">
+          <ComponentWrapper>
+            <VerticalTimeline selectedDate={new Date()} />
+          </ComponentWrapper>
           <video
             className="w-full my-8 rounded-md max-h-[225px] md:max-h-full"
             src="/crafts/vertical-timeline/timeline_video.mp4"
@@ -44,7 +49,7 @@ const Page = () => {
           <h3 className="mt-8 scroll-m-20 text-md font-semibold  tracking-tight">
             Code
           </h3>
-          <p className={cn("leading-7")}>
+          <p className={cn("")}>
             Preparing the states and variables for the unlimited month scroll
             and the drag funtionality
           </p>
@@ -65,7 +70,7 @@ const Page = () => {
           <h3 className="mt-8 scroll-m-20 text-md font-semibold  tracking-tight">
             Unlimited Month scroll
           </h3>
-          <p className={cn("leading-7")}>Logic for unlimited month scroll</p>
+          <p className={cn("")}>Logic for unlimited month scroll</p>
           <pre className={cn("w-full my-4 py-2 rounded-md bg-transparent")}>
             <code className="language-typescript overflow-x-scroll custom-scrollbar  border-[1px] w-full  px-2 pb-2 rounded-[7px] text-sm">
               {` const loadMoreMonths = (numMonths = 1) => {
@@ -123,7 +128,7 @@ const Page = () => {
           <h3 className="mt-8 scroll-m-20 text-md font-semibold  tracking-tight">
             TSX Elements
           </h3>
-          <p className={cn("leading-7")}>
+          <p className={cn("")}>
             Implementation of using framer motion for animating the timeline
           </p>
           <pre className={cn("w-full my-4 py-2 rounded-md bg-transparent")}>

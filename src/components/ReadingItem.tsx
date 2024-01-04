@@ -13,7 +13,7 @@ const ReadingItem = ({ book }: { book: Book }) => {
           width={500}
           height={500}
           alt="principles_book-cover"
-          className="object-cover repeat-0 rounded-md w-14"
+          className="object-cover repeat-0 rounded-md w-14 shadow-md"
         />
         <div>
           <h4 className="font-medium text-base underline">{book.title}</h4>

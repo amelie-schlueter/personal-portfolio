@@ -2,11 +2,12 @@
 import React from "react";
 import { Badge } from "../ui/badge";
 import Image from "next/image";
-import { ProjectType } from "@/lib/utils/types";
+
 import { describe } from "node:test";
 import { format } from "date-fns";
 import Link from "next/link";
 import { useTheme } from "next-themes";
+import { ProjectType } from "@/lib/types";
 
 const Projectcard = ({ project }: { project: ProjectType }) => {
   const { resolvedTheme: theme } = useTheme();

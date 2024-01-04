@@ -1,7 +1,7 @@
-import { WorkType } from "@/lib/utils/types";
 import { format } from "date-fns";
 import React from "react";
 import { Badge } from "./ui/badge";
+import { WorkType } from "@/lib/types";
 
 const Workexperience = ({ work }: { work: WorkType }) => {
   return (

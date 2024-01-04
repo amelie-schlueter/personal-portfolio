@@ -170,6 +170,7 @@ const Page = () => {
                       checked={adventure.checked}
                       value={adventure.title}
                       inProgress={adventure.inProgress}
+                      key={adventure.title}
                     />
                   );
                 })}

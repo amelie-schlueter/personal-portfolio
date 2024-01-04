@@ -3,11 +3,9 @@
 import EntryHeader from "@/components/journal/EntryHeader";
 import EntryWrapper from "@/components/journal/EntryWrapper";
 import EntrySidebar from "@/components/journal/EntrySidebar";
-import { motion } from "framer-motion";
 import { Separator } from "@/components/ui/separator";
 import { craftsArr } from "@/lib/data";
 import { cn } from "@/lib/utils";
-import { format } from "date-fns";
 import hljs from "highlight.js";
 import { useTheme } from "next-themes";
 import Link from "next/link";
@@ -16,7 +14,7 @@ import TabsGallery, { Tab } from "./components/TabsGallery";
 import TabBar from "./components/TabBar";
 import ComponentWrapper from "@/components/layout/ComponentWrapper";
 
-export const tabs: Tab[] = [
+const tabs: Tab[] = [
   { id: "overview", label: "Overview" },
   { id: "image_01", label: "Image 1" },
   { id: "image_02", label: "Image 2" },
@@ -90,7 +88,7 @@ const Page = () => {
           <h3 className="mt-8 scroll-m-20 text-md font-semibold  tracking-tight">
             Smooth Change Transitions
           </h3>
-          <p className={cn("leading-7")}>
+          <p className={cn("")}>
             To create these smooth change-transitions i used the
             Layout-Transition functionality from framer motion. Here i used a
             layoutId to achieve the desired outcome

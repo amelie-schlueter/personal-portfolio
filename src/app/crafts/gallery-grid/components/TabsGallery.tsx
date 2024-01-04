@@ -6,8 +6,6 @@ import Image from "next/image";
 import { CornerUpLeft } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useRouter } from "next/navigation";
-import { cn } from "@/lib/utils";
-import { buttonVariants } from "@/components/ui/button";
 
 interface TabsProps {
   tabs: Tab[];

@@ -1,14 +1,10 @@
 "use client";
 import { CraftArrItem } from "@/lib/data";
-import { Craft } from "contentlayer/generated";
 import { ArrowUpRight } from "lucide-react";
 import { useTheme } from "next-themes";
-import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import React from "react";
 import { motion } from "framer-motion";
-import { format } from "date-fns";
 
 interface Props {
   craft: CraftArrItem;

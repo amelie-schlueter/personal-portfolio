@@ -53,8 +53,8 @@ export const projects = [
     year: new Date("2023-06-01"),
     type: "Side Project",
     link: "",
-    imageDarkmode: "/Stacksdo/StacksdoImage.png",
-    imageLightmode: "/Stacksdo/stackdo-image-1-neg.png",
+    imageDarkmode: "/stacksdo/stacksdo-cover.png",
+    imageLightmode: "/stacksdo/stackdo-cover.png",
     description:
       "Stacksdo is a distraction free task management tool in a world full of constant overstimulation",
     techStack: [{ title: "NextJS", icon: "/nextjs.png" }],

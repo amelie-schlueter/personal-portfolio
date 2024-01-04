@@ -9,7 +9,6 @@ import {
   TooltipContent,
   Tooltip,
 } from "@/components/ui/tooltip";
-import { useParams, usePathname } from "next/navigation";
 
 interface Props {
   title: string;

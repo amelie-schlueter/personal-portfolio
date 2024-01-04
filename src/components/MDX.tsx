@@ -91,13 +91,7 @@ const components = {
     <li className={cn("mt-1 text-base", className)} {...props} />
   ),
   blockquote: ({ className, ...props }) => (
-    <blockquote
-      className={cn(
-        "mt-6 border-l-2 pl-6 italic [&>*]:text-muted-foreground",
-        className
-      )}
-      {...props}
-    />
+    <blockquote className={cn(className)} {...props} />
   ),
   img: ({
     className,
@@ -172,7 +166,7 @@ export function Mdx({ code }: MdxProps) {
   const Component = useMDXComponent(code);
 
   return (
-    <div className="w-full mt-4 mdx ">
+    <div className="w-full mdx ">
       <Component components={components} />
     </div>
   );

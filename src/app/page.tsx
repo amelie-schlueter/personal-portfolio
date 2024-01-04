@@ -27,7 +27,7 @@ export default function Home() {
       {/*Hero*/}
       <div className="flex flex-col gap-10">
         <Grid>
-          <div className="flex flex-col gap-1">
+          <div className="flex flex-col gap-0">
             <h1 className="text-xl font-medium">Amelie Schlüter</h1>
             <p className="text-muted-foreground ">Creative Developer</p>
           </div>
@@ -85,7 +85,7 @@ export default function Home() {
           <Grid>
             {/*Header*/}
             <Title
-              title="projects"
+              title="Projects"
               icon={<Layout strokeWidth={1.5} size={14} />}
             />
 

@@ -188,7 +188,7 @@ export const lifeAdventures = [
     checked: false,
   },
   {
-    title: "Visit Indonesia",
+    title: "Own a Tesla",
     inProgress: false,
     checked: false,
   },

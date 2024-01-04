@@ -13,7 +13,7 @@ interface Props {
 
 const TOC = ({ headings, className }: Props) => {
   return (
-    <nav className={cn("flex flex-col gap-2 my-8", className)}>
+    <nav className={cn("flex flex-col gap-2 mb-8 lg:my-8", className)}>
       {headings.map((heading) => (
         <Link
           key={`${heading.slug}`}

@@ -143,7 +143,6 @@ const x = useMotionValue(0);`}
     </div>`}
               </code>
             </pre>
-            http://localhost:3000/crafts/slider
             <p className="">
               I used Framer-Motions "drag" option to implement the
               slider-dragging logic. To create a seamless experience i used the

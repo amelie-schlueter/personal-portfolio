@@ -89,6 +89,14 @@
     @apply text-primary;
   }
 
+  blockquote {
+    @apply mt-4 border-l-2 pl-6 text-foreground text-base
+  }
+
+  blockquote span {
+    @apply pl-3 text-muted-foreground text-base
+  }
+
 
 
 }

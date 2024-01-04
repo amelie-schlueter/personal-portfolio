@@ -18,7 +18,7 @@ import {
 } from "lucide-react";
 import NavbarItemMobile from "./NavbarItemMobile";
 import MobileNavbar from "./MobileNavbar";
-import { Separator } from "./ui/separator";
+import { Separator } from "../ui/separator";
 import { ModeToggle } from "./Mode-toggle";
 
 export const pages: {

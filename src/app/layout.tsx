@@ -4,10 +4,10 @@ import "./globals.css";
 import { ThemeProvider } from "@/lib/theme-provider";
 import { Roboto } from "next/font/google";
 import localFont from "next/font/local";
-import Topbar from "@/components/Topbar";
-import Navbar from "@/components/Navbar";
+import Topbar from "@/components/layout/Topbar";
+import Navbar from "@/components/layout/Navbar";
 import { PT_Serif } from "next/font/google";
-import Footer from "@/components/Footer";
+import Footer from "@/components/layout/Footer";
 import { CommandLine } from "@/components/CommandLine";
 import { Toaster } from "@/components/ui/sonner";
 
@@ -63,7 +63,6 @@ export default function RootLayout({
           {/* <Topbar /> */}
           <div className="">{children}</div>
           <Toaster />
-          <Footer />
         </ThemeProvider>
       </body>
     </html>

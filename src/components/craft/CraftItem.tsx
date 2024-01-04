@@ -19,7 +19,7 @@ const CraftItem = ({ craft }: Props) => {
   return (
     <Link href={`crafts/${craft.slug}`}>
       <div
-        className={`h-[320px] w-full relative cursor-pointer overflow-hidden rounded-md`}
+        className={`h-[320px] text-white w-full relative cursor-pointer overflow-hidden rounded-md`}
       >
         <motion.video
           whileHover={{
@@ -40,8 +40,8 @@ const CraftItem = ({ craft }: Props) => {
           <p>{format(new Date(craft.date), "EE, dd.MMM yyyy")}</p>
         </div> */}
         <div className="w-full flex items-center justify-between absolute bottom-0 text-white right-0 left-0 px-3 text-sm py-2">
-          <p>{craft.title}</p>
-          <p className="">{craft.type}</p>
+          <p className="text-white">{craft.title}</p>
+          <p className="text-white">{craft.type}</p>
         </div>
       </div>
     </Link>

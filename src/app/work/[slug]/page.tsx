@@ -1,6 +1,6 @@
 "use client";
-import Navbar from "@/components/Navbar";
-import Topbar from "@/components/Topbar";
+import Navbar from "@/components/layout/Navbar";
+import Topbar from "@/components/layout/Topbar";
 import { useParams, usePathname } from "next/navigation";
 import React from "react";
 

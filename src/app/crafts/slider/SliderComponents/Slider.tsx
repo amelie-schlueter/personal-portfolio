@@ -58,7 +58,7 @@ const Slider = () => {
   }, [value]); // Only re-run the effect if value changes
 
   return (
-    <div className="relative justify-center max-w-xl cursor-ew-resize p-10 ">
+    <div className="relative justify-center max-w-[375px] md:max-w-xl cursor-ew-resize p-10 ">
       <p>{value}</p>
       <div className=" relative flex items-center  overflow-x-hidden   justify-center">
         <div className="w-full h-full absolute bg-gradient-to-r pointer-events-none from-background from-5% via-transparent to-background to-95% z-[2]" />

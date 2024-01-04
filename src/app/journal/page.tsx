@@ -1,7 +1,7 @@
-import BlogEntryCard from "@/components/BlogEntryCard";
+import BlogEntryCard from "@/components/journal/BlogEntryCard";
 import Hero from "@/components/Hero";
 import { Mdx } from "@/components/MDX";
-import Title from "@/components/Title";
+import Title from "@/components/layout/Title";
 import Grid from "@/components/layout/Grid";
 import { allDocs } from "contentlayer/generated";
 import { format } from "date-fns";
@@ -43,7 +43,7 @@ const page = () => {
               {/*Blog Entry*/}
               {docs &&
                 docs.map((doc, i) => (
-                  <div className="flex w-full ">
+                  <div className="flex w-full " key={doc.slug}>
                     <div className=" md:grid grid-cols-[1fr,1.75fr] gap-16 w-full">
                       <p className="text-muted-foreground text-sm mb-1 md:m-0">
                         {format(new Date(doc.publishedAt), "EE, dd.MMM yyyy")}

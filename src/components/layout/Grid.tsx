@@ -7,7 +7,7 @@ interface Props {
 
 const Grid = ({ columns, children }: Props) => {
   return (
-    <div className={`grid md:grid-cols-[1fr,1.75fr] gap-4 md:gap-16`}>
+    <div className={`grid md:grid-cols-[1fr,1.75fr] gap-2 md:gap-16`}>
       {children}
     </div>
   );

@@ -1,11 +1,11 @@
 import React from "react";
-import { Button } from "./ui/button";
+import { Button } from "../ui/button";
 import { Speech } from "lucide-react";
 import { ModeToggle } from "./Mode-toggle";
 import Image from "next/image";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-import { CommandLine } from "./CommandLine";
+import { CommandLine } from "../CommandLine";
 import MobileTopbar from "./MobileTopbar";
 
 const Topbar = ({

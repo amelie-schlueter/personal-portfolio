@@ -66,7 +66,7 @@ const components = {
   ),
   a: ({ className, ...props }) => (
     <a
-      className={cn("font-base underline underline-offset-4 ", className)}
+      className={cn("text-base underline  ", className)}
       target="_blank"
       {...props}
     />
@@ -78,14 +78,17 @@ const components = {
     />
   ),
   ul: ({ className, ...props }) => (
-    <ul className={cn("my-6 ml-6 list-disc", className)} {...props} />
+    <ul className={cn("my-6 ml-6 list-disc text-base", className)} {...props} />
   ),
 
   ol: ({ className, ...props }) => (
-    <ol className={cn("my-6 ml-6 list-decimal", className)} {...props} />
+    <ol
+      className={cn("my-6 ml-6 list-decimal text-base", className)}
+      {...props}
+    />
   ),
   li: ({ className, ...props }) => (
-    <li className={cn("mt-2", className)} {...props} />
+    <li className={cn("mt-1 text-base", className)} {...props} />
   ),
   blockquote: ({ className, ...props }) => (
     <blockquote
@@ -102,18 +105,9 @@ const components = {
     ...props
   }: React.ImgHTMLAttributes<HTMLImageElement>) => {
     // eslint-disable-next-line @next/next/no-img-element
-    const { resolvedTheme } = useTheme();
-    let url = "";
-    if (resolvedTheme === "dark") {
-      url = props.dark;
-    } else {
-      url = props.light;
-    }
-    console.log(url, "url");
-
     return (
       <img
-        className={cn("rounded-md border", className)}
+        className={cn("rounded-md border ", className)}
         alt={alt}
         {...props}
         src={url}

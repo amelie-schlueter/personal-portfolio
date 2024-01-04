@@ -2,7 +2,7 @@ import Image from "next/image";
 import React, { useState } from "react";
 import { Button } from "../ui/button";
 import { Github, Loader2 } from "lucide-react";
-import Confetti from "../Confetti";
+import Confetti from "./Confetti";
 
 const UserAuthForm = () => {
   const [isLoading, setIsLoading] = useState(false);

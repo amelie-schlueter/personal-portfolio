@@ -1,7 +1,7 @@
-import Navbar from "@/components/Navbar";
-import Projectcard from "@/components/Projectcard";
+import Navbar from "@/components/layout/Navbar";
+import Projectcard from "@/components/projects/Projectcard";
 import TabsComponent from "@/components/Tabs";
-import Topbar from "@/components/Topbar";
+import Topbar from "@/components/layout/Topbar";
 import { projects } from "@/lib/data";
 import React from "react";
 

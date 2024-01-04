@@ -1,17 +1,17 @@
 import { Button, buttonVariants } from "@/components/ui/button";
 
-import BlogEntryCard from "@/components/BlogEntryCard";
+import BlogEntryCard from "@/components/journal/BlogEntryCard";
 
 import { allDocs } from "contentlayer/generated";
 
-import Projectcard from "@/components/Projectcard";
+import Projectcard from "@/components/projects/Projectcard";
 import { projects } from "@/lib/data";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import Hero from "@/components/Hero";
 import { format } from "date-fns";
 import { ArrowUpRight, Layout, PenLine } from "lucide-react";
-import Title from "@/components/Title";
+import Title from "@/components/layout/Title";
 import Grid from "@/components/layout/Grid";
 import Image from "next/image";
 
@@ -84,7 +84,7 @@ export default function Home() {
       </div>
 
       {/*Projects*/}
-      <div className="flex gap-6 mt-16 flex-col ">
+      <div className="flex gap-6 mt-8  flex-col ">
         {/*My Work*/}
         <section className="w-full " id="work">
           <Grid>
@@ -94,7 +94,7 @@ export default function Home() {
               icon={<Layout strokeWidth={1.5} size={14} />}
             />
 
-            <div className="flex flex-col gap-8 border-t pt-4">
+            <div className="flex flex-col gap-8 border-t pt-6">
               {projects.map((project) => (
                 <Link
                   className="flex justify-between items-start   cursor-pointer"
@@ -129,7 +129,7 @@ export default function Home() {
 
         {/*Thoughts*/}
         <section
-          className="py-10 h-full w-full relative "
+          className="py-8 h-full w-full relative "
           aria-label="journal-section"
         >
           <div className="w-full">

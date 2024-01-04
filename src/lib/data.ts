@@ -150,3 +150,46 @@ export const reading = [
   //   status: "finished",
   // },
 ];
+
+export const lifeAdventures = [
+  {
+    title: "Visiting New York City",
+    inProgress: false,
+    checked: false,
+  },
+  {
+    title: "Live in Berlin",
+    inProgress: false,
+    checked: false,
+  },
+  {
+    title: "Create a full-stack app",
+    inProgress: false,
+    checked: true,
+  },
+  {
+    title: "Visit Apple Park",
+    inProgress: false,
+    checked: false,
+  },
+  {
+    title: "Start startup",
+    inProgress: false,
+    checked: false,
+  },
+  {
+    title: "Code personal side",
+    inProgress: true,
+    checked: false,
+  },
+  {
+    title: "Visit Denmark",
+    inProgress: false,
+    checked: false,
+  },
+  {
+    title: "Visit Indonesia",
+    inProgress: false,
+    checked: false,
+  },
+];

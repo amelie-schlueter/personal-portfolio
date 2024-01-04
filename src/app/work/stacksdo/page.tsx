@@ -13,10 +13,11 @@ import { AddTaskButton } from "@/components/stacksdo/AddTaskButton";
 
 import { Checkbox } from "@/components/ui/checkbox";
 import { useTheme } from "next-themes";
-import EntryHeader from "@/components/EntryHeader";
-import EntrySidebar from "@/components/EntrySidebar";
-import EntryWrapper from "@/components/EntryWrapper";
-import ProjectDetails from "@/components/ProjectDetails";
+import EntryHeader from "@/components/journal/EntryHeader";
+import EntrySidebar from "@/components/journal/EntrySidebar";
+import EntryWrapper from "@/components/journal/EntryWrapper";
+import ProjectDetails from "@/components/projects/ProjectDetails";
+import { Task } from "@/lib/types";
 
 const headings = [
   { level: 3, text: "Ideation", slug: "stacksdo-ideation" },

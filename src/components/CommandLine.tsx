@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/command";
 import { Button } from "./ui/button";
 import { File, Ghost, Linkedin, Search, XIcon } from "lucide-react";
-import { pages } from "./Navbar";
+import { pages } from "./layout/Navbar";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { allCrafts, allDocs } from "contentlayer/generated";

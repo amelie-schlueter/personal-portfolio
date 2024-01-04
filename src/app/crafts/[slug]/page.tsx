@@ -1,7 +1,5 @@
-import CodeComponent from "@/components/CodeComponent";
-import CraftPost from "@/components/CraftPost";
+import CraftPost from "@/components/layout/CraftPost";
 import { Mdx } from "@/components/MDX";
-import Post from "@/components/Post";
 import { allCrafts, allDocs, allDocuments } from "contentlayer/generated";
 import { notFound } from "next/navigation";
 import React from "react";

@@ -1,4 +1,4 @@
-import CraftItem from "@/components/CraftItem";
+import CraftItem from "@/components/craft/CraftItem";
 import Hero from "@/components/Hero";
 import Grid from "@/components/layout/Grid";
 import { craftsArr } from "@/lib/data";

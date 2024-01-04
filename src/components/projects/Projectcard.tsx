@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
-import { Badge } from "./ui/badge";
+import { Badge } from "../ui/badge";
 import Image from "next/image";
-import { ProjectType } from "@/app/utils/types";
+import { ProjectType } from "@/lib/utils/types";
 import { describe } from "node:test";
 import { format } from "date-fns";
 import Link from "next/link";

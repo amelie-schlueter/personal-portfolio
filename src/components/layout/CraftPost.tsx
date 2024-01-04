@@ -2,9 +2,9 @@ import React, { useEffect } from "react";
 import InlineNavbar from "./InlineNavbar";
 import { format } from "date-fns";
 
-import { Mdx } from "./MDX";
+import { Mdx } from "../MDX";
 import { Craft } from "contentlayer/generated";
-import TOC from "./TOC";
+import TOC from "../TOC";
 
 const CraftPost = ({ craft }: { craft: Craft }) => {
   const date = new Date(craft.publishedAt);

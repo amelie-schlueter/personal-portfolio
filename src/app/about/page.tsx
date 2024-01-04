@@ -1,25 +1,11 @@
-import Navbar from "@/components/Navbar";
-import Topbar from "@/components/Topbar";
 import Workexperience from "@/components/Workexperience";
-import { Button, buttonVariants } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
-import {
-  ArrowUpRight,
-  Brain,
-  Code,
-  File,
-  Glasses,
-  Layout,
-  Linkedin,
-  PenLine,
-  Twitter,
-} from "lucide-react";
+import { ArrowUpRight, Brain, Code, Glasses, Smile } from "lucide-react";
 import Image from "next/image";
 import React from "react";
-import { reading, workExperience } from "@/lib/data";
+import { lifeAdventures, reading, workExperience } from "@/lib/data";
 
 import Link from "next/link";
-import Title from "@/components/Title";
+import Title from "@/components/layout/Title";
 import Grid from "@/components/layout/Grid";
 import ReadingItem from "@/components/ReadingItem";
 import {
@@ -29,13 +15,17 @@ import {
   Tooltip,
 } from "@/components/ui/tooltip";
 import { Separator } from "@/components/ui/separator";
+import TechStackItem from "@/components/TechStackItem";
+import { Happy_Monkey } from "next/font/google";
+import LifeAdventureItem from "@/components/LifeAdventureItem";
+import Footer from "@/components/layout/Footer";
 
 const Page = () => {
   return (
     <div className=" container px-4 mx-auto w-full relative mt-12 md:mt-24">
-      <div className="flex flex-col gap-10">
+      <div className="flex flex-col mb-8 gap-10">
         <Grid>
-          <div>
+          <div className="">
             <Image
               src={"/profile.png"}
               width={150}
@@ -110,14 +100,14 @@ const Page = () => {
       </div>
 
       {/*Experience*/}
-      <section className="w-full  mt-16" id="experience">
+      <section className="w-full  mb-8 " id="experience">
         <Grid>
           <Title
             title="Experience"
             icon={<Brain strokeWidth={1.5} size={14} />}
           />
 
-          <div className="flex flex-col gap-6 border-t pt-4">
+          <div className="flex flex-col gap-6 border-t pt-6">
             {workExperience.map((work) => {
               return (
                 <Workexperience work={work} key={work.title + work.company} />
@@ -128,31 +118,31 @@ const Page = () => {
       </section>
 
       {/*Reading*/}
-      <section className="w-full  mt-16" id="Reading">
+      <section className="w-full  mb-8 " id="Reading">
         <Grid>
           <Title
             title="Reading"
             icon={<Glasses strokeWidth={1.5} size={14} />}
           />
 
-          <div className="flex flex-col gap-6 border-t pt-4">
+          <div className="flex flex-col gap-6 border-t pt-6">
             {reading.map((book) => {
-              return <ReadingItem book={book} />;
+              return <ReadingItem book={book} key={book.title} />;
             })}
           </div>
         </Grid>
       </section>
 
-      {/*Reading*/}
-      <section className="w-full  mt-16" id="Tech Stack">
+      {/*TeckStack*/}
+      <section className="w-full  mb-8 " id="Tech Stack">
         <Grid>
           <Title
             title="Tech stack"
             icon={<Code strokeWidth={1.5} size={14} />}
           />
 
-          <div className="flex flex-col gap-6 border-t pt-4">
-            <div className="flex flex-col gap-2 justify-start">
+          <div className="flex flex-col gap-6 border-t pt-6">
+            <div className="flex flex-col gap-1 justify-start">
               <TechStackItem title="Language" value="JavaScript" />
               <TechStackItem title="Framework" value="ReactJS" />
               <TechStackItem title="SSR" value="NextJS" />
@@ -162,23 +152,36 @@ const Page = () => {
           </div>
         </Grid>
       </section>
+
+      {/*Life's Adventure List*/}
+      <section className="w-full  mb-8 " id="Life's Adventure List">
+        <Grid>
+          <Title
+            title="Life's Adventure List"
+            icon={<Smile strokeWidth={1.5} size={14} className="" />}
+          />
+
+          <div className="flex flex-col gap-6 border-t pt-6">
+            <div className=" w-full justify-start">
+              <div className="grid grid-cols-2 gap-cols-4 w-full">
+                {lifeAdventures.map((adventure) => {
+                  return (
+                    <LifeAdventureItem
+                      checked={adventure.checked}
+                      value={adventure.title}
+                      inProgress={adventure.inProgress}
+                    />
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        </Grid>
+      </section>
+
+      <Footer />
     </div>
   );
 };
 
 export default Page;
-
-export const TechStackItem = ({
-  title,
-  value,
-}: {
-  title: string;
-  value: string;
-}) => {
-  return (
-    <div className="text-muted-foreground grid grid-cols-[0.75fr,1.75fr]">
-      <p className="text-muted-foreground">{title}</p>
-      <p className="text-base text-foreground">{value}</p>
-    </div>
-  );
-};

@@ -28,7 +28,7 @@
   }
 
   .dark {
-    --background: 277 6% 4%;
+    --background: 0, 0%, 6%;
     --foreground: 0 0% 98%;
     --card: 240 10% 3.9%;
     --card-foreground: 0 0% 98%;
@@ -38,7 +38,7 @@
     --primary-foreground: 240 5.9% 10%;
     --secondary: 240 3.7% 15.9%;
     --secondary-foreground: 0 0% 98%;
-    --muted: 255 3.7% 13%;
+    --muted: 0 0% 8%;
     --muted-foreground: 255 5% 50%;
     --accent: 240 3.7% 15.9%;
     --accent-foreground: 0 0% 98%;
@@ -57,6 +57,8 @@
     scroll-behavior: smooth;
   }
 
+
+
   p {
     @apply text-foreground text-base;
   }
@@ -64,12 +66,19 @@
 
   .underline:hover {
     @apply text-blue-500;
-    text-decoration-color: currentColor
+    text-decoration-color: currentColor;
+
+  }
+
+  .underline {
+    text-underline-offset: 2px
   }
 
   body {
     @apply bg-background text-foreground;
   }
+
+
 
   ::selection {
     @apply bg-blue-600/30 text-blue-500;
@@ -99,11 +108,32 @@ ol ol li {
 
 .mdx ul li li {
   margin-left: 0;
-  list-style: circle;
+  list-style: none;
+}
+
+.mdx ul li {
+  list-style: none;
+  margin-left: 0;
+
+}
+
+.mdx ul {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-left: 0;
 }
 
 
 .mdx li ul li {
   padding: 0;
   margin: 0
+}
+
+p>code.hljs {
+  display: inline;
+}
+
+
+span>pre>code.hljs {
+  display: inline-flex;
 }

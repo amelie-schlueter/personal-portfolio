@@ -6,7 +6,7 @@ import { format } from "date-fns";
 import Link from "next/link";
 import { ArrowUpRight, BookOpenText, Pilcrow } from "lucide-react";
 import { motion } from "framer-motion";
-import { Mdx } from "./MDX";
+import { Mdx } from "../MDX";
 const BlogEntryCard = ({ doc }: { doc: Doc }) => {
   const date = new Date(doc.publishedAt);
 

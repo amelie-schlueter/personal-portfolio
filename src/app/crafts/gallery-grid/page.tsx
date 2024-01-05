@@ -71,7 +71,7 @@ const Page = () => {
             to create these microinteractions.
           </p>
           <ComponentCodeBlock>
-            <ComponentContent>
+            <ComponentContent className="p-4">
               <TabBar />
             </ComponentContent>
             <CodeContent language="typescript">

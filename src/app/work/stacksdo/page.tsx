@@ -59,6 +59,25 @@ const Page = () => {
 
         {/*Content*/}
         <div className="max-w-[600px] space-y-4">
+          {currentTheme === "dark" ? (
+            <video
+              src={"/stacksdo/stacksdo-video-dark.mp4"}
+              playsInline
+              autoPlay
+              muted
+              alt="stackdo-image-1"
+              className="w-full max-h-[400px] h-full object-cover rounded-md"
+            ></video>
+          ) : (
+            <video
+              src={"/stacksdo/stacksdo-video-dark.mp4"}
+              playsInline
+              autoPlay
+              muted
+              alt="stackdo-image-1"
+              className="w-full max-h-[400px] h-full object-cover rounded-md"
+            ></video>
+          )}
           <div>
             <h3 className="mt-6" id="stacksdo-ideation">
               Ideation
@@ -197,7 +216,7 @@ export { handler as GET, handler as POST };`}
                 <div className=" rounded-md   gap-2 md:gap-8 flex flex-col h-fit lg:flex-row justify-center relative">
                   <AddTaskButton setTask={setTasks} />
                   <div className="w-full flex flex-col gap-2">
-                    <h3 className="font-semibold mb-2 w-full">Your Tasks</h3>
+                    <h4 className="font-semibold mb-2 w-full">Your Tasks</h4>
                     {tasks.length > 0 &&
                       tasks.map((task) => (
                         <div key={task.id} className="flex items-center gap-2">
@@ -261,39 +280,20 @@ export { handler as GET, handler as POST };`}
               database.
             </p>
           </div>
-          <div className="w-full bg-muted py-6 px-6 rounded-md flex h-[30] items-center justify-center overflow-hidden">
+          <div className="w-full bg-muted  rounded-md flex h-[30] items-center justify-center overflow-hidden">
             {currentTheme === "dark" ? (
               <Image
-                src={"/stacksdo/Stackdo-image-1.png"}
-                className="shadow-2xl relative"
+                src={"/stacksdo/Stacksdo-Landingpage.png"}
+                className="w-full max-h-[400px] object-cover rounded-md"
                 width={550}
                 height={1080}
                 alt="stackdo-image-1"
               ></Image>
             ) : (
               <Image
-                src={"/stacksdo/Stackdo-image-1-neg.png"}
-                className="shadow-2xl relative"
+                src={"/stacksdo/Stacksdo-Landingpage.png"}
+                className="w-full max-h-[400px] rounded-md"
                 width={550}
-                height={1080}
-                alt="stackdo-image-1"
-              ></Image>
-            )}
-          </div>
-          <div className="w-full bg-muted py-6 px-6  rounded-md flex h-[30] items-center justify-center overflow-hidden relative">
-            {currentTheme === "dark" ? (
-              <Image
-                src={"/stacksdo/stackdo-image-2.png"}
-                className="shadow-lg  relative bottom-[-100px] right-[-150px] scale-[130%]"
-                width={900}
-                height={1080}
-                alt="stackdo-image-1"
-              ></Image>
-            ) : (
-              <Image
-                src={"/stacksdo/stackdo-image-2-neg.png"}
-                className="shadow-lg  relative bottom-[-100px] right-[-150px] scale-[130%]"
-                width={900}
                 height={1080}
                 alt="stackdo-image-1"
               ></Image>

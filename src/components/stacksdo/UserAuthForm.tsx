@@ -16,7 +16,7 @@ const UserAuthForm = () => {
     setIsVisible(false);
   };
   return (
-    <div className="flex items-center justify-center relative">
+    <div className="flex items-center shadow-lg justify-center relative">
       {isVisible && <Confetti />}
       <div className="border-[1px]  w-fit h-fit rounded-lg px-6   py-6 bg-background/60">
         <div className="flex flex-col items-center justify-center gap-2">

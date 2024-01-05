@@ -12,6 +12,7 @@ import { Dot, PenTool } from "lucide-react";
 import { usePathname } from "next/navigation";
 import React, { useEffect } from "react";
 import { type } from "os";
+import { isAscii } from "buffer";
 interface Props {
   title: string;
   link: string;
@@ -21,14 +22,15 @@ interface Props {
 const NavbarItem = ({ title, link, icon }: Props) => {
   const [active, setActive] = React.useState(false);
   const page = usePathname();
+  console.log({ page }, { link });
 
   useEffect(() => {
-    if (page.includes(link)) {
+    if (page === link) {
       setActive(true);
     } else {
       setActive(false);
     }
-  }, []);
+  }, [link, page]);
 
   return (
     <Link href={link} className="flex items-center justify-center ">
@@ -38,7 +40,7 @@ const NavbarItem = ({ title, link, icon }: Props) => {
             <motion.div
               whileHover={{
                 y: -10,
-                scale: 1.2,
+                scale: 1.1,
               }}
               transition={{ duration: 0.03, type: "spring" }}
               className={`${
@@ -47,11 +49,9 @@ const NavbarItem = ({ title, link, icon }: Props) => {
             >
               {icon}
             </motion.div>
-            {page.includes(link) && (
-              <Dot className="absolute bottom-[-5px]" width={18} />
-            )}
+            {active && <Dot className="absolute bottom-[-5px]" width={18} />}
           </TooltipTrigger>
-          <TooltipContent className="">
+          <TooltipContent className="" sideOffset={20}>
             <p>{title}</p>
           </TooltipContent>
         </Tooltip>

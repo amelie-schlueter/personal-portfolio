@@ -150,7 +150,7 @@ export const NavAnimation = {
     opacity: 0,
   },
   animate: {
-    y: "-150%", // Animate to the on-screen position
+    y: "-110%", // Animate to the on-screen position
     opacity: 100,
     transition: {
       duration: 0.5,

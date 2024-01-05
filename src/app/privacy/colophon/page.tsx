@@ -16,13 +16,16 @@ import {
   Home,
   Lightbulb,
   Pen,
+  Podcast,
   Server,
   Smile,
+  Type,
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import Footer from "@/components/layout/Footer";
+import { WriteStream } from "fs";
 
 const imprint = () => {
   return (
@@ -32,7 +35,7 @@ const imprint = () => {
         <p className="text-muted-foreground">Guide to this website</p>
         <div className=" mx-auto w-full relative">
           <Grid className="mb-8">
-            <GridItem className="border-none">
+            <GridItem className="border-0 ">
               <Title
                 title="Tech stack"
                 icon={<Code strokeWidth={1.5} className="h-4 w-4" />}
@@ -63,13 +66,13 @@ const imprint = () => {
 
           {/*Hosting*/}
           <Grid className="">
-            <GridItem>
+            <GridItem className="border-0 md:border-t-[1px]">
               <Title
                 title="Hosting"
                 icon={<Server strokeWidth={1.5} size={14} />}
               />
             </GridItem>
-            <GridItem className="m-0 ">
+            <GridItem className="m-0">
               <p>
                 This side is deployed and hosted on{" "}
                 <span className="underline">
@@ -79,14 +82,14 @@ const imprint = () => {
             </GridItem>
           </Grid>
           {/*Icons*/}
-          <Grid className="mb-6">
-            <GridItem>
+          <Grid className="mb-6 ">
+            <GridItem className="border-0 md:border-t">
               <Title
                 title="Icons"
                 icon={<Home strokeWidth={1.5} size={14} />}
               />
             </GridItem>
-            <GridItem className="m-0 ">
+            <GridItem className="m-0">
               <p>
                 This personal site uses the React Icon library{" "}
                 <span className="underline">
@@ -97,7 +100,31 @@ const imprint = () => {
             </GridItem>
           </Grid>
           <Grid className="mb-6">
-            <GridItem>
+            <GridItem className="border-0 md:border-t">
+              <Title
+                title="Typography"
+                icon={<Type strokeWidth={1.5} size={14} />}
+              />
+            </GridItem>
+            <GridItem className="m-0 ">
+              <p>
+                The simple and clean typeface{" "}
+                <span className="underline">
+                  <Link href={"https://klim.co.nz/retail-fonts/soehne/"}>
+                    Soehne
+                  </Link>
+                </span>{" "}
+                by <span>Kris Sowersby</span> and publishd through{" "}
+                <span className="underline">
+                  <Link href={"https://klim.co.nz/"}>Klim Type Foundry</Link>
+                </span>{" "}
+                is used for this website. I used only the regular and the
+                semibold weight.
+              </p>
+            </GridItem>
+          </Grid>
+          <Grid className="mb-6">
+            <GridItem className="border-0 md:border-t">
               <Title
                 title="User Interface Elements"
                 icon={<Pen strokeWidth={1.5} size={14} />}
@@ -118,7 +145,7 @@ const imprint = () => {
             </GridItem>
           </Grid>
           <Grid className="mb-6">
-            <GridItem>
+            <GridItem className="border-0 md:border-t">
               <Title
                 title="Inspiration"
                 icon={<Lightbulb strokeWidth={1.5} size={14} />}

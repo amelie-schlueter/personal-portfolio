@@ -15,7 +15,7 @@ const Footer = () => {
         <Link className="underline" href={"/imprint"}>
           Imprint
         </Link>
-        <Link className="underline" href={"/colophon"}>
+        <Link className="underline" href={"/privacy/colophon"}>
           Colophon
         </Link>
       </div>

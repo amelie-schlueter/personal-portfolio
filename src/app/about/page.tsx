@@ -106,7 +106,7 @@ const Page = () => {
       {/*Experience*/}
       <section className="w-full " id="experience">
         <Grid>
-          <GridItem>
+          <GridItem className="border-0 md:border-t">
             <Title
               title="Experience"
               icon={<Brain strokeWidth={1.5} className="h-4 w-4" />}
@@ -127,7 +127,7 @@ const Page = () => {
       {/*Reading*/}
       <section className="w-full " id="Reading">
         <Grid>
-          <GridItem>
+          <GridItem className="border-0 md:border-t">
             <Title
               title="Reading"
               icon={<Glasses strokeWidth={1.5} size={14} />}
@@ -146,7 +146,7 @@ const Page = () => {
       {/*TeckStack*/}
       <section className="w-full" id="Tech Stack">
         <Grid>
-          <GridItem>
+          <GridItem className="border-0 md:border-t">
             <Title
               title="Tech stack"
               icon={<Code strokeWidth={1.5} size={14} />}
@@ -169,7 +169,7 @@ const Page = () => {
       {/*Life's Adventure List*/}
       <section className="w-full " id="Life's Adventure List">
         <Grid>
-          <GridItem>
+          <GridItem className="border-0 md:border-t">
             <Title
               title="Life's Adventure List"
               icon={<Smile strokeWidth={1.5} size={14} className="" />}

@@ -29,5 +29,5 @@ export const GridItem = ({
   children: React.ReactNode;
   className?: string;
 }) => {
-  return <div className={cn("border-t pt-6", className)}>{children}</div>;
+  return <div className={cn("border-t pt-6 ", className)}>{children}</div>;
 };

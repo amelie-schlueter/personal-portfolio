@@ -87,7 +87,7 @@ export default function Home() {
         {/*My Work*/}
         <section className="w-full " id="work">
           <Grid>
-            <GridItem>
+            <GridItem className="border-0 md:border-t">
               {/*Header*/}
               <Title
                 title="Projects"
@@ -138,7 +138,7 @@ export default function Home() {
         >
           <div className="w-full">
             <Grid>
-              <GridItem>
+              <GridItem className="border-0 md:border-t">
                 <div>
                   <Title
                     title="Writing"

@@ -11,9 +11,13 @@ import Link from "next/link";
 import Footer from "@/components/layout/Footer";
 
 const page = () => {
-  const docs = allDocs.sort((a, b) => {
-    return b.publishedAt.localeCompare(a.publishedAt);
-  });
+  const docs = allDocs
+    .sort((a, b) => {
+      return b.publishedAt.localeCompare(a.publishedAt);
+    })
+    .filter((doc) => {
+      return doc.published;
+    });
   return (
     <div className=" container px-4 mx-auto w-full relative my-12 md:mt-24">
       {/*Wrapepr*/}

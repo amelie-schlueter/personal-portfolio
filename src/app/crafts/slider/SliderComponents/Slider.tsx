@@ -56,15 +56,10 @@ const Slider = () => {
   // This effect runs every time the value changes
   useEffect(() => {
     // Create a new audio object with the sound file
-    const audio = new Audio(sound);
     if (!muted) {
+      const audio = new Audio(sound);
       audio.play();
-    } else {
-      audio.pause();
     }
-
-    // Play the sound
-    audio;
   }, [value, muted]); // Only re-run the effect if value changes
 
   const toggleMute = () => {

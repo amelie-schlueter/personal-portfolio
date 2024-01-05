@@ -111,7 +111,7 @@ export const MobileExpand = () => {
             initial="initial"
             animate="animate"
             exit="exit"
-            className="absolute  right-0 flex flex-col gap-2 bg-accent rounded-full p-1"
+            className="absolute  right-0 flex flex-col gap-2 bg-muted rounded-full p-1"
           >
             {sublinks.map((page) => {
               return (

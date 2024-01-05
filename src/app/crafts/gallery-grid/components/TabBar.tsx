@@ -21,7 +21,7 @@ const TabBar = () => {
   const { resolvedTheme: currentTheme } = useTheme();
 
   return (
-    <div className="flex space-x-1 items-center justify-center mb-6 mt-3">
+    <div className="flex space-x-1 w-full items-center justify-center mb-6 mt-3">
       {tabs.map((tab) => (
         <button
           key={tab.id}

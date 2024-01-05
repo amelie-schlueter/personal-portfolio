@@ -15,7 +15,7 @@ const page = () => {
     return b.publishedAt.localeCompare(a.publishedAt);
   });
   return (
-    <div className=" container px-4 mx-auto w-full relative mt-12 md:mt-24">
+    <div className=" container px-4 mx-auto w-full relative my-12 md:mt-24">
       {/*Wrapepr*/}
       {/*Hero*/}
       <div className="flex flex-col gap-10">

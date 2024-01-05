@@ -44,6 +44,9 @@ const Page = () => {
             return <CraftItem craft={craft} key={craft.slug} />;
           })}
       </div>
+      <div className="flex px-4 container flex-col gap-10">
+        <Footer />
+      </div>
     </div>
   );
 };

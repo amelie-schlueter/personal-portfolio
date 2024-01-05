@@ -1,18 +1,17 @@
 import EntryWrapper from "@/components/journal/EntryWrapper";
+import Footer from "@/components/layout/Footer";
 import Grid from "@/components/layout/Grid";
 import Link from "next/link";
 import React from "react";
 
 const imprint = () => {
   return (
-    <div className="mt-24">
+    <div className=" container px-4 mx-auto w-full relative my-12 md:mt-24">
       <EntryWrapper>
         <h1 className="text-xl font-medium">Imprint</h1>
         <div className="flex flex-col gap-10 mt-10">
           <div>
-            <p className="text-muted-foreground mb-2">
-              Information according to German §5 of TMG
-            </p>
+            <h4 className=" mb-2">Information according to German §5 of TMG</h4>
             <p className=" max-w-md">
               <span className="text-base font-medium">Amelie Schlüter</span>
               <br />
@@ -28,9 +27,9 @@ const imprint = () => {
                 </Link>
               </span>
             </p>
-            <p className="text-muted-foreground mb-2 mt-10">
+            <h4 className="mb-2 mt-10">
               Information Copyright and internal content
-            </p>
+            </h4>
             <p className="  ">
               The material and content on this website are protected under the
               copyright laws of Germany. Unless explicitly allowed by law
@@ -56,6 +55,7 @@ const imprint = () => {
           </div>
         </div>
       </EntryWrapper>
+      <Footer />
     </div>
   );
 };

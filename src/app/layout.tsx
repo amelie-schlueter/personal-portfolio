@@ -37,9 +37,6 @@ const soehne = localFont({
   ],
 });
 
-// user pt serif from google
-const pt_serif = PT_Serif({ weight: "400", subsets: ["latin"] });
-
 export const metadata: Metadata = {
   title: "Amelie - Software Engineer",
   description: "Amelie Schlüter - Software Engineer & Designer ",

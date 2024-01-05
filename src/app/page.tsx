@@ -26,21 +26,21 @@ export default function Home() {
     <div className=" container px-4 mx-auto w-full relative my-12 md:mt-24">
       {/*Hero*/}
       <div className="flex flex-col gap-10">
-        <Grid>
-          <GridItem className="border-none">
+        <Grid className="p-0">
+          <GridItem className="border-none p-0">
             <div className="flex flex-col gap-0">
               <h1 className="text-xl font-medium">Amelie Schlüter</h1>
               <p className="text-muted-foreground ">Creative Developer</p>
             </div>
           </GridItem>
-          <GridItem className="border-none">
+          <GridItem className="border-none p-0">
             <div>
               <p className=" max-w-md">
                 Hey there, i am Amelie, a{" "}
                 <span>
                   <TooltipProvider delayDuration={0}>
                     <Tooltip>
-                      <TooltipTrigger className="underline">
+                      <TooltipTrigger className="md:underline">
                         creative development
                       </TooltipTrigger>
                       <TooltipContent className=" max-w-xs ">
@@ -66,7 +66,7 @@ export default function Home() {
               <p className=" max-w-md mt-4 ">
                 Currently i am working at{" "}
                 <span className="inline-flex items-center underline">
-                  <Link href={""} className="underline">
+                  <Link href={"https://zwoeins.de"} className="underline">
                     zwoeins marketing
                   </Link>
                   <ArrowUpRight

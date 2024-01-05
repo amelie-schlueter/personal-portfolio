@@ -21,6 +21,7 @@ import ComponentWrapper from "@/components/layout/ComponentWrapper";
 import ComponentCodeBlock from "@/components/layout/ComponentCodeBlock";
 import CodeContent from "@/components/layout/CodeContent";
 import ComponentContent from "@/components/layout/ComponentContent";
+import Footer from "@/components/layout/Footer";
 
 const Page = () => {
   const craft = craftsArr.find((craft) => craft.slug === "slider");
@@ -174,6 +175,7 @@ const x = useMotionValue(0);`}
             </CodeContent>
           </div>
         </div>
+        <Footer />
       </EntryWrapper>
     </div>
   );

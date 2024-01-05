@@ -22,7 +22,7 @@ import Footer from "@/components/layout/Footer";
 
 const Page = () => {
   return (
-    <div className=" container px-4 space-y-8 mx-auto w-full relative mt-12 md:mt-24">
+    <div className=" container px-4 space-y-8 mx-auto w-full relative my-12 md:mt-24">
       <Grid>
         <div className="">
           <Image
@@ -66,7 +66,7 @@ const Page = () => {
             <span>
               <TooltipProvider delayDuration={0}>
                 <Tooltip>
-                  <TooltipTrigger className="underline">
+                  <TooltipTrigger className="md:underline">
                     creative development
                   </TooltipTrigger>
                   <TooltipContent className=" max-w-xs ">
@@ -88,7 +88,7 @@ const Page = () => {
           <p className=" max-w-md mt-4 ">
             Right now i am working at{" "}
             <span className="inline-flex items-center underline">
-              <Link href={""} className="underline">
+              <Link href={"https://zwoeins.de"} className="underline">
                 zwoeins marketing
               </Link>
               <ArrowUpRight

@@ -16,6 +16,7 @@ import ComponentWrapper from "@/components/layout/ComponentWrapper";
 import CodeContent from "@/components/layout/CodeContent";
 import ComponentCodeBlock from "@/components/layout/ComponentCodeBlock";
 import ComponentContent from "@/components/layout/ComponentContent";
+import Footer from "@/components/layout/Footer";
 
 const tabs: Tab[] = [
   { id: "overview", label: "Overview" },
@@ -137,6 +138,7 @@ const Page = () => {
         </TabContent>`}
           </CodeContent>
         </div>
+        <Footer />
       </EntryWrapper>
     </div>
   );

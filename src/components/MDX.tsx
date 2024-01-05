@@ -11,17 +11,14 @@ import hljs from "highlight.js";
 const components = {
   h1: ({ className, ...props }) => (
     <h1
-      className={cn(
-        "mt-2 scroll-m-20 text-lg font-semibold tracking-tight",
-        className
-      )}
+      className={cn("mt-8 scroll-m-20 text-lg font-semibold ", className)}
       {...props}
     />
   ),
   h2: ({ className, ...props }) => (
     <h2
       className={cn(
-        "mt-2 scroll-m-20 border-b pb-1 text-md font-semibold tracking-tight first:mt-0",
+        "mt-8 scroll-m-20 border-b pb-1 text-md font-semibold  first:mt-0",
         className
       )}
       {...props}
@@ -29,10 +26,7 @@ const components = {
   ),
   h3: ({ className, ...props }) => (
     <h3
-      className={cn(
-        "mt-8 scroll-m-20 text-md font-semibold  tracking-tight",
-        className
-      )}
+      className={cn("mt-8 font-semibold  ", className)}
       {...props}
       id={props.id}
     />

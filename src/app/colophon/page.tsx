@@ -30,12 +30,12 @@ import { WriteStream } from "fs";
 const imprint = () => {
   return (
     <>
-      <div className="mt-24 container">
+      <div className=" container px-4 mx-auto w-full relative my-12 md:mt-24 ">
         <h1 className="text-xl font-medium">Colophon</h1>
-        <p className="text-muted-foreground">Guide to this website</p>
+        <p className="text-muted-foreground mb-8">Guide to this website</p>
         <div className=" mx-auto w-full relative">
-          <Grid className="mb-8">
-            <GridItem className="border-0 ">
+          <Grid className="mb-8 p-0">
+            <GridItem className="border-0 p-0 ">
               <Title
                 title="Tech stack"
                 icon={<Code strokeWidth={1.5} className="h-4 w-4" />}

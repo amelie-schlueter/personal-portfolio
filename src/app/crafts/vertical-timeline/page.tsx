@@ -11,6 +11,7 @@ import { useTheme } from "next-themes";
 import React from "react";
 import ComponentWrapper from "@/components/layout/ComponentWrapper";
 import VerticalTimeline from "./components/VerticalTimeline";
+import Footer from "@/components/layout/Footer";
 
 const Page = () => {
   const craft = craftsArr.find((craft) => craft.slug === "vertical-timeline");
@@ -170,6 +171,7 @@ const Page = () => {
           </pre>
           <Separator className="w-full my-6" />
         </div>
+        <Footer />
       </EntryWrapper>
     </div>
   );

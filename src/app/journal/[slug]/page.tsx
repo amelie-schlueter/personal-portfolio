@@ -26,7 +26,9 @@ const Page = async ({ params }: Props) => {
   const doc = await getDocFromParams(params.slug);
   const date = new Date(doc.publishedAt);
   const headings = doc.headings;
-  const docs = allDocs.find((doc) => doc.slugAsParams !== params.slug);
+  const docs = allDocs.find((doc) => {
+    return doc.slugAsParams !== params.slug && doc.published;
+  });
 
   return (
     <EntryWrapper>

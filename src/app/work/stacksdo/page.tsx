@@ -300,7 +300,7 @@ export { handler as GET, handler as POST };`}
             )}
           </div>
         </div>
-        <ProjectDetails />
+        <ProjectDetails work="Development" date={2023} />
       </EntryWrapper>
     </>
   );

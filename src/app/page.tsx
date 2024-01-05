@@ -18,9 +18,9 @@ import { useEffect } from "react";
 import Footer from "@/components/layout/Footer";
 
 export default function Home() {
-  const docs = allDocs.sort((a, b) =>
-    b.publishedAt.localeCompare(a.publishedAt)
-  );
+  const docs = allDocs
+    .sort((a, b) => b.publishedAt.localeCompare(a.publishedAt))
+    .filter((doc) => doc.published);
 
   return (
     <div className=" container px-4 mx-auto w-full relative my-12 md:mt-24">

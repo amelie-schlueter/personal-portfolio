@@ -55,9 +55,10 @@ const Slider = () => {
   }, [x, maxWidth, range]);
   // This effect runs every time the value changes
   useEffect(() => {
+    const audio = new Audio(sound);
+    console.log("sound");
     // Create a new audio object with the sound file
-    if (!muted) {
-      const audio = new Audio(sound);
+    if (muted) {
       audio.play();
     }
   }, [value, muted]); // Only re-run the effect if value changes
@@ -74,14 +75,14 @@ const Slider = () => {
             className=" cursor-pointer absolute right-2 top-2 rounded-full p-3 bg-muted flex items-center justify-center "
             onClick={toggleMute}
           >
-            {muted ? (
+            {!muted ? (
               <VolumeX strokeWidth={1.5} className="h-4 w-4" />
             ) : (
               <Volume2 strokeWidth={1.5} className="h-4 w-4" />
             )}
           </TooltipTrigger>
           <TooltipContent className=" py-1.5 text-sm">
-            <p className="text-sm">{muted ? "Unmute" : "Mute"}</p>
+            <p className="text-sm">{!muted ? "Unmute" : "Mute"}</p>
           </TooltipContent>
         </Tooltip>
       </TooltipProvider>

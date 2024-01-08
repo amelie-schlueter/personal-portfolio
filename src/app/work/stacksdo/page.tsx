@@ -213,7 +213,7 @@ export { handler as GET, handler as POST };`}
           <ComponentCodeBlock>
             <ComponentContent className="w-full max-w-full max-h-full">
               <div className="w-full">
-                <div className=" rounded-md   gap-2 md:gap-8 flex flex-col h-fit  min-h-[300px] lg:flex-row justify-center relative">
+                <div className=" rounded-md   gap-2 md:gap-8 flex flex-col h-fit  min-h-[300px] md:min-h-fit  lg:flex-row justify-center relative">
                   <AddTaskButton setTask={setTasks} />
                   <div className="w-full flex flex-col gap-2">
                     <h4 className="font-semibold mb-2 w-full">Your Tasks</h4>

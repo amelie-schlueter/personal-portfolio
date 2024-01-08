@@ -22,6 +22,7 @@ import ComponentCodeBlock from "@/components/layout/ComponentCodeBlock";
 import CodeContent from "@/components/layout/CodeContent";
 import ComponentContent from "@/components/layout/ComponentContent";
 import Footer from "@/components/layout/Footer";
+import InlineCode from "@/components/layout/InlineCode";
 
 const Page = () => {
   const craft = craftsArr.find((craft) => craft.slug === "slider");
@@ -60,8 +61,8 @@ const Page = () => {
                   Fractional Slider by Rauno Freiberg
                 </Link>
               </span>{" "}
-              an recreated it using Framer Motion and React. My focus was
-              primarily on the motion and the sound design of these component.
+              nd recreated it using Framer Motion and React. My focus was
+              primarily on the motion and the sound design of these components.
             </p>
             <video
               playsInline
@@ -78,11 +79,10 @@ const Page = () => {
             <p className="">
               I started by creating my state variables as well as the refs and
               the individual slider-range. I used the useMotionValue hook from
-              framer motion to track the drag position.
+              Framer Motion to track the drag position.
             </p>
-            <pre className={cn("w-full  py-2 rounded-md bg-transparent")}>
-              <code className="language-typescript overflow-x-scroll custom-scrollbar  border-[1px] w-full  px-2 pb-2 rounded-[7px] text-sm">
-                {`const range = [-20, 20];
+            <CodeContent language="typescript" variant="default">
+              {`const range = [-20, 20];
 const sliderRef = useRef<HTMLDivElement>(null);
 const [value, setValue] = useState<number>(0);
 
@@ -91,14 +91,13 @@ const items = Array.from({
   );
 const [maxWidth, setMaxWidth] = useState(0);
 const x = useMotionValue(0);`}
-              </code>
-            </pre>
+            </CodeContent>
 
             <div>
               <h3 className="mt-6">TSX elements and Framer-motion setup</h3>
               <p className="">
-                I created the individual slider elements and pased the value i
-                also pased an active prop to track if the element is currently
+                I created the individual slider elements and passed the value. I
+                also passed an active prop to track if the element is currently
                 within the selected range.
               </p>
             </div>
@@ -149,15 +148,16 @@ const x = useMotionValue(0);`}
             </ComponentCodeBlock>
 
             <p className="">
-              I used Framer-Motions "drag" option to implement the
-              slider-dragging logic. To create a seamless experience i used the
+              I used Framer Motion's "drag" option to implement the
+              slider-dragging logic. To create a seamless experience, I used the
               dragConstraints option to limit the dragging to the slider-range.
             </p>
 
             <p className="">
-              To create the selecting logic i used React-state.I used some math
-              to calculate the current value and set the state on every change.
-              Then i also added a click-soundeffect whenever the value changes.{" "}
+              To create the selecting logic, I used React state. I used some
+              math to calculate the current value and set the state on every
+              change. Then I also added a click sound effect whenever the value
+              changes.
             </p>
 
             <CodeContent language="typescript" variant="default">

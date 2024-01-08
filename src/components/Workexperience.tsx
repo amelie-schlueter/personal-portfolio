@@ -8,11 +8,11 @@ const Workexperience = ({ work }: { work: WorkType }) => {
     <div>
       <div className="flex items-center w-full md:col-start-1">
         <div className="flex items-start justify-between w-full">
-          <div className="flex flex-col  gap-">
-            <h4 className="font-medium text-base ">{work.title}</h4>
+          <div className="flex flex-col ">
+            <h4 className="font-medium m-0">{work.title}</h4>
             <p className="text-muted-foreground "> {work.company}</p>
           </div>
-          <div className="flex items-center text-sm text-muted-foreground">
+          <div className="flex items-center text-sm text-muted-foreground ">
             {format(work.startingDate, "MM / yyyy")} -{" "}
             {work.endDate ? (
               format(work.endDate, "MMM yyyy")
@@ -24,9 +24,6 @@ const Workexperience = ({ work }: { work: WorkType }) => {
           </div>
         </div>
       </div>
-      <p className=" text-muted-foreground max-w-xs truncate">
-        {work.description}
-      </p>
     </div>
   );
 };

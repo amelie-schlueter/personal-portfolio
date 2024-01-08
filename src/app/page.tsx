@@ -41,7 +41,7 @@ export default function Home() {
                   <TooltipProvider delayDuration={0}>
                     <Tooltip>
                       <TooltipTrigger className="md:underline">
-                        creative development
+                        creative developer
                       </TooltipTrigger>
                       <TooltipContent className=" max-w-xs ">
                         <p className="font-medium">
@@ -57,7 +57,7 @@ export default function Home() {
                   </TooltipProvider>{" "}
                 </span>{" "}
                 based in Germany. I am currently studying Interaction Design at
-                the University of Applied Sciences in in Schwaebisch Gmuend.
+                the University of Applied Sciences in Schwaebisch Gmuend.
               </p>
               <p className=" max-w-md mt-4 ">
                 I am passionate about creating meaningful digital experiences by
@@ -75,7 +75,7 @@ export default function Home() {
                     className="inline-block"
                   />
                 </span>
-                in germany as an interaction designer.
+                in Germany as an interaction designer.
               </p>
             </div>
           </GridItem>

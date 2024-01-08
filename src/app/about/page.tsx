@@ -55,14 +55,14 @@ const Page = () => {
         </div>
         <div>
           <p className=" max-w-md">
-            I was born in a small town in western germany and i grew up in an
-            ever growing age of technology. My whole life i was curious about
+            I was born in a small town in western Germany, and I grew up in an
+            ever-growing age of technology. My whole life, I was curious about
             how technology evolves and how it can enhance our everyday life.
           </p>
           <p className=" max-w-md mt-4 ">
-            A few years ago i stared to learn more about design. For me it was
-            important to bring my ideas to life, so i self-taught myself how to
-            code and learned more about{" "}
+            A few years ago, I started to learn more about design. For me, it
+            was important to bring my ideas to life, so I self-taught myself how
+            to code and learned more about{" "}
             <span>
               <TooltipProvider delayDuration={0}>
                 <Tooltip>
@@ -82,8 +82,8 @@ const Page = () => {
                 </Tooltip>
               </TooltipProvider>{" "}
             </span>
-            . In 2023 i started my bachelor in interaction design at the
-            University of Applied Sciences in Schwaebisch Gmuend.
+            . In early 2023, I started my bachelor's in Interaction Design at
+            the University of Applied Sciences in Schwaebisch Gmuend.
           </p>
           <p className=" max-w-md mt-4 ">
             Right now i am working at{" "}
@@ -113,7 +113,7 @@ const Page = () => {
             />
           </GridItem>
           <GridItem>
-            <div className="flex flex-col gap-6 ">
+            <div className="flex flex-col gap-4 ">
               {workExperience.map((work) => {
                 return (
                   <Workexperience work={work} key={work.title + work.company} />

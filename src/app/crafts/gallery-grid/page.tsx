@@ -58,8 +58,8 @@ const Page = () => {
           </ComponentWrapper>
 
           <p className={cn("")}>
-            I created a tabbar with a nice microinteraction to change between
-            the tab content. I used{" "}
+            I created a tab bar with a nice microinteraction to change between
+            the tab content. I used{""}
             <span>
               <Link
                 href={"https://www.framer.com/motion/"}
@@ -93,9 +93,9 @@ const Page = () => {
           <div>
             <h3 className="mt-6">Smooth Change Transitions</h3>
             <p className={cn("")}>
-              To create these smooth change-transitions i used the
-              Layout-Transition functionality from framer motion. Here i used a
-              layoutId to achieve the desired outcome
+              To create these smooth change transitions, I used the
+              Layout-Transition functionality from Framer Motion. Here I used a
+              layoutId to achieve the desired outcome:
             </p>
           </div>
           <video

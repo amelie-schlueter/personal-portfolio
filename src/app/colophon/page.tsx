@@ -1,13 +1,8 @@
 import TechStackItem from "@/components/TechStackItem";
-import EntryWrapper from "@/components/journal/EntryWrapper";
+
 import Grid, { GridItem } from "@/components/layout/Grid";
 import Title from "@/components/layout/Title";
-import { Separator } from "@/components/ui/separator";
-import {
-  Tooltip,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
+
 import {
   ArrowUpRight,
   Brain,
@@ -21,11 +16,9 @@ import {
   Smile,
   Type,
 } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import Footer from "@/components/layout/Footer";
-import { WriteStream } from "fs";
 
 const imprint = () => {
   return (
@@ -35,15 +28,15 @@ const imprint = () => {
         <p className="text-muted-foreground mb-8">Guide to this website</p>
         <div className=" mx-auto w-full relative">
           <Grid className="mb-8 p-0">
-            <GridItem className="border-0 p-0 ">
+            <GridItem className="border-0 ">
               <Title
                 title="Tech stack"
                 icon={<Code strokeWidth={1.5} className="h-4 w-4" />}
               />
             </GridItem>
-            <GridItem className="border-none">
+            <GridItem className=" border-t md:border-none">
               <p>
-                I used my favorite tech stack for this side and added some
+                I used my favorite tech stack for this site and added some
                 additional tools to make my life easier and create the best
                 possible experience while keeping flexibility in mind.
               </p>
@@ -114,7 +107,7 @@ const imprint = () => {
                     Soehne
                   </Link>
                 </span>{" "}
-                by <span>Kris Sowersby</span> and publishd through{" "}
+                by <span>Kris Sowersby</span> and published through{" "}
                 <span className="underline">
                   <Link href={"https://klim.co.nz/"}>Klim Type Foundry</Link>
                 </span>{" "}
@@ -132,7 +125,7 @@ const imprint = () => {
             </GridItem>
             <GridItem className="m-0 ">
               <p>
-                The foundation of the user interface elements is the open source
+                The foundation of the user interface elements is the open-source
                 library{" "}
                 <span>
                   <Link href={"https://ui.shadcn.com/"} className="underline">
@@ -153,9 +146,9 @@ const imprint = () => {
             </GridItem>
             <GridItem className="m-0 ">
               <p>
-                Day by day i see many great websites on the world wide web. And
-                i am always inspired by the work of others. I try to learn from
-                them and implement the things i like in my own way.
+                Day by day, I see many great websites on the World Wide Web, and
+                I am always inspired by the work of others. I try to learn from
+                them and implement the things I like in my own way.
               </p>
               <p>
                 I want to mention some amazing sites that inspired me for this
@@ -163,28 +156,45 @@ const imprint = () => {
               </p>
               <ul className="text-base mt-4">
                 <li>
-                  <Link href={"/"} className="underline">
+                  <Link
+                    href={"https://linusrogge.com/"}
+                    className="underline"
+                    target="_blank"
+                  >
                     Linus Rogge
                   </Link>
                 </li>
                 <li>
-                  <Link href={"/"} className="underline">
+                  <Link
+                    href={"https://rauno.me/"}
+                    className="underline"
+                    target="_blank"
+                  >
                     Rauno Freiberg
                   </Link>
                 </li>
                 <li>
-                  <Link href={"/"} className="underline">
+                  <Link
+                    href={"https://floriankiem.com"}
+                    className="underline"
+                    target="_blank"
+                  >
                     Florian Kiem
                   </Link>
                 </li>
                 <li>
-                  <Link href={"/"} className="underline">
+                  <Link
+                    target="_blank"
+                    href={"https://antonstallboerger.com/"}
+                    className="underline"
+                  >
                     Anton Stallbörger
                   </Link>
                 </li>
                 <li>
                   <Link
                     href={"https://www.0xshapeshifter.dev/"}
+                    target="_blank"
                     className="underline"
                   >
                     Shapeshifter
@@ -193,26 +203,36 @@ const imprint = () => {
                 <li>
                   <Link
                     href={"https://www.fabianschultz.com/"}
+                    target="_blank"
                     className="underline"
                   >
                     Fabian Schultz
                   </Link>
                 </li>
                 <li>
-                  <Link href={"https://paco.me/"} className="underline">
+                  <Link
+                    href={"https://paco.me/"}
+                    target="_blank"
+                    className="underline"
+                  >
                     Paco Coursey
                   </Link>
                 </li>
                 <li>
                   <Link
                     href={"https://carlbarenbrug.com/"}
+                    target="_blank"
                     className="underline"
                   >
                     Carl Barenburg
                   </Link>
                 </li>
                 <li>
-                  <Link href={"https://www.ambedg.ar/"} className="underline">
+                  <Link
+                    href={"https://www.ambedg.ar/"}
+                    target="_blank"
+                    className="underline"
+                  >
                     Edgar Ambartsoumian
                   </Link>
                 </li>

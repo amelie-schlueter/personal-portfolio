@@ -85,7 +85,7 @@ const Page = () => {
             <p>
               In our digital age, we're constantly bombarded with information
               and stimulation. At the same time, there's an ongoing quest for
-              the perfect productivity system or task management tool, aimed at
+              the perfect productivity system or task management tool aimed at
               enhancing productivity and managing our daily 24 hours more
               efficiently. I admit, I've tried nearly every productivity tool
               out there, seeking that slight edge in efficiency. But is this
@@ -113,8 +113,8 @@ const Page = () => {
               Building
             </h3>
             <p>
-              Now i could start creating the basic setup of my app as well as
-              creating basic components. As a techstack i used{" "}
+              Now I could start creating the basic setup of my app as well as
+              creating basic components. As a tech stack, I used{" "}
               <Link
                 href="https://nextjs.org/"
                 className=" underline hover:text-muted-foreground"
@@ -207,13 +207,13 @@ export { handler as GET, handler as POST };`}
             </CodeContent>
           </ComponentCodeBlock>
           <p>
-            I set a focus on direct user feedback pared with minimalistic but
-            still beautiful animation and interactions. Try out yourself:
+            I set a focus on direct user feedback paired with minimalistic but
+            still beautiful animation and interactions. Try it out yourself:
           </p>
           <ComponentCodeBlock>
             <ComponentContent className="w-full max-w-full max-h-full">
               <div className="w-full">
-                <div className=" rounded-md   gap-2 md:gap-8 flex flex-col h-fit lg:flex-row justify-center relative">
+                <div className=" rounded-md   gap-2 md:gap-8 flex flex-col h-fit  min-h-[300px] lg:flex-row justify-center relative">
                   <AddTaskButton setTask={setTasks} />
                   <div className="w-full flex flex-col gap-2">
                     <h4 className="font-semibold mb-2 w-full">Your Tasks</h4>
@@ -245,11 +245,13 @@ export { handler as GET, handler as POST };`}
               Result
             </h3>
             <p>
-              Stacksdo is an amazing tool for managing task and projects without
-              any unnessary distractions for the user. It focuses on the
-              foundatinal elements and still provides an amazing user experience
-              throught consistent user feedback, a minimal design and great
-              performance.{" "}
+              Stacksdo is an amazing tool for managing tasks and projects
+              without any unnecessary distractions for the user. It focuses on
+              the foundational elements and still provides an amazing user
+              experience through consistent user feedback, a minimal design, and
+              great performance. Next.js, TypeScript with Tailwind CSS for
+              styling, Planetscale as the database, and Prisma ORM for
+              communication with the database.{" "}
               <span>
                 <Link href="https://nextjs.org/" className=" underline ">
                   NEXTjs

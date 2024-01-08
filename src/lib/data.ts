@@ -56,7 +56,7 @@ export const projects = [
     imageDarkmode: "/stacksdo/stacksdo-cover.png",
     imageLightmode: "/stacksdo/stackdo-cover.png",
     description:
-      "Stacksdo is a distraction free task management tool in a world full of constant overstimulation",
+      "Stacksdo is a distraction-free task management tool in a world full of constant overstimulation.",
     techStack: [{ title: "NextJS", icon: "/nextjs.png" }],
   },
 ].sort((a, b) => b.year.getTime() - a.year.getTime());

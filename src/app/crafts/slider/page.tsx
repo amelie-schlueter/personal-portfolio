@@ -61,7 +61,7 @@ const Page = () => {
                   Fractional Slider by Rauno Freiberg
                 </Link>
               </span>{" "}
-              nd recreated it using Framer Motion and React. My focus was
+              and recreated it using Framer Motion and React. My focus was
               primarily on the motion and the sound design of these components.
             </p>
             <video

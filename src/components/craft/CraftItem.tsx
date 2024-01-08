@@ -15,7 +15,7 @@ const CraftItem = ({ craft }: Props) => {
   return (
     <Link href={`crafts/${craft.slug}`}>
       <div
-        className={`h-[320px] text-white w-full relative cursor-pointer overflow-hidden rounded-md`}
+        className={`min-h-[320px] h-full text-white w-full relative cursor-pointer overflow-hidden rounded-md`}
       >
         <motion.video
           whileHover={{

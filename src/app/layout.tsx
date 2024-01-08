@@ -38,8 +38,8 @@ const soehne = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Amelie - Software Engineer",
-  description: "Amelie Schlüter - Software Engineer & Designer ",
+  title: "Amelie - Creative Developer",
+  description: "Amelie Schlüter - Creative Developer & Designer ",
 };
 
 export default function RootLayout({

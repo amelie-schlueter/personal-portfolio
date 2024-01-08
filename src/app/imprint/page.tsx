@@ -54,8 +54,8 @@ const imprint = () => {
             </p>
           </div>
         </div>
+        <Footer />
       </EntryWrapper>
-      <Footer />
     </div>
   );
 };

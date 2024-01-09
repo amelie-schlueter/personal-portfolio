@@ -18,7 +18,7 @@ const Page = () => {
   return (
     <div className="  mx-auto w-full relative mt-12 md:mt-24">
       <div className="flex px-4 container flex-col gap-10">
-        <Grid>
+        <Grid className="border-none">
           <div className="flex flex-col gap-1">
             <div>
               <h1 className="text-xl font-medium">Interaction Corner</h1>

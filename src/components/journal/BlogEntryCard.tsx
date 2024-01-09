@@ -21,12 +21,6 @@ const BlogEntryCard = ({ doc }: { doc: Doc }) => {
       >
         <div className="flex items-center justify-between  underline ">
           <div className="flex items-center gap-2">
-            <Pilcrow
-              size={16}
-              strokeWidth={1.5}
-              className="mt-1 text-muted-foreground"
-            />
-
             <div className="flex flex-col">
               {/* <p className="w-fit mt-1 text-muted-foreground text-xs">
                 {format(date, "EE, dd MMM yyyy")}

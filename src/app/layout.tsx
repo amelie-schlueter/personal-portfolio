@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/lib/theme-provider";
 import { Roboto } from "next/font/google";
 import localFont from "next/font/local";
+import Head from "next/head";
 import Topbar from "@/components/layout/Topbar";
 import Navbar from "@/components/layout/Navbar";
 import { PT_Serif } from "next/font/google";
@@ -49,6 +50,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <Head>
+        <meta property="og:image" content="/profile.png" />
+      </Head>
       <body className={soehne.className}>
         <ThemeProvider
           attribute="class"

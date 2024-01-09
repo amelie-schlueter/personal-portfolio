@@ -11,7 +11,7 @@ const Grid = ({ columns, children, className }: Props) => {
   return (
     <div
       className={cn(
-        `grid md:grid-cols-[1fr,1.75fr] gap-2 md:gap-16`,
+        `grid md:grid-cols-[1fr,1.75fr] gap-2 md:gap-16 border-t`,
         className
       )}
     >
@@ -29,5 +29,5 @@ export const GridItem = ({
   children: React.ReactNode;
   className?: string;
 }) => {
-  return <div className={cn("border-t pt-6 ", className)}>{children}</div>;
+  return <div className={cn(" pt-6 ", className)}>{children}</div>;
 };

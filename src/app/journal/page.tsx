@@ -23,7 +23,7 @@ const page = () => {
       {/*Wrapepr*/}
       {/*Hero*/}
       <div className="flex flex-col gap-10">
-        <Grid>
+        <Grid className="border-none">
           <div className="flex flex-col gap-1">
             <h1 className="text-xl font-medium">Writing</h1>
           </div>

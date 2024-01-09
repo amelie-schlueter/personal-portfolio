@@ -29,7 +29,7 @@ export function ModeToggle() {
           }}
           transition={{ duration: 0.03, type: "spring" }}
           className={
-            "  bg-muted h-12 w-12 rounded-full flex  flex-col item-center shadow-sm relative cursor-pointer  ring-1 ring-foreground/10 hover:underline transition-all items-center justify-center"
+            "  bg-muted h-12 w-12 rounded-full flex  flex-col item-center shadow-sm relative cursor-pointer  ring-1 ring-foreground/10  transition-all items-center justify-center"
           }
         >
           <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />

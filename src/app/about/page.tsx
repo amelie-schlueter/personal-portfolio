@@ -23,7 +23,7 @@ import Footer from "@/components/layout/Footer";
 const Page = () => {
   return (
     <div className=" container px-4 space-y-8 mx-auto w-full relative my-12 md:mt-24">
-      <Grid>
+      <Grid className="border-none">
         <div className="">
           <Image
             src={"/profile.png"}
@@ -66,7 +66,7 @@ const Page = () => {
             <span>
               <TooltipProvider delayDuration={0}>
                 <Tooltip>
-                  <TooltipTrigger className="md:underline">
+                  <TooltipTrigger className="md:underline cursor-default">
                     creative development
                   </TooltipTrigger>
                   <TooltipContent className=" max-w-xs ">
@@ -106,7 +106,7 @@ const Page = () => {
       {/*Experience*/}
       <section className="w-full " id="experience">
         <Grid>
-          <GridItem className="border-0 md:border-t">
+          <GridItem className="">
             <Title
               title="Experience"
               icon={<Brain strokeWidth={1.5} className="h-4 w-4" />}
@@ -127,7 +127,7 @@ const Page = () => {
       {/*Reading*/}
       <section className="w-full " id="Reading">
         <Grid>
-          <GridItem className="border-0 md:border-t">
+          <GridItem className="">
             <Title
               title="Reading"
               icon={<Glasses strokeWidth={1.5} size={14} />}
@@ -146,7 +146,7 @@ const Page = () => {
       {/*TeckStack*/}
       <section className="w-full" id="Tech Stack">
         <Grid>
-          <GridItem className="border-0 md:border-t">
+          <GridItem className="">
             <Title
               title="Tech stack"
               icon={<Code strokeWidth={1.5} size={14} />}
@@ -169,7 +169,7 @@ const Page = () => {
       {/*Life's Adventure List*/}
       <section className="w-full " id="Life's Adventure List">
         <Grid>
-          <GridItem className="border-0 md:border-t">
+          <GridItem className="">
             <Title
               title="Life's Adventure List"
               icon={<Smile strokeWidth={1.5} size={14} className="" />}

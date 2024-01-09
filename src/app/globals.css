@@ -170,3 +170,7 @@ span>pre>code.hljs {
 li {
   margin-bottom: 0.25rem;
 }
+
+.hover-underline:hover p {
+  text-decoration: underline;
+}

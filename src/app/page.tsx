@@ -2,7 +2,7 @@ import BlogEntryCard from "@/components/journal/BlogEntryCard";
 import { allDocs } from "contentlayer/generated";
 import { projects } from "@/lib/data";
 import Link from "next/link";
-import { ArrowUpRight, Layout, PenLine } from "lucide-react";
+import { ArrowUpRight, Glasses, Layout, PenLine } from "lucide-react";
 import Title from "@/components/layout/Title";
 import Grid, { GridItem } from "@/components/layout/Grid";
 import Image from "next/image";
@@ -16,6 +16,7 @@ import {
 import CraftBanner from "@/components/CraftBanner";
 import { useEffect } from "react";
 import Footer from "@/components/layout/Footer";
+import Projectcard from "@/components/projects/Projectcard";
 
 export default function Home() {
   const docs = allDocs
@@ -26,7 +27,7 @@ export default function Home() {
     <div className=" container px-4 mx-auto w-full relative my-12 md:mt-24">
       {/*Hero*/}
       <div className="flex flex-col gap-10">
-        <Grid className="p-0">
+        <Grid className="p-0 border-none">
           <GridItem className="border-none p-0">
             <div className="flex flex-col gap-0">
               <h1 className="text-xl font-medium">Amelie Schlüter</h1>
@@ -40,7 +41,7 @@ export default function Home() {
                 <span>
                   <TooltipProvider delayDuration={0}>
                     <Tooltip>
-                      <TooltipTrigger className="md:underline">
+                      <TooltipTrigger className="md:underline cursor-default">
                         creative developer
                       </TooltipTrigger>
                       <TooltipContent className=" max-w-xs ">
@@ -86,8 +87,8 @@ export default function Home() {
       <div className="flex gap-6 mt-8  flex-col ">
         {/*My Work*/}
         <section className="w-full " id="work">
-          <Grid>
-            <GridItem className="border-0 md:border-t">
+          <Grid className="border-t">
+            <GridItem className="">
               {/*Header*/}
               <Title
                 title="Projects"
@@ -97,34 +98,7 @@ export default function Home() {
             <GridItem>
               <div className="flex flex-col gap-8">
                 {projects.map((project) => (
-                  <Link
-                    className="flex justify-between items-start   cursor-pointer"
-                    key={project.slug}
-                    href={`/work/${project.slug}`}
-                  >
-                    <div className="flex items-center justify-between  w-full">
-                      <div className="w-full">
-                        <div className="mb-4">
-                          <div className="flex items-center justify-between">
-                            <h3 className="font-medium  mb-1">
-                              {project.title}
-                            </h3>
-                            <ArrowUpRight size={18} strokeWidth={1.5} />
-                          </div>
-                          <p className=" text-muted-foreground">
-                            {project.description}
-                          </p>
-                        </div>
-                        <Image
-                          src={project.imageDarkmode}
-                          width={600}
-                          height={400}
-                          alt=""
-                          className="rounded-md"
-                        />
-                      </div>
-                    </div>
-                  </Link>
+                  <Projectcard project={project} />
                 ))}
               </div>
             </GridItem>
@@ -138,11 +112,11 @@ export default function Home() {
         >
           <div className="w-full">
             <Grid>
-              <GridItem className="border-0 md:border-t">
+              <GridItem className="">
                 <div>
                   <Title
                     title="Writing"
-                    icon={<PenLine strokeWidth={1.5} size={14} />}
+                    icon={<Glasses strokeWidth={1.5} size={14} />}
                   />
                 </div>
               </GridItem>

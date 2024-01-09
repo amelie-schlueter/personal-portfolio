@@ -98,7 +98,7 @@ export default function Home() {
             <GridItem>
               <div className="flex flex-col gap-8">
                 {projects.map((project) => (
-                  <Projectcard project={project} />
+                  <Projectcard project={project} key={project.slug} />
                 ))}
               </div>
             </GridItem>
